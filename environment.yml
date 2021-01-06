@@ -1,0 +1,14 @@
+name: data-science-notes
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - ipykernel
+  - nb_conda
+  - jupyter_contrib_nbextensions
+  - yapf
+  - pip
+  - pip:
+    - jupyter-book
+    - cookiecutter
