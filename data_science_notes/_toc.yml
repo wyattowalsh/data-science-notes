@@ -1,6 +1,5 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
-- file: probabililty
+- file: probability/index
   sections:
-    - file: basics
-    - file: notebooks
+    - file: probability/basics
