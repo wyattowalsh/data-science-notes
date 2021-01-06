@@ -12,3 +12,4 @@ dependencies:
   - pip:
     - jupyter-book
     - cookiecutter
+    - ghp-import

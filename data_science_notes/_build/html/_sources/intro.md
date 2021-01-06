@@ -1,7 +1,3 @@
-Welcome to your Jupyter Book
-============================
+# Data Science Notes
 
-This is a small sample book to give you a feel for how book content is
-structured.
-
-Check out the content pages bundled with this sample book to get started.
+Hopefully this can turn into a good resource for notes on data science topics such as probability, data mining, or data modeling!
