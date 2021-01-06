@@ -1,6 +1,5 @@
-file: index
+file: intro
 sections:
-- file: notebooks
 - file: probability/index
   sections:
   - file: probability/basics
