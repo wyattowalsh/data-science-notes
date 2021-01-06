@@ -1,5 +1,48 @@
-file: intro
-sections:
-- file: probability/index
-  sections:
-  - file: probability/basics
+- file: intro
+
+- part: Mathematical Preliminaries 
+  chapters:
+  - file: mathematical_preliminaries/index
+  - file: mathematical_preliminaries/calculus/index
+  - file: mathematical_preliminaries/linear_algebra/index
+  - file: mathematical_preliminaries/probability/index
+    sections:
+    - file: mathematical_preliminaries/probability/basics
+  - file: mathematical_preliminaries/statistics/index
+  - file: mathematical_preliminaries/optimization/index
+
+- part: Programming
+  chapters:
+  - file: programming/index
+  - file: programming/python/index
+  - file: programming/r/index
+
+- part: Data Ingestion
+  chapters:
+  - file: data_ingestion/index
+
+- part: Data Cleaning
+  chapters:
+  - file: data_cleaning/index
+
+- part: Exploratory Data Analysis
+  chapters:
+  - file: eda/index
+
+- part: Visualization
+  chapters:
+  - file: visualization/index
+
+- part: Data Mining
+  chapters:
+  - file: data_mining/index
+
+- part: Modeling
+  chapters:
+  - file: modeling/index
+  - file: modeling/regression/index
+  - file: modeling/classification/index
+
+- part: Simulation
+  chapters:
+  - file: simulation/index
