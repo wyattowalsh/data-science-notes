@@ -181,6 +181,32 @@
    Table of Contents
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-space">
+   Probability Space
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probability-function-p">
+     Probability Function (
+     <span class="math notranslate nohighlight">
+      \(P\)
+     </span>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#consequences">
+     Consequences
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditional-probability">
+   Conditional Probability
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -197,8 +223,45 @@
 <div class="section" id="table-of-contents">
 <h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li></li>
+<li><p><a class="reference external" href="#probability_space">Probability Space</a></p>
+<ul>
+<li><p><a class="reference external" href="#probability-function">Probability Function</a></p></li>
+<li><p><a class="reference external" href="#consequences">Consequences</a></p></li>
 </ul>
+</li>
+<li><p><a class="reference external" href="#condititional-probability">Conditional Probability</a></p></li>
+</ul>
+</div>
+<div class="section" id="probability-space">
+<h2>Probability Space<a class="headerlink" href="#probability-space" title="Permalink to this headline">¶</a></h2>
+<p>A probability space: <span class="math notranslate nohighlight">\((\Omega, \mathcal{F}, P)\)</span> where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> is the sample space (set of all possible outcomes)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> is a set of events where each event is an outcome</p></li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span> is a function giving the probability of an event</p></li>
+</ul>
+<div class="section" id="probability-function-p">
+<h3>Probability Function (<span class="math notranslate nohighlight">\(P\)</span>)<a class="headerlink" href="#probability-function-p" title="Permalink to this headline">¶</a></h3>
+<p>Probability of an event must be greater than or equal to zero, probability of the sample space is equal to one, and probabilities of an intersection are additive:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(A) \geq 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\Omega) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(A_1 \cup A_1 \cup ...) = P(A_1) + P(A_2) + ... \)</span> for any countable collection of mutually exclusive events <span class="math notranslate nohighlight">\(A_1, A_2, ...\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="consequences">
+<h3>Consequences<a class="headerlink" href="#consequences" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(o_i)  = 1/n \)</span> in a sample space <span class="math notranslate nohighlight">\(\Omega = \{ o_1, o_2, ..., o_n\}\)</span> <strong>where each outcome <span class="math notranslate nohighlight">\(o_i\)</span> is equally likely to occur</strong> <span class="math notranslate nohighlight">\(\hspace{5pt} \forall \hspace{5pt} i = 1, ..., n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\bar{A}) = 1 - P(A)\)</span> where <span class="math notranslate nohighlight">\(\bar{A}\)</span> is the <strong>complement</strong> of event <span class="math notranslate nohighlight">\(A\)</span></p></li>
+<li><p>For events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(P(A\cup B) = P(A) + P(B) - P(A\cap B)\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(A\subseteq B\)</span>, then <span class="math notranslate nohighlight">\(P(A) \leq P(B)\)</span></p></li>
+<li><p>For any event A, <span class="math notranslate nohighlight">\(P(A) = \sum_{k=1}^m P(A \cap B_k)\)</span> where mutually exclusive events <span class="math notranslate nohighlight">\(B_1, B_2, ..., B_m\)</span> such that <span class="math notranslate nohighlight">\(B_1 \cup B_2 \cup ... \cup B_m\)</span> and <span class="math notranslate nohighlight">\(P(B_i) &gt; 0 \hspace{5pt} \forall \hspace{5pt} i \)</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="conditional-probability">
+<h2>Conditional Probability<a class="headerlink" href="#conditional-probability" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
