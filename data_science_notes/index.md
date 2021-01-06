@@ -1,5 +1,3 @@
 # Data Science Notes
 
-Hopefully this will turn into a cool collection of notes across data science topics. 
-
-
+Hopefully this can turn into a good resource for notes on data science topics such as probability, data mining, or data modeling!

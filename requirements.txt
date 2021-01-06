@@ -1,0 +1,8 @@
+python
+ipykernel
+nb_conda
+jupyter_contrib_nbextensions
+yapf
+jupyter-book
+cookiecutter
+ghp-import
