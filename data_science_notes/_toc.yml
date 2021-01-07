@@ -46,3 +46,7 @@
 - part: Simulation
   chapters:
   - file: simulation/index
+
+- part: General Resources
+  chapters:
+  - file: general_resources/index 
