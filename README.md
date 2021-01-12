@@ -1,35 +1,36 @@
-# Data Science Notes
+# MakeUseofData.com: Data Science Notes 
 
-Hopefully this will turn into a cool collection of notes across data science topics such as probability, predictive modeling, data mining, etc
+## Hey 👋 <br><br> Glad to see you here! 
 
-## Usage
+You have just landed in the repository of the open-source website: [MakeUseofData.com](https://makeuseofdata.com/)!
 
-### Building the book
+So far, MakeUseofData has only been utilized for **_Data Science Notes_**, a collection of notes on topics necessary for data scientists. However, it would be awesome if there are any ideas for additional content to be hosted on [MakeUseofData.com](https://makeuseofdata.com/). These ideas could be like hosting live-updating data stories or results of web-crawling a certain trend. Anything regarding the title really! Feel free to submit any ideas via issues with the `enhancement` tag. 👍
 
-If you'd like to develop on and build the Data Science Notes book, you should:
+Read below for information about **_Data Science Notes_** ⬇️
+
+### Motivation
+
+This project was first created as a place to host notes of one of the contributors as he endeavored to study various data science topics for job interviews. However, throughout that research, it was noticed that information on data science topics had wide dispersion; there were many many different sources of information to synthesize knowledge across the topics. Having seen the success of *Jupyter Book* deployments across several UC Berkeley courses, such as Data 8 with its textbook, [InferentialThinking.com](https://www.inferentialthinking.com/chapters/intro) it seemed like a good technology to create a repository of data science information since mathematical typesetting, in-page Jupyter Notebook usage, and additional plugins were available for use. 
+
+### Usage
+
+#### Building the book
+
+If you'd like to develop on and build the  **_Data Science Notes_** book, you should:
 
 - Clone this repository and run
-- Run `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
-- (Recommended) Remove the existing `Data Science Notes/_build/` directory
-- Run `jupyter-book build Data Science Notes/`
+- Run `conda env create -f environment.yml` to create a Conda environment with the necessary dependencies or pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
+- (Recommended) Remove the existing `data_science_notes/_build/` directory
+- Run `jupyter-book build data_science_notes/`
 
-A fully-rendered HTML version of the book will be built in `Data Science Notes/_build/html/`.
+A fully-rendered HTML version of the book will be built in `data_science_notes/_build/html/`.
 
-### Hosting the book
+### See Contribution Guidelines and Best Practices [**here**](https://github.com/wyattowalsh/data-science-notes/blob/master/CONTRIBUTING.md)
 
-The html version of the book is hosted on the `gh-pages` branch of this repo. A GitHub actions workflow has been created that automatically builds and pushes the book to this branch on a push or pull request to main.
-
-If you wish to disable this automation, you may remove the GitHub actions workflow and build the book manually by:
-
-- Navigating to your local build; and running,
-- `ghp-import -n -p -f Data Science Notes/_build/html`
-
-This will automatically push your build to the `gh-pages` branch. More information on this hosting process can be found [here](https://jupyterbook.org/publish/gh-pages.html#manually-host-your-book-with-github-pages).
-
-## Contributors
+### Contributors
 
 We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/wyattowalsh/data_science_notes/graphs/contributors).
 
-## Credits
+### Credits
 
 This project is created using the excellent open source [Jupyter Book project](https://jupyterbook.org/) and the [executablebooks/cookiecutter-jupyter-book template](https://github.com/executablebooks/cookiecutter-jupyter-book).
