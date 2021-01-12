@@ -8,6 +8,8 @@ So far, MakeUseofData has only been utilized for **_Data Science Notes_**, a col
 
 Read below for information about **_Data Science Notes_** ⬇️
 
+---
+
 ### Motivation
 
 This project was first created as a place to host notes of one of the contributors as he endeavored to study various data science topics for job interviews. However, throughout that research, it was noticed that information on data science topics had wide dispersion; there were many many different sources of information to synthesize knowledge across the topics. Having seen the success of *Jupyter Book* deployments across several UC Berkeley courses, such as Data 8 with its textbook, [InferentialThinking.com](https://www.inferentialthinking.com/chapters/intro) it seemed like a good technology to create a repository of data science information since mathematical typesetting, in-page Jupyter Notebook usage, and additional plugins were available for use. 
