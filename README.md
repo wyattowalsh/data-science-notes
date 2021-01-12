@@ -1,4 +1,4 @@
-# MakeUseofData.com: Data Science Notes 
+# MakeUseofData.com: **_Data Science Notes_**
 
 ## Hey 👋 <br><br> Glad to see you here! 
 
@@ -28,8 +28,6 @@ If you'd like to develop on and build the  **_Data Science Notes_** book, you sh
 - Run `jupyter-book build data_science_notes/`
 
 A fully-rendered HTML version of the book will be built in `data_science_notes/_build/html/`.
-
-
 
 ### Contributors
 
