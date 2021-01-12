@@ -16,6 +16,8 @@ This project was first created as a place to host notes of one of the contributo
 
 ### Usage
 
+#### See Contribution Guidelines and Best Practices [**here**](https://github.com/wyattowalsh/data-science-notes/blob/master/CONTRIBUTING.md)
+
 #### Building the book
 
 If you'd like to develop on and build the  **_Data Science Notes_** book, you should:
@@ -27,7 +29,7 @@ If you'd like to develop on and build the  **_Data Science Notes_** book, you sh
 
 A fully-rendered HTML version of the book will be built in `data_science_notes/_build/html/`.
 
-### See Contribution Guidelines and Best Practices [**here**](https://github.com/wyattowalsh/data-science-notes/blob/master/CONTRIBUTING.md)
+
 
 ### Contributors
 
