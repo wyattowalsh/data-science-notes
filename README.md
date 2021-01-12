@@ -21,7 +21,7 @@ This project was first created as a place to host notes of one of the contributo
 If you'd like to develop on and build the  **_Data Science Notes_** book, you should:
 
 - Clone this repository and run
-- Run `conda env create -f environment.yml` to create a Conda environment with the necessary dependencies or pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
+- Run `conda env create -f environment.yml` to create a Conda environment with the necessary dependencies or `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
 - (Recommended) Remove the existing `data_science_notes/_build/` directory
 - Run `jupyter-book build data_science_notes/`
 
