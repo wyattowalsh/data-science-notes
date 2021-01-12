@@ -1,7 +1,9 @@
-# Contributing
+# Contributing to **Data Science Notes**
 
 Contributions are welcome, and they are greatly appreciated! Every little bit
 helps, and credit will always be given. You can contribute in the ways listed below.
+
+Make sure to give the README a thorough read. 
 
 ## Report Bugs
 
@@ -44,12 +46,13 @@ If you are proposing a feature:
 
 Ready to contribute? Here's how to set up `Data Science Notes` for local development.
 
-1. Fork the repo on GitHub.
-2. Clone your fork locally.
-3. Install your local copy into a virtualenv, e.g., using `conda`.
-4. Create a branch for local development and make changes locally.
-5. Commit your changes and push your branch to GitHub.
-6. Submit a pull request through the GitHub website.
+1. Review the formatting guidelines [**here**](https://github.com/wyattowalsh/data-science-notes/blob/master/FORMATTING.md)
+2. Fork the repo on GitHub.
+3. Clone your fork locally.
+4. Install your local copy into a virtualenv, e.g., using `conda`.
+5. Create a branch for local development and make changes locally.
+6. Commit your changes and push your branch to GitHub.
+7. Submit a pull request through the GitHub website.
 
 ## Code of Conduct
 
