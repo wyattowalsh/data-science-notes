@@ -8,7 +8,7 @@ So far, MakeUseofData has only been utilized for **_Data Science Notes_**, a col
 
 ![](site_preview.gif)
 
-Read below for information about **_Data Science Notes_** ⬇️
+### Read below for information about **_Data Science Notes_** ⬇️
 
 ---
 
