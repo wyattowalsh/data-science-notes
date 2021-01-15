@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://makeuseofdata.com/</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/intro.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/1_mathematical_preliminaries/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/1_mathematical_preliminaries/1_calculus/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/1_mathematical_preliminaries/1_calculus/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/1_mathematical_preliminaries/2_linear_algebra/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/1_mathematical_preliminaries/2_linear_algebra/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/1_mathematical_preliminaries/3_optimization/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/1_mathematical_preliminaries/3_optimization/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/1_mathematical_preliminaries/4_probability/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/1_mathematical_preliminaries/4_probability/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/1_mathematical_preliminaries/5_statistics/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/1_mathematical_preliminaries/5_statistics/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/2_programming/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/2_programming/1_python/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/2_programming/1_python/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/2_programming/2_r/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/2_programming/2_r/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/3_data_cleaning/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/3_data_cleaning/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/4_data_ingestion/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/4_data_ingestion/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/5_eda/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/5_eda/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/5_eda/1_visualization/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/5_eda/1_visualization/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/6_simulation/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/6_simulation/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/7_modeling/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/7_modeling/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/7_modeling/1_regression/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/7_modeling/1_regression/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/7_modeling/2_classification/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/7_modeling/2_classification/basics.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/index.html</loc>
+  <lastmod>2021-01-12T05:16:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
