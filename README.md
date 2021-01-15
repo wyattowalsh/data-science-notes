@@ -6,6 +6,8 @@ You have just landed in the repository of the open-source website: [MakeUseofDat
 
 So far, MakeUseofData has only been utilized for **_Data Science Notes_**, a collection of notes on topics necessary for data scientists. However, it would be awesome if there are any ideas for additional content to be hosted on [MakeUseofData.com](https://makeuseofdata.com/). These ideas could be like hosting live-updating data stories or results of web-crawling a certain trend. Anything regarding the title really! Feel free to submit any ideas via issues with the `enhancement` tag. 👍
 
+![](site_preview.gif)
+
 Read below for information about **_Data Science Notes_** ⬇️
 
 ---
