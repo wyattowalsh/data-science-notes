@@ -27,18 +27,27 @@ sections:
   - file: 2_programming/2_r/index
     sections:
     - file: 2_programming/2_r/basics
+  - file: 2_programming/3_sql/index
+    sections:
+    - file: 2_programming/3_sql/basics
 - file: 3_data_cleaning/index
   sections:
   - file: 3_data_cleaning/basics
 - file: 4_data_ingestion/index
   sections:
   - file: 4_data_ingestion/basics
+  - file: 4_data_ingestion/1_databases/index
+    sections:
+    - file: 4_data_ingestion/1_databases/basics
 - file: 5_eda/index
   sections:
   - file: 5_eda/basics
-  - file: 5_eda/1_visualization/index
+  - file: 5_eda/1_clustering/index
     sections:
-    - file: 5_eda/1_visualization/basics
+    - file: 5_eda/1_clustering/basics
+  - file: 5_eda/2_visualization/index
+    sections:
+    - file: 5_eda/2_visualization/basics
 - file: 6_simulation/index
   sections:
   - file: 6_simulation/basics
@@ -47,7 +56,8 @@ sections:
   - file: 7_modeling/basics
   - file: 7_modeling/1_regression/index
     sections:
-    - file: 7_modeling/1_regression/basics
+    - file: 7_modeling/1_regression/1_basics
+    - file: 7_modeling/1_regression/2_ols_plus_regularization
   - file: 7_modeling/2_classification/index
     sections:
     - file: 7_modeling/2_classification/basics
