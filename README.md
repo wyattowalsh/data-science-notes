@@ -1,8 +1,9 @@
 # MakeUseofData.com: **_Data Science Notes_**
 
 ## Hey 👋 <br><br> Glad to see you here! 
+![Website](https://img.shields.io/website?down_color=red&down_message=down%20%F0%9F%98%A8&up_color=green&up_message=online%20%F0%9F%91%8D&url=https%3A%2F%2Fmakeuseofdata.com)
 
-You have just landed in the repository of the open-source website: [MakeUseofData.com](https://makeuseofdata.com/)!
+You have just landed in the repository of the open-source website: [MakeUseofData.com](https://makeuseofdata.com/)!    
 
 So far, ***MakeUseofData*** has only been utilized for **_Data Science Notes_**, a collection of notes on topics necessary for data scientists. However, it would be awesome if there are any ideas for additional content to be hosted on [MakeUseofData.com](https://makeuseofdata.com/). These ideas could be like hosting live-updating data stories or results of web-crawling a certain trend. Anything regarding the title really! Feel free to submit any ideas via [**issues**](https://github.com/wyattowalsh/data-science-notes/issues) with the `enhancement` tag. 
 
