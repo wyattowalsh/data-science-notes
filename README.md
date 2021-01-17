@@ -1,7 +1,7 @@
 # MakeUseofData.com: **_Data Science Notes_**
 
 ## Hey 👋 <br><br> Glad to see you here! 
-![Website](https://img.shields.io/website?down_color=red&down_message=down%20%F0%9F%98%A8&up_color=green&up_message=online%20%F0%9F%91%8D&url=https%3A%2F%2Fmakeuseofdata.com)
+[![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) ![Website](https://img.shields.io/website?down_color=red&down_message=down%20%F0%9F%98%A8&up_color=green&up_message=online%20%F0%9F%91%8D&url=https%3A%2F%2Fmakeuseofdata.com)
 
 You have just landed in the repository of the open-source website: [MakeUseofData.com](https://makeuseofdata.com/)!    
 
