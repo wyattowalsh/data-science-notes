@@ -56,7 +56,7 @@ The $\frac{1}{2n}$ term is added in order to simplify gradient solving ($\frac{1
 
 ### Model Estimator
 
-By setting the gradient of the loss function equal to zero and solving for the coefficient vector, $\hat\mathbf{\beta}$ the **OLS estimator** is found:
+By setting the gradient of the loss function equal to zero and solving for the coefficient vector, $\hat{\mathbf{\beta}}$, the **OLS estimator** is found:
 
 $$
 \hat{\mathbf{\beta}} = (\mathbf{X}^\mathbf{T}\mathbf{X})^{-1}(\mathbf{X}^\mathbf{T}\mathbf{y}) 
@@ -110,7 +110,7 @@ Just like OLS, the $\frac{1}{2n}$ term is added in order to simplify gradient so
 
 ### Model Estimator
 
-By setting the gradient of the loss function equal to zero and solving for the coefficient vector, $\hat\mathbf{\beta}$, the **Ridge Estimator** is found:
+By setting the gradient of the loss function equal to zero and solving for the coefficient vector, $\hat{\mathbf{\beta}}$, the **Ridge Estimator** is found:
 
 $$
 {\hat {\beta }}=(\mathbf {X} ^{\mathsf {T}}\mathbf {X} +\lambda \mathbf {I} )^{-1}\mathbf {X} ^{\mathsf {T}}\mathbf {y}
