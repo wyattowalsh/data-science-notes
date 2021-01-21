@@ -230,11 +230,11 @@ In practice it is recommended to use a cross-validation technique such as K-Fold
 
 ### Implementation in Python Using Scikit-Learn
 
-- [Plain Lasso Function Documentation]([sklearn.linear_model.Lasso &mdash; scikit-learn 0.24.1 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html)
+- [Plain Lasso Function Documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html)
 
-- [Lasso Cross-Validation Function Documentation]([sklearn.linear_model.LassoCV &mdash; scikit-learn 0.24.1 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html#sklearn.linear_model.LassoCV)
+- [Lasso Cross-Validation Function Documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html#sklearn.linear_model.LassoCV)
 
-- [Scikit-Learn User Guide Entry]([1.1. Linear Models &mdash; scikit-learn 0.24.1 documentation](https://scikit-learn.org/stable/modules/linear_model.html#lasso)
+- [Scikit-Learn User Guide Entry](https://scikit-learn.org/stable/modules/linear_model.html#lasso)
 
 ---
 
@@ -296,11 +296,11 @@ In practice it is recommended to use a cross-validation technique such as K-Fold
 
 ### Implementation in Python Using Scikit-Learn
 
-- [Plain Elastic Net Function]([sklearn.linear_model.ElasticNet &mdash; scikit-learn 0.24.1 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet)
+- [Plain Elastic Net Function](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet)
 
-- [Elastic Net Cross-Validation Function]([sklearn.linear_model.ElasticNetCV &mdash; scikit-learn 0.24.1 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html#sklearn.linear_model.ElasticNetCV)
+- [Elastic Net Cross-Validation Function](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html#sklearn.linear_model.ElasticNetCV)
 
-- [Scikit-Learn User Guide Entry]([1.1. Linear Models &mdash; scikit-learn 0.24.1 documentation](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
+- [Scikit-Learn User Guide Entry](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
 
 ---
 
