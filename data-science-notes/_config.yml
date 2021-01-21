@@ -3,6 +3,9 @@
 # See the documentation for help and more options: 
 # https://jupyterbook.org/customize/config.html
 
+# Workaround for issue https://github.com/sphinx-contrib/googleanalytics/issues/2
+# Note that a warning still will be issued "unsupported object from its setup() function"
+# Remove this workaround when the issue has been resolved upstream
 #######################################################################################
 # Book settings
 title                       :  Data Science Notes <br><br> <p style="font-size:75%">Welcome!</p> # The title of the book. Will be placed in the left navbar.
@@ -17,12 +20,12 @@ html:
   use_repository_button: true
   use_edit_page_button: true
   favicon: 'favicon_io/android-chrome-512x512.png'
-  google_analytics_id:  'G-VKV4WP95W2'
+  googleanalytics_id:  'G-VKV4WP95W2'
 
 sphinx:
   config:
     language: 'en'
-  extra_extensions:
-    - 'sphinxcontrib.googleanalytics'
+#   extra_extensions:
+#     - "sphinxcontrib.googleanalytics"
 
-googleanalytics_id: 'G-VKV4WP95W2'
+# googleanalytics_id: 'G-VKV4WP95W2'

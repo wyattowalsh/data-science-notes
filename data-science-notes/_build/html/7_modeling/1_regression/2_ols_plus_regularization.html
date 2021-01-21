@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -439,7 +439,7 @@
             href="https://github.com/wyattowalsh/data-science-notes/issues/new?title=Issue%20on%20page%20%2F7_modeling/1_regression/2_ols_plus_regularization.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/wyattowalsh/data-science-notes/edit/master/data_science_notes/7_modeling/1_regression/2_ols_plus_regularization.md"><button
+        <a class="edit-button" href="https://github.com/wyattowalsh/data-science-notes/edit/master/data-science-notes/7_modeling/1_regression/2_ols_plus_regularization.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -542,7 +542,76 @@
      Loss Function and Optimization Problem
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pathwise-coordinate-descent">
+     Pathwise Coordinate Descent
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#naive-updates">
+       Naive Updates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#covariance-updates">
+       Covariance Updates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#warm-starts">
+       Warm Starts
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-in-python-using-numpy">
+     Implementation in Python Using NumPy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-in-python-using-scikit-learn">
+     Implementation in Python Using Scikit-Learn
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-elastic-net-for-regression">
+   The Elastic Net for Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Notes:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Loss Function and Optimization Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Pathwise Coordinate Descent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Implementation in Python Using NumPy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Implementation in Python Using Scikit-Learn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sources">
+   Sources
+  </a>
  </li>
 </ul>
 
@@ -580,7 +649,7 @@ y_i = \beta_0 + \beta_1x_{i,1} + \beta_2x_{i,2} + \ldots + \beta_px_{i,p} + \eps
 <p>where <span class="math notranslate nohighlight">\(p\)</span> is the number of features, <span class="math notranslate nohighlight">\(n\)</span> is the number of samples and <span class="math notranslate nohighlight">\(\epsilon\)</span> is an error term with mean of zero and finite variance. Or in vector notation:</p>
 <div class="math notranslate nohighlight">
 \[
- \mathbf{y} = \mathbf{X}\mathbf{\beta} + \mathbf{\epsilon}
+\mathbf{y} = \mathbf{X}\mathbf{\beta} + \mathbf{\epsilon}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(y\)</span> is a response vector <span class="math notranslate nohighlight">\([y_1, y_2, ..., y_n]^\mathbf{T}\)</span> of length <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is a <span class="math notranslate nohighlight">\(n \times (p + 1)\)</span> <strong>design matrix</strong> of features <span class="math notranslate nohighlight">\([\mathbf{1}, \mathbf{x_1}, \mathbf{x_2}, ..., \mathbf{x_p}]\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{\beta}\)</span> is a length <span class="math notranslate nohighlight">\((p+1)\)</span> coefficient vector <span class="math notranslate nohighlight">\([\beta_0, \beta_1, \beta_2, ..., \beta_p]\)</span> with <span class="math notranslate nohighlight">\(\beta_0\)</span> an intercept term. This intercept term is included in the model through <strong>data augmentation</strong> of the column of <span class="math notranslate nohighlight">\(\mathbf{1}\)</span>s to the <strong>design matrix</strong>. When an intercept is not sought, this column can be omitted and <span class="math notranslate nohighlight">\(\mathbf{\beta}\)</span> is length <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </div>
@@ -696,8 +765,147 @@ L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda\|\m
 \[
 \hat{\mathbf{\beta}} = \arg\min_{\mathbf{\beta}}  L(\mathbf{\beta}) = \arg\min_{\mathbf{\beta}} \frac{1}{2n} \|\mathbf{y}-\mathbf{X}\mathbf{\beta} \|_{2}^{2} + \lambda\|\mathbf{\beta}\|_1
 \]</div>
-<p>No closed-form solution exists in this case since the addition of the <span class="math notranslate nohighlight">\(\mathbf{L}_1\)</span> penalty adds a non-smooth, absolute component to the loss function rendering it no longer continuously differentiable.  Thus, a discrete optimization technique is required to solve for model coefficient estimates.</p>
+<p>No closed-form solution exists in this case since the addition of the <span class="math notranslate nohighlight">\(\mathbf{L}_1\)</span> penalty adds a non-smooth, absolute component to the loss function rendering it no longer continuously differentiable.  Thus, a discrete optimization technique is required to solve for model coefficient estimates. Many algorithms can be utilized for this purpose such as <em><strong>LARS</strong></em> (Least Angle Regression) and <em><strong>Forwards Stepwise Regression</strong></em>. Coordinate Descent seems to be the most favored algorithm currently and used in the popular packages <em><strong>Scikit-Learn</strong></em> in Python and <em><strong>GLMNET</strong></em> in R.</p>
 </div>
+<div class="section" id="pathwise-coordinate-descent">
+<h3>Pathwise Coordinate Descent<a class="headerlink" href="#pathwise-coordinate-descent" title="Permalink to this headline">¶</a></h3>
+<p>Here, all features should be standardized to have zero mean and unit variance. A <span class="math notranslate nohighlight">\(p+1\)</span> length coefficient vector is then initialized to zero. Cycles are run across all coefficients until convergence when the values stabilize within a certain tolerance. For every cycle, across each coefficient, a coefficient update is found.</p>
+<p>The simplest form of update calculates the simple least-squares coefficient value using the partial residuals across all other features in the design matrix and subsequently applies the soft-thresholding operator with the tuning parameter penalty as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\beta_j = \mathbf{S}(\beta_j^*, \lambda) = sign(\beta_j^*)(\left|\beta_j^*\right| - \lambda)_+ =
+ \begin{cases} 
+     \beta_j^* - \lambda &amp; \beta_j^* &gt; 0 \text{ and } \lambda &lt;  \left|\beta_j^*\right|\\
+     \beta_j^* + \lambda &amp; \beta_j^* &gt; 0 \text{ and } \lambda &lt; \left|\beta_j^*\right| \\
+     0 &amp; \lambda \geq  \left|\beta_j^*\right|
+  \end{cases}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> is the soft-thresholding operator and <span class="math notranslate nohighlight">\(\beta_j^*\)</span> is the update as calculated by:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_j^* = \frac{1}{n}\sum_{i=1}^{n} x_{i, j}r_{i, j}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_{i,j}\)</span> is the partial residuals across as found by:</p>
+<div class="math notranslate nohighlight">
+\[
+r_{i,j} = y_i - \sum_{k \neq j} x_{i, k}\beta_k
+\]</div>
+<div class="section" id="naive-updates">
+<h4>Naive Updates<a class="headerlink" href="#naive-updates" title="Permalink to this headline">¶</a></h4>
+<p>Improved efficiency can be found by updated via:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_j^* = \frac{1}{n}\sum_{i=1}^{n} x_{i, j}r_i + \beta_j\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_i\)</span> is the current model residual for all samples, <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</div>
+<div class="section" id="covariance-updates">
+<h4>Covariance Updates<a class="headerlink" href="#covariance-updates" title="Permalink to this headline">¶</a></h4>
+<p>When the number of samples is much greater than the number of features (<span class="math notranslate nohighlight">\(n \gg p\)</span>) further efficiency boosts can be gained by replacing the first term of the <em><strong>Naive update</strong></em> above as:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^{n} x_{i, j}r_i = \langle x_j, y \rangle - \sum_{k: \left|\beta_k\right| &gt; 0} \langle x_j, x_k \rangle \beta_k
+\]</div>
+</div>
+<div class="section" id="warm-starts">
+<h4>Warm Starts<a class="headerlink" href="#warm-starts" title="Permalink to this headline">¶</a></h4>
+<p>It has been shown that fitting a sequence of models using the solution of one as the starting coefficient values of the next can be faster than a single fit for some small <span class="math notranslate nohighlight">\(\lambda\)</span> values. This sequence should begin at <span class="math notranslate nohighlight">\(\lambda_{max}\)</span>, the smallest value of the tuning parameter for which all coefficient estimates are brought to zero, and end at <span class="math notranslate nohighlight">\(\epsilon \cdot \lambda_{max}\)</span> with around 100 values on a log scale where <span class="math notranslate nohighlight">\(\epsilon\)</span> is typically 0.001:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\text{max}} \rightarrow \lambda_{\text{min}} = \epsilon \cdot \lambda_{\text{max}}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\lambda_{max}\)</span> can be found by finding the minimum value that will bring the estimates for all model coefficients to zero. Thus any values greater than this value will result in total sparsity of the coefficient vector. This value can be found as:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\text{max}} = \frac{\max_l \left|\langle x_l, y \rangle \right|}{n}
+\]</div>
+<p>When <em><strong>warm starts</strong></em> are utilized the Coordinate Descent algorithm is referred to as <em><strong>Pathwise Coordinate Descent</strong></em>.</p>
+</div>
+</div>
+<div class="section" id="implementation-in-python-using-numpy">
+<h3>Implementation in Python Using NumPy<a class="headerlink" href="#implementation-in-python-using-numpy" title="Permalink to this headline">¶</a></h3>
+<script src="https://gist.github.com/wyattowalsh/6a95b1c9ad6118b196336cffd5de4f72.js"></script>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In practice it is recommended to use a cross-validation technique such as K-Fold cross-validation to choose the tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</div>
+</div>
+<div class="section" id="implementation-in-python-using-scikit-learn">
+<h3>Implementation in Python Using Scikit-Learn<a class="headerlink" href="#implementation-in-python-using-scikit-learn" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html">Plain Lasso Function Documentation</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html#sklearn.linear_model.LassoCV">Lasso Cross-Validation Function Documentation</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#lasso">Scikit-Learn User Guide Entry</a></p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-elastic-net-for-regression">
+<h2>The Elastic Net for Regression<a class="headerlink" href="#the-elastic-net-for-regression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>Notes:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Compromise between <em><strong>Ridge Regression</strong></em> and <em><strong>the Lasso</strong></em></p></li>
+<li><p>Helps to reduce <strong>overfitting</strong> by bringing model coefficients towards zero and selectively to zero</p></li>
+<li><p>Arguably the most robust linear regularized method</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>Loss Function and Optimization Problem<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>The associated loss function for <em><strong>the Elastic Net</strong></em> modifies the OLS loss function through the addition of both an <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> penalties controlled by tuning parameters <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> respectively as:</p>
+<div class="math notranslate nohighlight">
+\[
+L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda [(1-\alpha)\frac{1}{2} \|\mathbf{\beta}\|_2^2 + \alpha \|\mathbf{\beta}\| ] \: \: \: \text{ with tuning parameters $\lambda \geq 0, 0 \leq \alpha \leq 1$  } 
+\]</div>
+<p>In this context, <span class="math notranslate nohighlight">\(\alpha\)</span> can be considered as the parameter controlling the ratio of <span class="math notranslate nohighlight">\(L_1\)</span> penalty and <span class="math notranslate nohighlight">\(\lambda\)</span> is the intensity of regularization to apply.</p>
+<p>Formulating the loss function as a <em>least-squares</em> optimization problem yields:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mathbf{\beta}} = \arg\min_{\mathbf{\beta}} L(\mathbf{\beta}) = \arg\min_{\mathbf{\beta}}  \frac{1}{2n}\|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda [(1-\alpha)\frac{1}{2} \|\mathbf{\beta}\|_2^2 + \alpha \|\mathbf{\beta}\| ]
+\]</div>
+<p>Similarly to <em><strong>the Lasso</strong></em>, a discrete optimization technique needs to be applied to yield a solution for the coefficient estimates.</p>
+</div>
+<div class="section" id="id8">
+<h3>Pathwise Coordinate Descent<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>The algorithm is similar to that of <em><strong>the Lasso</strong></em>. Features should be should be standardized to have zero mean and unit variance. Coefficients should be updated as:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_j = \frac{\mathbf{S}(\beta_j^*, \lambda\alpha)}{1 + \lambda(1-\alpha)}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> is the same soft-thresholding operator applied in the case of <em><strong>the Lasso</strong></em>:</p>
+<div class="math notranslate nohighlight">
+\[
+sign(\beta_j^*)(\left|\beta_j^*\right| - \lambda\alpha)_+ 
+\]</div>
+<p>Furthermore, if <em><strong>warm starts</strong></em> are to be utilized then <span class="math notranslate nohighlight">\(\lambda_{max}\)</span> can be found as:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\text{max}} = \frac{\max_l \left|\langle x_l, y \rangle \right|}{n\alpha}
+\]</div>
+</div>
+<div class="section" id="id9">
+<h3>Implementation in Python Using NumPy<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<script src="https://gist.github.com/wyattowalsh/3bfb1a924007f19a7191a17b6c4e52a0.js"></script>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In practice it is recommended to use a cross-validation technique such as K-Fold cross-validation to choose the tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>Implementation in Python Using Scikit-Learn<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet">Plain Elastic Net Function</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html#sklearn.linear_model.ElasticNetCV">Elastic Net Cross-Validation Function</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#elastic-net">Scikit-Learn User Guide Entry</a></p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="sources">
+<h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://towardsdatascience.com/tagged/regularized-regression">Three-Part Series on Regularized Linear Regression in <em>Towards Data Science</em></a></p></li>
+</ul>
+<hr class="docutils" />
 </div>
 </div>
 
@@ -751,16 +959,6 @@ L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda\|\m
   <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'G-VKV4WP95W2', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
     
   </body>
 </html>
