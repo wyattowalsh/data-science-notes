@@ -3,3 +3,4 @@ jupyter_contrib_nbextensions
 yapf
 jupyter-book
 cookiecutter
+sphinxcontrib-googleanalytics
