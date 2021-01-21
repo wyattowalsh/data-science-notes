@@ -6,9 +6,9 @@
 #######################################################################################
 # Book settings
 title                       :  Data Science Notes <br><br> <p style="font-size:75%">Welcome!</p> # The title of the book. Will be placed in the left navbar.
-author                      :  # The author of the book
-copyright                   : 2021 # Copyright year to be placed in the footer
-logo                        : favicon_io/android-chrome-512x512.png # A path to the book logo
+author                      : '' # The author of the book
+copyright                   : '2021' # Copyright year to be placed in the footer
+logo                        : 'favicon_io/android-chrome-512x512.png' # A path to the book logo
 repository:
   url: https://github.com/wyattowalsh/data-science-notes
   path_to_book: data-science-notes/ 
@@ -16,12 +16,12 @@ html:
   use_issues_button: true
   use_repository_button: true
   use_edit_page_button: true
-  favicon: favicon_io/android-chrome-512x512.png
-  google_analytics_id:  G-VKV4WP95W2
+  favicon: 'favicon_io/android-chrome-512x512.png'
+  google_analytics_id:  'G-VKV4WP95W2'
 
 sphinx:
   config:
-    language: en
+    language: 'en'
   extra_extensions:
     - 'sphinxcontrib.googleanalytics'
 
