@@ -20,7 +20,7 @@ html:
   use_repository_button: true
   use_edit_page_button: true
   favicon: 'favicon_io/android-chrome-512x512.png'
-  google_analytics_id:  'G-VKV4WP95W2'
+  google_analytics_id: 
 
 sphinx:
   config:
