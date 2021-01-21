@@ -11,7 +11,7 @@ copyright                   : 2021 # Copyright year to be placed in the footer
 logo                        : favicon_io/android-chrome-512x512.png # A path to the book logo
 repository:
   url: https://github.com/wyattowalsh/data-science-notes
-  path_to_book: data_science_notes/ 
+  path_to_book: data-science-notes/ 
 html:
   use_issues_button: true
   use_repository_button: true
