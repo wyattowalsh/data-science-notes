@@ -576,6 +576,43 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-elastic-net-for-regression">
+   The Elastic Net for Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Notes:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Loss Function and Optimization Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Pathwise Coordinate Descent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Implementation in Python Using NumPy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Implementation in Python Using Scikit-Learn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sources">
+   Sources
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -787,8 +824,9 @@ r_{i,j} = y_i - \sum_{k \neq j} x_{i, k}\beta_k
 <div class="section" id="implementation-in-python-using-numpy">
 <h3>Implementation in Python Using NumPy<a class="headerlink" href="#implementation-in-python-using-numpy" title="Permalink to this headline">¶</a></h3>
 <script src="https://gist.github.com/wyattowalsh/6a95b1c9ad6118b196336cffd5de4f72.js"></script>
-<div class="highlight-warning notranslate"><div class="highlight"><pre><span></span>In practice it is recommended to use a cross-validation technique such as K-Fold cross-validation to choose the tuning parameter, $\lambda$.
-</pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In practice it is recommended to use a cross-validation technique such as K-Fold cross-validation to choose the tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
 </div>
 </div>
 <div class="section" id="implementation-in-python-using-scikit-learn">
@@ -799,6 +837,75 @@ r_{i,j} = y_i - \sum_{k \neq j} x_{i, k}\beta_k
 <li><p>[Scikit-Learn User Guide Entry](<a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#lasso">1.1. Linear Models — scikit-learn 0.24.1 documentation</a></p></li>
 </ul>
 </div>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-elastic-net-for-regression">
+<h2>The Elastic Net for Regression<a class="headerlink" href="#the-elastic-net-for-regression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>Notes:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Compromise between <em><strong>Ridge Regression</strong></em> and <em><strong>the Lasso</strong></em></p></li>
+<li><p>Helps to reduce <strong>overfitting</strong> by bringing model coefficients towards zero and selectively to zero</p></li>
+<li><p>Arguably the most robust linear regularized method</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>Loss Function and Optimization Problem<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>The associated loss function for <em><strong>the Elastic Net</strong></em> modifies the OLS loss function through the addition of both an <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> penalties controlled by tuning parameters <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> respectively as:</p>
+<div class="math notranslate nohighlight">
+\[
+L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda [(1-\alpha)\frac{1}{2} \|\mathbf{\beta}\|_2^2 + \alpha \|\mathbf{\beta}\| ] \: \: \: \text{ with tuning parameters $\lambda \geq 0, 0 \leq \alpha \leq 1$  } 
+\]</div>
+<p>In this context, <span class="math notranslate nohighlight">\(\alpha\)</span> can be considered as the parameter controlling the ratio of <span class="math notranslate nohighlight">\(L_1\)</span> penalty and <span class="math notranslate nohighlight">\(\lambda\)</span> is the intensity of regularization to apply.</p>
+<p>Formulating the loss function as a <em>least-squares</em> optimization problem yields:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mathbf{\beta}} = \arg\min_{\mathbf{\beta}} L(\mathbf{\beta}) = \arg\min_{\mathbf{\beta}}  \frac{1}{2n}\|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda [(1-\alpha)\frac{1}{2} \|\mathbf{\beta}\|_2^2 + \alpha \|\mathbf{\beta}\| ]
+\]</div>
+<p>Similarly to <em><strong>the Lasso</strong></em>, a discrete optimization technique needs to be applied to yield a solution for the coefficient estimates.</p>
+</div>
+<div class="section" id="id8">
+<h3>Pathwise Coordinate Descent<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>The algorithm is similar to that of <em><strong>the Lasso</strong></em>. Features should be should be standardized to have zero mean and unit variance. Coefficients should be updated as:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_j = \frac{\mathbf{S}(\beta_j^*, \lambda\alpha)}{1 + \lambda(1-\alpha)}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> is the same soft-thresholding operator applied in the case of <em><strong>the Lasso</strong></em>:</p>
+<div class="math notranslate nohighlight">
+\[
+sign(\beta_j^*)(\left|\beta_j^*\right| - \lambda\alpha)_+ 
+\]</div>
+<p>Furthermore, if <em><strong>warm starts</strong></em> are to be utilized then <span class="math notranslate nohighlight">\(\lambda_{max}\)</span> can be found as:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\text{max}} = \frac{\max_l \left|\langle x_l, y \rangle \right|}{n\alpha}
+\]</div>
+</div>
+<div class="section" id="id9">
+<h3>Implementation in Python Using NumPy<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<script src="https://gist.github.com/wyattowalsh/3bfb1a924007f19a7191a17b6c4e52a0.js"></script>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In practice it is recommended to use a cross-validation technique such as K-Fold cross-validation to choose the tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>Implementation in Python Using Scikit-Learn<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>[Plain Elastic Net Function](<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet">sklearn.linear_model.ElasticNet — scikit-learn 0.24.1 documentation</a></p></li>
+<li><p>[Elastic Net Cross-Validation Function](<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html#sklearn.linear_model.ElasticNetCV">sklearn.linear_model.ElasticNetCV — scikit-learn 0.24.1 documentation</a></p></li>
+<li><p>[Scikit-Learn User Guide Entry](<a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#elastic-net">1.1. Linear Models — scikit-learn 0.24.1 documentation</a></p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="sources">
+<h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://towardsdatascience.com/tagged/regularized-regression">Three-Part Series on Regularized Linear Regression in <em>Towards Data Science</em></a></p></li>
+</ul>
+<hr class="docutils" />
 </div>
 </div>
 
