@@ -542,6 +542,38 @@
      Loss Function and Optimization Problem
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pathwise-coordinate-descent">
+     Pathwise Coordinate Descent
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#naive-updates">
+       Naive Updates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#covariance-updates">
+       Covariance Updates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#warm-starts">
+       Warm Starts
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-in-python-using-numpy">
+     Implementation in Python Using NumPy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-in-python-using-scikit-learn">
+     Implementation in Python Using Scikit-Learn
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -580,7 +612,7 @@ y_i = \beta_0 + \beta_1x_{i,1} + \beta_2x_{i,2} + \ldots + \beta_px_{i,p} + \eps
 <p>where <span class="math notranslate nohighlight">\(p\)</span> is the number of features, <span class="math notranslate nohighlight">\(n\)</span> is the number of samples and <span class="math notranslate nohighlight">\(\epsilon\)</span> is an error term with mean of zero and finite variance. Or in vector notation:</p>
 <div class="math notranslate nohighlight">
 \[
- \mathbf{y} = \mathbf{X}\mathbf{\beta} + \mathbf{\epsilon}
+\mathbf{y} = \mathbf{X}\mathbf{\beta} + \mathbf{\epsilon}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(y\)</span> is a response vector <span class="math notranslate nohighlight">\([y_1, y_2, ..., y_n]^\mathbf{T}\)</span> of length <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is a <span class="math notranslate nohighlight">\(n \times (p + 1)\)</span> <strong>design matrix</strong> of features <span class="math notranslate nohighlight">\([\mathbf{1}, \mathbf{x_1}, \mathbf{x_2}, ..., \mathbf{x_p}]\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{\beta}\)</span> is a length <span class="math notranslate nohighlight">\((p+1)\)</span> coefficient vector <span class="math notranslate nohighlight">\([\beta_0, \beta_1, \beta_2, ..., \beta_p]\)</span> with <span class="math notranslate nohighlight">\(\beta_0\)</span> an intercept term. This intercept term is included in the model through <strong>data augmentation</strong> of the column of <span class="math notranslate nohighlight">\(\mathbf{1}\)</span>s to the <strong>design matrix</strong>. When an intercept is not sought, this column can be omitted and <span class="math notranslate nohighlight">\(\mathbf{\beta}\)</span> is length <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </div>
@@ -696,7 +728,76 @@ L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda\|\m
 \[
 \hat{\mathbf{\beta}} = \arg\min_{\mathbf{\beta}}  L(\mathbf{\beta}) = \arg\min_{\mathbf{\beta}} \frac{1}{2n} \|\mathbf{y}-\mathbf{X}\mathbf{\beta} \|_{2}^{2} + \lambda\|\mathbf{\beta}\|_1
 \]</div>
-<p>No closed-form solution exists in this case since the addition of the <span class="math notranslate nohighlight">\(\mathbf{L}_1\)</span> penalty adds a non-smooth, absolute component to the loss function rendering it no longer continuously differentiable.  Thus, a discrete optimization technique is required to solve for model coefficient estimates.</p>
+<p>No closed-form solution exists in this case since the addition of the <span class="math notranslate nohighlight">\(\mathbf{L}_1\)</span> penalty adds a non-smooth, absolute component to the loss function rendering it no longer continuously differentiable.  Thus, a discrete optimization technique is required to solve for model coefficient estimates. Many algorithms can be utilized for this purpose such as <em><strong>LARS</strong></em> (Least Angle Regression) and <em><strong>Forwards Stepwise Regression</strong></em>. Coordinate Descent seems to be the most favored algorithm currently and used in the popular packages <em><strong>Scikit-Learn</strong></em> in Python and <em><strong>GLMNET</strong></em> in R.</p>
+</div>
+<div class="section" id="pathwise-coordinate-descent">
+<h3>Pathwise Coordinate Descent<a class="headerlink" href="#pathwise-coordinate-descent" title="Permalink to this headline">¶</a></h3>
+<p>Here, all features should be standardized to have zero mean and unit variance. A <span class="math notranslate nohighlight">\(p+1\)</span> length coefficient vector is then initialized to zero. Cycles are run across all coefficients until convergence when the values stabilize within a certain tolerance. For every cycle, across each coefficient, a coefficient update is found.</p>
+<p>The simplest form of update calculates the simple least-squares coefficient value using the partial residuals across all other features in the design matrix and subsequently applies the soft-thresholding operator with the tuning parameter penalty as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\beta_j = \mathbf{S}(\beta_j^*, \lambda) = sign(\beta_j^*)(\left|\beta_j^*\right| - \lambda)_+ =
+ \begin{cases} 
+     \beta_j^* - \lambda &amp; \beta_j^* &gt; 0 \text{ and } \lambda &lt;  \left|\beta_j^*\right|\\
+     \beta_j^* + \lambda &amp; \beta_j^* &gt; 0 \text{ and } \lambda &lt; \left|\beta_j^*\right| \\
+     0 &amp; \lambda \geq  \left|\beta_j^*\right|
+  \end{cases}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> is the soft-thresholding operator and <span class="math notranslate nohighlight">\(\beta_j^*\)</span> is the update as calculated by:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_j^* = \frac{1}{n}\sum_{i=1}^{n} x_{i, j}r_{i, j}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_{i,j}\)</span> is the partial residuals across as found by:</p>
+<div class="math notranslate nohighlight">
+\[
+r_{i,j} = y_i - \sum_{k \neq j} x_{i, k}\beta_k
+\]</div>
+<div class="section" id="naive-updates">
+<h4>Naive Updates<a class="headerlink" href="#naive-updates" title="Permalink to this headline">¶</a></h4>
+<p>Improved efficiency can be found by updated via:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_j^* = \frac{1}{n}\sum_{i=1}^{n} x_{i, j}r_i + \beta_j\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_i\)</span> is the current model residual for all samples, <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</div>
+<div class="section" id="covariance-updates">
+<h4>Covariance Updates<a class="headerlink" href="#covariance-updates" title="Permalink to this headline">¶</a></h4>
+<p>When the number of samples is much greater than the number of features (<span class="math notranslate nohighlight">\(n \gg p\)</span>) further efficiency boosts can be gained by replacing the first term of the <em><strong>Naive update</strong></em> above as:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^{n} x_{i, j}r_i = \langle x_j, y \rangle - \sum_{k: \left|\beta_k\right| &gt; 0} \langle x_j, x_k \rangle \beta_k
+\]</div>
+</div>
+<div class="section" id="warm-starts">
+<h4>Warm Starts<a class="headerlink" href="#warm-starts" title="Permalink to this headline">¶</a></h4>
+<p>It has been shown that fitting a sequence of models using the solution of one as the starting coefficient values of the next can be faster than a single fit for some small <span class="math notranslate nohighlight">\(\lambda\)</span> values. This sequence should begin at <span class="math notranslate nohighlight">\(\lambda_{max}\)</span>, the smallest value of the tuning parameter for which all coefficient estimates are brought to zero, and end at <span class="math notranslate nohighlight">\(\epsilon \cdot \lambda_{max}\)</span> with around 100 values on a log scale where <span class="math notranslate nohighlight">\(\epsilon\)</span> is typically 0.001:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\text{max}} \rightarrow \lambda_{\text{min}} = \epsilon \cdot \lambda_{\text{max}}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\lambda_{max}\)</span> can be found by finding the minimum value that will bring the estimates for all model coefficients to zero. Thus any values greater than this value will result in total sparsity of the coefficient vector. This value can be found as:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\text{max}} = \frac{\max_l \left|\langle x_l, y \rangle \right|}{n}
+\]</div>
+<p>When <em><strong>warm starts</strong></em> are utilized the Coordinate Descent algorithm is referred to as <em><strong>Pathwise Coordinate Descent</strong></em>.</p>
+</div>
+</div>
+<div class="section" id="implementation-in-python-using-numpy">
+<h3>Implementation in Python Using NumPy<a class="headerlink" href="#implementation-in-python-using-numpy" title="Permalink to this headline">¶</a></h3>
+<script src="https://gist.github.com/wyattowalsh/6a95b1c9ad6118b196336cffd5de4f72.js"></script>
+<div class="highlight-warning notranslate"><div class="highlight"><pre><span></span>In practice it is recommended to use a cross-validation technique such as K-Fold cross-validation to choose the tuning parameter, $\lambda$.
+</pre></div>
+</div>
+</div>
+<div class="section" id="implementation-in-python-using-scikit-learn">
+<h3>Implementation in Python Using Scikit-Learn<a class="headerlink" href="#implementation-in-python-using-scikit-learn" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>[Plain Lasso Function Documentation](<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html">sklearn.linear_model.Lasso — scikit-learn 0.24.1 documentation</a></p></li>
+<li><p>[Lasso Cross-Validation Function Documentation](<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html#sklearn.linear_model.LassoCV">sklearn.linear_model.LassoCV — scikit-learn 0.24.1 documentation</a></p></li>
+<li><p>[Scikit-Learn User Guide Entry](<a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#lasso">1.1. Linear Models — scikit-learn 0.24.1 documentation</a></p></li>
+</ul>
 </div>
 </div>
 </div>
