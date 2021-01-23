@@ -1,6 +1,6 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: Technical Bug Report
+about: Report any technical issues with MakeUseofData.com
 title: ''
 labels: ''
 assignees: ''
