@@ -7,3 +7,5 @@ The authors recommend so far to compose `.md` files within a Markdown editor tha
 The **Write Book Content** section of the [Jupyter Book](https://jupyterbook.org/intro.html) website can prove quite useful for seeing the syntactical possibilities avaiable to contribute content. 
 
 Content should be written in a similar form as other sections utilizing tools such as *LaTeX* typesetting or highlighted code snippets if necessary.
+
+**Please include sources at the bottom your content if applicable!**
