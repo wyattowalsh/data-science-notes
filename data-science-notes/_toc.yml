@@ -57,10 +57,14 @@ sections:
 - file: modeling/index
   sections:
   - file: modeling/basics
+  - file: modeling/classification/index
+    sections:
+    - file: modeling/classification/basics
+  - file: modeling/nlp/index
+    sections:
+    - file: modeling/nlp/basics
   - file: modeling/regression/index
     sections:
     - file: modeling/regression/basics
     - file: modeling/regression/ols_plus_regularization
-  - file: modeling/classification/index
-    sections:
-    - file: modeling/classification/basics
+  
