@@ -2,62 +2,65 @@ file: index
 title: Home
 sections:
 - file: intro
-- file: 1_mathematical_preliminaries/index
+- file: mathematical_preliminaries/index
   sections:
-  - file: 1_mathematical_preliminaries/1_calculus/index
+  - file: mathematical_preliminaries/calculus/index
     sections:
-    - file: 1_mathematical_preliminaries/1_calculus/basics
-  - file: 1_mathematical_preliminaries/2_linear_algebra/index
+    - file: mathematical_preliminaries/calculus/basics
+  - file: mathematical_preliminaries/linear_algebra/index
     sections:
-    - file: 1_mathematical_preliminaries/2_linear_algebra/basics
-  - file: 1_mathematical_preliminaries/3_optimization/index
+    - file: mathematical_preliminaries/linear_algebra/basics
+  - file: mathematical_preliminaries/optimization/index
     sections:
-    - file: 1_mathematical_preliminaries/3_optimization/basics
-  - file: 1_mathematical_preliminaries/4_probability/index
+    - file: mathematical_preliminaries/optimization/basics
+  - file: mathematical_preliminaries/probability/index
     sections:
-    - file: 1_mathematical_preliminaries/4_probability/basics
-  - file: 1_mathematical_preliminaries/5_statistics/index
+    - file: mathematical_preliminaries/probability/basics
+  - file: mathematical_preliminaries/statistics/index
     sections:
-    - file: 1_mathematical_preliminaries/5_statistics/basics
-- file: 2_programming/index
+    - file: mathematical_preliminaries/statistics/basics
+- file: programming/index
   sections:
-  - file: 2_programming/1_python/index
+  - file: programming/excel/index
     sections:
-    - file: 2_programming/1_python/basics
-  - file: 2_programming/2_r/index
+    - file: programming/excel/basics
+  - file: programming/python/index
     sections:
-    - file: 2_programming/2_r/basics
-  - file: 2_programming/3_sql/index
+    - file: programming/python/basics
+  - file: programming/r/index
     sections:
-    - file: 2_programming/3_sql/basics
-- file: 3_data_cleaning/index
+    - file: programming/r/basics
+  - file: programming/sql/index
+    sections:
+    - file: programming/sql/basics
+- file: data_cleaning/index
   sections:
-  - file: 3_data_cleaning/basics
-- file: 4_data_ingestion/index
+  - file: data_cleaning/basics
+- file: data_ingestion/index
   sections:
-  - file: 4_data_ingestion/basics
-  - file: 4_data_ingestion/1_databases/index
+  - file: data_ingestion/basics
+  - file: data_ingestion/databases/index
     sections:
-    - file: 4_data_ingestion/1_databases/basics
-- file: 5_eda/index
+    - file: data_ingestion/databases/basics
+- file: eda/index
   sections:
-  - file: 5_eda/basics
-  - file: 5_eda/1_clustering/index
+  - file: eda/basics
+  - file: eda/clustering/index
     sections:
-    - file: 5_eda/1_clustering/basics
-  - file: 5_eda/2_visualization/index
+    - file: eda/clustering/basics
+  - file: eda/visualization/index
     sections:
-    - file: 5_eda/2_visualization/basics
-- file: 6_simulation/index
+    - file: eda/visualization/basics
+- file: simulation/index
   sections:
-  - file: 6_simulation/basics
-- file: 7_modeling/index
+  - file: simulation/basics
+- file: modeling/index
   sections:
-  - file: 7_modeling/basics
-  - file: 7_modeling/1_regression/index
+  - file: modeling/basics
+  - file: modeling/regression/index
     sections:
-    - file: 7_modeling/1_regression/1_basics
-    - file: 7_modeling/1_regression/2_ols_plus_regularization
-  - file: 7_modeling/2_classification/index
+    - file: modeling/regression/basics
+    - file: modeling/regression/ols_plus_regularization
+  - file: modeling/classification/index
     sections:
-    - file: 7_modeling/2_classification/basics
+    - file: modeling/classification/basics
