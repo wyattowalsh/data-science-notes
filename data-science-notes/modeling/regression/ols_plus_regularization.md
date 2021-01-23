@@ -6,15 +6,15 @@ This section will cover some of the most popular forms of regression models: ***
 
 ## Suggested Prerequisites:
 
-- [Calculus](https://makeuseofdata/1_mathematical_preliminaries/1_calculus/index.html)
+- [Calculus](https://makeuseofdata/mathematical_preliminaries/calculus/index.html)
 
-- [Linear Algebra](https://makeuseofdata.com/1_mathematical_preliminaries/2_linear_algebra/index.html)
+- [Linear Algebra](https://makeuseofdata.com/mathematical_preliminaries/linear_algebra/index.html)
 
-- [Optimization](https://makeuseofdata.com/1_mathematical_preliminaries/3_optimization/index.html)
+- [Optimization](https://makeuseofdata.com/mathematical_preliminaries/optimization/index.html)
 
-- [Modeling Basics](https://makeuseofdata.com/7_modeling/basics.html)
+- [Modeling Basics](https://makeuseofdata.com/modeling/basics.html)
 
-- [Regression Basics](https://makeuseofdata.com/7_modeling/1_regression/basics.html)
+- [Regression Basics](https://makeuseofdata.com/modeling/regression/basics.html)
 
 ---
 
