@@ -2,23 +2,23 @@ file: index
 title: Home
 sections:
 - file: intro
-- file: mathematical_preliminaries/index
+- file: mathematical_topics/index
   sections:
-  - file: mathematical_preliminaries/calculus/index
+  - file: mathematical_topics/calculus/index
     sections:
-    - file: mathematical_preliminaries/calculus/basics
-  - file: mathematical_preliminaries/linear_algebra/index
+    - file: mathematical_topics/calculus/basics
+  - file: mathematical_topics/linear_algebra/index
     sections:
-    - file: mathematical_preliminaries/linear_algebra/basics
-  - file: mathematical_preliminaries/optimization/index
+    - file: mathematical_topics/linear_algebra/basics
+  - file: mathematical_topics/optimization/index
     sections:
-    - file: mathematical_preliminaries/optimization/basics
-  - file: mathematical_preliminaries/probability/index
+    - file: mathematical_topics/optimization/basics
+  - file: mathematical_topics/probability/index
     sections:
-    - file: mathematical_preliminaries/probability/basics
-  - file: mathematical_preliminaries/statistics/index
+    - file: mathematical_topics/probability/basics
+  - file: mathematical_topics/statistics/index
     sections:
-    - file: mathematical_preliminaries/statistics/basics
+    - file: mathematical_topics/statistics/basics
 - file: programming/index
   sections:
   - file: programming/excel/index
@@ -33,38 +33,45 @@ sections:
   - file: programming/sql/index
     sections:
     - file: programming/sql/basics
-- file: data_cleaning/index
+- file: data_collection/index
   sections:
-  - file: data_cleaning/basics
-- file: data_ingestion/index
+  - file: data_collection/basics
+  - file: data_collection/databases/index
+    sections:
+    - file: data_collection/databases/basics
+- file: data_preparation/index
   sections:
-  - file: data_ingestion/basics
-  - file: data_ingestion/databases/index
-    sections:
-    - file: data_ingestion/databases/basics
-- file: eda/index
+  - file: data_preparation/basics
+- file: visualization/index
   sections:
-  - file: eda/basics
-  - file: eda/clustering/index
-    sections:
-    - file: eda/clustering/basics
-  - file: eda/visualization/index
-    sections:
-    - file: eda/visualization/basics
-- file: simulation/index
+    - file: visualization/basics
+- file: machine_learning_and_data_mining/index
   sections:
-  - file: simulation/basics
-- file: modeling/index
+  - file: machine_learning_and_data_mining/classification/index
+    sections:
+    - file: machine_learning_and_data_mining/classification/basics
+  - file: machine_learning_and_data_mining/clustering/index
+    sections:
+    - file: machine_learning_and_data_mining/clustering/basics
+  - file: machine_learning_and_data_mining/dimensionality_reduction/index
+    sections:
+    - file: machine_learning_and_data_mining/dimensionality_reduction/basics
+  - file: machine_learning_and_data_mining/nlp/index
+    sections:
+    - file: machine_learning_and_data_mining/nlp/basics
+  - file: machine_learning_and_data_mining/regression/index
+    sections:
+    - file: machine_learning_and_data_mining/regression/basics
+    - file: machine_learning_and_data_mining/regression/ols_plus_regularization
+  - file: machine_learning_and_data_mining/reinforcement_learning/index
+    sections:
+    - file: machine_learning_and_data_mining/reinforcement_learning/basics
+- file: additional_topics/index
   sections:
-  - file: modeling/basics
-  - file: modeling/classification/index
+  - file: additional_topics/eda/index
     sections:
-    - file: modeling/classification/basics
-  - file: modeling/nlp/index
+    - file: additional_topics/eda/basics
+  - file: additional_topics/simulation/index
     sections:
-    - file: modeling/nlp/basics
-  - file: modeling/regression/index
-    sections:
-    - file: modeling/regression/basics
-    - file: modeling/regression/ols_plus_regularization
-  
+    - file: additional_topics/simulation/basics
+- file: resources/index

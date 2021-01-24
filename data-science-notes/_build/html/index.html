@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hey 👋 &#8212; Data Science Notes &lt;br&gt;&lt;br&gt; &lt;p style=&#34;font-size:75%&#34;&gt;Welcome!&lt;/p&gt;</title>
+    <title>Hey 👋 &#8212; Data Science Notes</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -43,9 +43,11 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/gtag_2.js"></script>
+    <script src="_static/gtag.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
@@ -79,7 +81,7 @@
   <img src="_static/android-chrome-512x512.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">Data Science Notes <br><br> <p style="font-size:75%">Welcome!</p></h1>
+  <h1 class="site-logo" id="site-title">Data Science Notes</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -101,17 +103,17 @@
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="1_mathematical_preliminaries/index.html">
-   Mathematical Preliminaries
+  <a class="reference internal" href="mathematical_topics/index.html">
+   Mathematical Topics
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="1_mathematical_preliminaries/1_calculus/index.html">
+    <a class="reference internal" href="mathematical_topics/calculus/index.html">
      Calculus
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="1_mathematical_preliminaries/1_calculus/basics.html">
+      <a class="reference internal" href="mathematical_topics/calculus/basics.html">
        Basics
       </a>
      </li>
@@ -120,12 +122,12 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="1_mathematical_preliminaries/2_linear_algebra/index.html">
+    <a class="reference internal" href="mathematical_topics/linear_algebra/index.html">
      Linear Algebra
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="1_mathematical_preliminaries/2_linear_algebra/basics.html">
+      <a class="reference internal" href="mathematical_topics/linear_algebra/basics.html">
        Basics
       </a>
      </li>
@@ -134,12 +136,12 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="1_mathematical_preliminaries/3_optimization/index.html">
+    <a class="reference internal" href="mathematical_topics/optimization/index.html">
      Optimization
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="1_mathematical_preliminaries/3_optimization/basics.html">
+      <a class="reference internal" href="mathematical_topics/optimization/basics.html">
        Basics
       </a>
      </li>
@@ -148,12 +150,12 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="1_mathematical_preliminaries/4_probability/index.html">
+    <a class="reference internal" href="mathematical_topics/probability/index.html">
      Probability
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="1_mathematical_preliminaries/4_probability/basics.html">
+      <a class="reference internal" href="mathematical_topics/probability/basics.html">
        Basic Probability Rules
       </a>
      </li>
@@ -162,12 +164,12 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="1_mathematical_preliminaries/5_statistics/index.html">
+    <a class="reference internal" href="mathematical_topics/statistics/index.html">
      Statistics
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="1_mathematical_preliminaries/5_statistics/basics.html">
+      <a class="reference internal" href="mathematical_topics/statistics/basics.html">
        Basics
       </a>
      </li>
@@ -180,17 +182,31 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="2_programming/index.html">
+  <a class="reference internal" href="programming/index.html">
    Programming
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="2_programming/1_python/index.html">
+    <a class="reference internal" href="programming/excel/index.html">
+     Excel
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="programming/excel/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="programming/python/index.html">
      Python
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="2_programming/1_python/basics.html">
+      <a class="reference internal" href="programming/python/basics.html">
        Basics
       </a>
      </li>
@@ -199,12 +215,12 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="2_programming/2_r/index.html">
+    <a class="reference internal" href="programming/r/index.html">
      R
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="2_programming/2_r/basics.html">
+      <a class="reference internal" href="programming/r/basics.html">
        Basics
       </a>
      </li>
@@ -213,12 +229,12 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="2_programming/3_sql/index.html">
+    <a class="reference internal" href="programming/sql/index.html">
      SQL
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="2_programming/3_sql/basics.html">
+      <a class="reference internal" href="programming/sql/basics.html">
        Basics
       </a>
      </li>
@@ -231,12 +247,40 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="3_data_cleaning/index.html">
-   Data Cleaning
+  <a class="reference internal" href="data_collection/index.html">
+   Data Collection
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="3_data_cleaning/basics.html">
+    <a class="reference internal" href="data_collection/basics.html">
+     Basics
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="data_collection/databases/index.html">
+     Databases
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="data_collection/databases/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="data_preparation/index.html">
+   Data Preparation
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_preparation/basics.html">
      Data Cleaning Basics
     </a>
    </li>
@@ -245,22 +289,31 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="4_data_ingestion/index.html">
-   Data Ingestion
+  <a class="reference internal" href="visualization/index.html">
+   Visualization
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="4_data_ingestion/basics.html">
-     Basics of Data Ingestion
+    <a class="reference internal" href="visualization/basics.html">
+     Basics
     </a>
    </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="machine_learning_and_data_mining/index.html">
+   Machine Learning and Data Mining
+  </a>
+  <ul class="collapse-ul">
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="4_data_ingestion/1_databases/index.html">
-     Databases
+    <a class="reference internal" href="machine_learning_and_data_mining/classification/index.html">
+     Classification
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="4_data_ingestion/1_databases/basics.html">
+      <a class="reference internal" href="machine_learning_and_data_mining/classification/basics.html">
        Basics
       </a>
      </li>
@@ -268,27 +321,13 @@
     <i class="fas fa-chevron-down">
     </i>
    </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="5_eda/index.html">
-   Exploratory Data Analysis
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="5_eda/basics.html">
-     Basics of Exploratory Data Analysis
-    </a>
-   </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="5_eda/1_clustering/index.html">
+    <a class="reference internal" href="machine_learning_and_data_mining/clustering/index.html">
      Clustering
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="5_eda/1_clustering/basics.html">
+      <a class="reference internal" href="machine_learning_and_data_mining/clustering/basics.html">
        Basics
       </a>
      </li>
@@ -297,12 +336,12 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="5_eda/2_visualization/index.html">
-     Visualization
+    <a class="reference internal" href="machine_learning_and_data_mining/dimensionality_reduction/index.html">
+     Dimensionality Reduction
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="5_eda/2_visualization/basics.html">
+      <a class="reference internal" href="machine_learning_and_data_mining/dimensionality_reduction/basics.html">
        Basics
       </a>
      </li>
@@ -310,46 +349,32 @@
     <i class="fas fa-chevron-down">
     </i>
    </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="6_simulation/index.html">
-   Simulation
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="6_simulation/basics.html">
-     Basics
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="machine_learning_and_data_mining/nlp/index.html">
+     Natural Language Processing
     </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="7_modeling/index.html">
-   Modeling
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="7_modeling/basics.html">
-     Basics
-    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="machine_learning_and_data_mining/nlp/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="7_modeling/1_regression/index.html">
+    <a class="reference internal" href="machine_learning_and_data_mining/regression/index.html">
      Regression
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="7_modeling/1_regression/1_basics.html">
+      <a class="reference internal" href="machine_learning_and_data_mining/regression/basics.html">
        Basics
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="7_modeling/1_regression/2_ols_plus_regularization.html">
+      <a class="reference internal" href="machine_learning_and_data_mining/regression/ols_plus_regularization.html">
        Ordinary Least Squares and Regularized Forms
       </a>
      </li>
@@ -358,12 +383,12 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="7_modeling/2_classification/index.html">
-     Classification
+    <a class="reference internal" href="machine_learning_and_data_mining/reinforcement_learning/index.html">
+     Reinforcement Learning
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="7_modeling/2_classification/basics.html">
+      <a class="reference internal" href="machine_learning_and_data_mining/reinforcement_learning/basics.html">
        Basics
       </a>
      </li>
@@ -374,6 +399,48 @@
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="additional_topics/index.html">
+   Additional Topics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="additional_topics/eda/index.html">
+     Exploratory Data Analysis
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="additional_topics/eda/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="additional_topics/simulation/index.html">
+     Simulation
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="additional_topics/simulation/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="resources/index.html">
+   Resources
+  </a>
  </li>
 </ul>
 
@@ -469,7 +536,7 @@
 <h1>Hey 👋<a class="headerlink" href="#hey" title="Permalink to this headline">¶</a></h1>
 <p style='font-size: x-large'>Welcome to <b>Data Science Notes!</b></p>
 <p style= 'font-size:large'>Here, you can find a developing collection of notes across varying topics in data science.</p>
-<p style='font-size: large'>The goal with this project is to create a reliable source of referenced information in an open-source manner for  increased accessibility for people to learn about the topic. </p>
+<p style='font-size: large'>The goal with this project is to create a reliable source of referenced information in an <i>open-source</i> manner for  increased accessibility for people to learn about the topic. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p style='font-size: large'> <b> If you are a new student of data science</b>, it is recommended to begin at the <b>Introduction</b> section, which will help to make sense of how all the different parts are connected together and what sort of preliminary information is needed for each. </p>

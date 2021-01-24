@@ -4,7 +4,7 @@
 
 <p style= 'font-size:large'>Here, you can find a developing collection of notes across varying topics in data science.</p>
 
-<p style='font-size: large'>The goal with this project is to create a reliable source of referenced information in an open-source manner for  increased accessibility for people to learn about the topic. </p>
+<p style='font-size: large'>The goal with this project is to create a reliable source of referenced information in an <i>open-source</i> manner for  increased accessibility for people to learn about the topic. </p>
 
 ```{warning}
 <p style='font-size: large'> <b> If you are a new student of data science</b>, it is recommended to begin at the <b>Introduction</b> section, which will help to make sense of how all the different parts are connected together and what sort of preliminary information is needed for each. </p>
