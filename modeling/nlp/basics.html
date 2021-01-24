@@ -498,6 +498,13 @@
   <a class="reference internal nav-link" href="#word-tokenization">
    Word Tokenization
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-example">
+     For example:
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sentence-tokenization">
@@ -544,6 +551,15 @@
 <h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="word-tokenization">
 <h2>Word Tokenization<a class="headerlink" href="#word-tokenization" title="Permalink to this headline">¶</a></h2>
+<p>Word <strong>Tokenization</strong> also called as word segmentation is the process of dividing a string of written language into its component words. In English and many other languages using some form of Latin alphabet, space is a good approximation of a word divider.</p>
+<p>However, we still can have problems if we only split by space to achieve the wanted results. Some English compound nouns are variably written and sometimes they contain a space. Mostly making use of a library to achieve the wanted results, is a good idea.</p>
+<div class="section" id="for-example">
+<h3>For example:<a class="headerlink" href="#for-example" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>San Francisco is a beautiful city.</p>
+</div></blockquote>
+<p>In the above sentence we can clearly see that if we consider <code class="docutils literal notranslate"><span class="pre">San</span></code> and <code class="docutils literal notranslate"><span class="pre">Francisco</span></code> as two different words then it totally changes the meaning of the word.</p>
+</div>
 </div>
 <div class="section" id="sentence-tokenization">
 <h2>Sentence Tokenization<a class="headerlink" href="#sentence-tokenization" title="Permalink to this headline">¶</a></h2>
