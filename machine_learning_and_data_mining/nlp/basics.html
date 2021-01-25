@@ -811,6 +811,13 @@
   <a class="reference internal nav-link" href="#stemming-and-text-lemmatization">
    Stemming and Text Lemmatization
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example:
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stop-words">
@@ -859,9 +866,36 @@
 </div>
 <div class="section" id="sentence-tokenization">
 <h2>Sentence Tokenization<a class="headerlink" href="#sentence-tokenization" title="Permalink to this headline">¶</a></h2>
+<p>Sentence <strong>Tokenization</strong> also called as sentence segmentation is the process of dividing a string of written language into its component sentences. The idea here looks very simple. In English and some other languages, we can split apart the sentences wherever we see a punctuation mark.
+However, even in English, this problem is not trivial due to the use of full stop character for abbreviations. When processing plain text, tables of abbreviations that contain periods can help us to prevent incorrect assignment of sentence boundaries. In many cases, we make use of built-in libraries to do the job for us.</p>
 </div>
 <div class="section" id="stemming-and-text-lemmatization">
 <h2>Stemming and Text Lemmatization<a class="headerlink" href="#stemming-and-text-lemmatization" title="Permalink to this headline">¶</a></h2>
+<p>For many grammatical reasons, documents can contain different forms of a word such as drive, drives, driving. Also, sometimes we have related words with a similar meaning, such as nation, national, nationality.</p>
+<blockquote>
+<div><p>The goal of both stemming and lemmatization is to reduce inflectional forms and sometimes derivationally related forms of a word to a common base form.</p>
+</div></blockquote>
+<p>Sources:</p>
+<ul class="simple">
+<li><p>https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html</p></li>
+</ul>
+<div class="section" id="example">
+<h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Consults, Cousultant, Consultants, contsulting =&gt; Counsult</p></li>
+<li><p>Plays, Played, Playing =&gt; Play</p></li>
+<li><p>dog’s, dog, dogs =&gt; dog</p></li>
+</ul>
+<p>In the above examples we can see that all different grammatical forms of a word were converted to their base words this is basically what stemming and lemmatization do.<br>Stemming and lemmatization are special cases of normalization. However, they are different from each other. The major difference between them is that Lemmatization provides more meaningful words whereas in stemming the derived words may need not necessarily be meaningful. Hence the time taken to perform stemming is less than the time taken to perform lemmatization. Stemming is also easier to perform and runs faster. Also, the reduced “accuracy” may not matter for some applications.</p>
+<blockquote>
+<div><p>Stemming usually refers to a crude heuristic process that chops off the ends of words in the hope of achieving this goal correctly most of the time, and often includes the removal of derivational affixes.</p>
+<p>Lemmatization usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma.</p>
+</div></blockquote>
+<p>Sources:</p>
+<ul class="simple">
+<li><p>https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="stop-words">
 <h2>Stop Words<a class="headerlink" href="#stop-words" title="Permalink to this headline">¶</a></h2>
