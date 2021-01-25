@@ -30,4 +30,7 @@ sphinx:
     - 'sphinx_copybutton'
 parse:
   myst_extended_syntax: true
+launch_buttons:
+  binderhub_url: "https://mybinder.org"
+  colab_url: "https://colab.research.google.com"
 # googleanalytics_id: 'G-VKV4WP95W2'

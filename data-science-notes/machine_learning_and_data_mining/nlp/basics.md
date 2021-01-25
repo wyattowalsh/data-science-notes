@@ -12,6 +12,7 @@ However, we still can have problems if we only split by space to achieve the wan
 
 In the above sentence we can clearly see that if we consider `San` and `Francisco` as two different words then it totally changes the meaning of the word. 
 
+
 ## Sentence Tokenization
 
 Sentence **Tokenization** also called as sentence segmentation is the process of dividing a string of written language into its component sentences. The idea here looks very simple. In English and some other languages, we can split apart the sentences wherever we see a punctuation mark.
@@ -39,6 +40,7 @@ In the above examples we can see that all different grammatical forms of a word 
 Sources: 
 
 - https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html
+
 
 ## Stop Words
 

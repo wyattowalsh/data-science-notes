@@ -4,3 +4,5 @@ yapf
 jupyter-book
 cookiecutter
 sphinx-copybutton
+nbdime
+isort

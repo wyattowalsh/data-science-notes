@@ -1,6 +1,4 @@
-# Hey 👋
-
-<p style='font-size: x-large'>Welcome to <b>Data Science Notes!</b></p>
+# Welcome to **Data Science Notes**!
 
 <p style= 'font-size:large'>Here, you can find a developing collection of notes across varying topics in data science.</p>
 
