@@ -88,18 +88,24 @@
 - part: Data Collection
   chapters:
   - file: data_collection/index
-  - file: data_collection/databases/index.md
+  - file: data_collection/databases/index
     sections:
-    - file: data_collection/databases/relational/index.md
-    - file: data_collection/databases/non_relational/index.md
+    - file: data_collection/databases/relational/index
+    - file: data_collection/databases/non_relational/index
 
 - part: Data Processing
   chapters:
   - file: data_processing/index
+  - file: data_processing/feature_selection/index
 
 - part: Visualization
   chapters:
   - file: visualization/index
+  - file: visualization/python/index
+    sections:
+    - file: visualization/python/matplotlib.ipynb
+    - file: visualization/python/plotly.ipynb
+    - file: visualization/python/seaborn.ipynb
 
 - part: Machine Learning & Data Mining
   chapters:
