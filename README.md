@@ -1,7 +1,7 @@
 # MakeUseofData.com: **_Data Science Notes_**
 
 ## Hey 👋 <br><br> Glad to see you here! 
-<a href="https://twitter.com/makeuseofdata" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" /></a> [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) ![deploy-book](https://github.com/wyattowalsh/data-science-notes/workflows/deploy-book/badge.svg) ![Website](https://img.shields.io/website?down_color=red&down_message=down%20%F0%9F%98%A8&up_color=green&up_message=online%20%F0%9F%91%8D&url=https%3A%2F%2Fmakeuseofdata.com)
+<img src="https://discordapp.com/api/guilds/802623515119452190/widget.png?style=banner2" alt="Discord Banner 2"/> <a href="https://twitter.com/makeuseofdata" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" /></a> [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) ![deploy-book](https://github.com/wyattowalsh/data-science-notes/workflows/deploy-book/badge.svg) ![Website](https://img.shields.io/website?down_color=red&down_message=down%20%F0%9F%98%A8&up_color=green&up_message=online%20%F0%9F%91%8D&url=https%3A%2F%2Fmakeuseofdata.com)
 
 
 You have just landed in the repository of the *open-source* website: [MakeUseofData.com](https://makeuseofdata.com/)!     
@@ -31,4 +31,4 @@ Please see [**here**](CONTRIBUTING.md) for contributing guidelines.
 
 ### Credits
 
-This project is created using the excellent open source [Jupyter Book project](https://jupyterbook.org/) and the [executablebooks/cookiecutter-jupyter-book template](https://github.com/executablebooks/cookiecutter-jupyter-book).
+This project is created using the excellent open source [Jupyter Book project](https://jupyterbook.org/) and the [executablebooks/cookiecutter-jupyter-book template](https://github.com/executablebooks/cookiecutter-jupyter-book)
