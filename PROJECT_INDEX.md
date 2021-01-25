@@ -1,0 +1,82 @@
+### Current Sections
+
+- Mathematical Topics ***All Topics Need Work (5/5)**
+  - Calculus 
+    - Basics
+  - Linear Algebra
+    - Basics
+  - Optimization
+    - Basics
+  - Probability
+    - Basics
+  - Statistics
+    - Basics
+- Programming ***All Topics Need Work (3/3)***
+  - Data Structures
+    - Basics
+  - Frameworks ***All Topics Need Work (5/5)***
+    - Apache Hadoop
+      - Basics
+    - Apache Spark
+      - Basics
+    - Jupyter
+      - Basics
+    - Pytorch
+      - Basics
+    - TensorFlow
+      - Basics
+  - Languages ***All Topics Need Work (13/13)***
+    - C
+      - Basics
+    - C++
+      - Basics
+    - Excel
+      - Basics
+    - Java
+      - Basics
+    - JavaScript
+      - Basics
+    - Julia
+      - Basics
+    - MATLAB
+      - Basics
+    - Python
+      - Basics
+    - R
+      - Basics
+    - Rust
+      - Basics
+    - SAS
+      - Basics
+    - Scala
+      - Basics
+    - SQL
+      - Basics
+- Data Collection ***Needs Work***
+  - Databases
+    - Relational
+    - Non-Relational
+- Data Processing ***Needs Work***
+- Data Visualization ***Needs Work***
+- Machine Learning & Data Mining ***All Topics Need Work (6/6)***
+  - Classification
+    - Basics
+  - Clustering
+    - Basics
+  - Dimensionality Reduction
+    - Basics
+  - Natural Language Processing
+    - Basics ***Currently Being Worked On*** [#59](i59) 
+  - Regression
+    - Basics
+    - Ordinary Least Squares and Regularized Linear Regression ***Good For Now***
+  - Reinforcement Learning
+    - Basics
+- Additional Topics ***All Topics Need Work***
+  - Business 
+    - Basics
+  - Exploratory Data Analysis
+    - Basics
+  - Simulation
+    - Basics
+- Resources ***Needs Work***
