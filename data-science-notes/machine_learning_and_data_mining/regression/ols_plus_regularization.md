@@ -307,3 +307,5 @@ In practice it is recommended to use a cross-validation technique such as K-Fold
 - [Three-Part Series on Regularized Linear Regression in *Towards Data Science*](https://towardsdatascience.com/tagged/regularized-regression)
 
 ---
+
+Contributions made by our wonderful GitHub Contributors: [@wyattowalsh](https://github.com/wyatowalsh)

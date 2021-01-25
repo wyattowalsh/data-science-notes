@@ -1,9 +1,9 @@
-file: index
-title: Home
-sections:
-- file: intro
-- file: mathematical_topics/index
-  sections:
+- file: index
+  title: Home
+
+- part: Mathematical Topics 
+  chapters:
+  - file: mathematical_topics/index
   - file: mathematical_topics/calculus/index
     sections:
     - file: mathematical_topics/calculus/basics
@@ -18,35 +18,91 @@ sections:
     - file: mathematical_topics/probability/basics
   - file: mathematical_topics/statistics/index
     sections:
-    - file: mathematical_topics/statistics/basics
-- file: programming/index
-  sections:
-  - file: programming/excel/index
+    - file: mathematical_topics/statistics/basics 
+
+- part: Programming
+  chapters:
+  - file: programming/index
+  - file: programming/data_structures/index
     sections:
-    - file: programming/excel/basics
-  - file: programming/python/index
+    - file: programming/data_structures/basics
+  - file: programming/frameworks/index
     sections:
-    - file: programming/python/basics
-  - file: programming/r/index
+    - file: programming/frameworks/apache_hadoop/index
+      sections:
+      - file: programming/frameworks/apache_hadoop/basics
+    - file: programming/frameworks/apache_spark/index
+      sections:
+      - file: programming/frameworks/apache_spark/basics
+    - file: programming/frameworks/jupyter/index
+      sections:
+      - file: programming/frameworks/jupyter/basics
+    - file: programming/frameworks/pytorch/index
+      sections:
+      - file: programming/frameworks/pytorch/basics
+    - file: programming/frameworks/tensorflow/index
+      sections:
+      - file: programming/frameworks/tensorflow/basics
+  - file: programming/languages/index
     sections:
-    - file: programming/r/basics
-  - file: programming/sql/index
+    - file: programming/languages/c/index
+      sections:
+      - file: programming/languages/c/basics
+    - file: programming/languages/c++/index
+      sections:
+      - file: programming/languages/c++/basics
+    - file: programming/languages/excel/index
+      sections:
+      - file: programming/languages/excel/basics
+    - file: programming/languages/java/index
+      sections:
+      - file: programming/languages/java/basics
+    - file: programming/languages/javascript/index
+      sections:
+      - file: programming/languages/javascript/basics
+    - file: programming/languages/julia/index
+      sections:
+      - file: programming/languages/julia/basics
+    - file: programming/languages/matlab/index
+      sections:
+      - file: programming/languages/matlab/basics
+    - file: programming/languages/python/index
+      sections:
+      - file: programming/languages/python/basics
+    - file: programming/languages/r/index
+      sections:
+      - file: programming/languages/r/basics
+    - file: programming/languages/rust/index
+      sections:
+      - file: programming/languages/rust/basics
+    - file: programming/languages/sas/index
+      sections:
+      - file: programming/languages/sas/basics
+    - file: programming/languages/scala/index
+      sections:
+      - file: programming/languages/scala/basics
+    - file: programming/languages/sql/index
+      sections:
+      - file: programming/languages/sql/basics
+
+- part: Data Collection
+  chapters:
+  - file: data_collection/index
+  - file: data_collection/databases/index.md
     sections:
-    - file: programming/sql/basics
-- file: data_collection/index
-  sections:
-  - file: data_collection/basics
-  - file: data_collection/databases/index
-    sections:
-    - file: data_collection/databases/basics
-- file: data_preparation/index
-  sections:
-  - file: data_preparation/basics
-- file: visualization/index
-  sections:
-    - file: visualization/basics
-- file: machine_learning_and_data_mining/index
-  sections:
+    - file: data_collection/databases/relational/index.md
+    - file: data_collection/databases/non_relational/index.md
+
+- part: Data Processing
+  chapters:
+  - file: data_processing/index
+
+- part: Visualization
+  chapters:
+  - file: visualization/index
+
+- part: Machine Learning & Data Mining
+  chapters:
   - file: machine_learning_and_data_mining/classification/index
     sections:
     - file: machine_learning_and_data_mining/classification/basics
@@ -66,12 +122,13 @@ sections:
   - file: machine_learning_and_data_mining/reinforcement_learning/index
     sections:
     - file: machine_learning_and_data_mining/reinforcement_learning/basics
-- file: additional_topics/index
-  sections:
+
+- part: Addional Topics
+  chapters:
+  - file: additional_topics/business_topics/index
   - file: additional_topics/eda/index
-    sections:
-    - file: additional_topics/eda/basics
   - file: additional_topics/simulation/index
-    sections:
-    - file: additional_topics/simulation/basics
-- file: resources/index
+
+- part: Resources
+  chapters:
+  - file: resources/index
