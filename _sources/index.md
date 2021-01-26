@@ -6,10 +6,6 @@
 
 <p style='font-size: large'>The goal with this project is to create a reliable source of referenced information in an <i>open-source</i> manner for  increased accessibility for people to learn about the topic. </p>
 
-```{warning}
-<p style='font-size: large'> <b> If you are a new student of data science</b>, it is recommended to begin at the <b>Introduction</b> section, which will help to make sense of how all the different parts are connected together and what sort of preliminary information is needed for each. </p>
-```
-
 <p style='font-size: large'> Feel free to use the button within the <b>GitHub</b> menu or view the project's repository <a href='https://github.com/wyattowalsh/data-science-notes'><b>here</b></a> </p>
 
 <p style='font-size: large'> Contributions are most welcomed for this project!!! </p>
