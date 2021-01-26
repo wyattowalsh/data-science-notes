@@ -23,6 +23,9 @@
 - part: Programming
   chapters:
   - file: programming/index
+  - file: programming/ci_cd/index
+    sections:
+    - file: programming/ci_cd/basics
   - file: programming/data_structures/index
     sections:
     - file: programming/data_structures/basics
@@ -45,6 +48,9 @@
       - file: programming/frameworks/tensorflow/basics
   - file: programming/languages/index
     sections:
+    - file: programming/languages/bash/index
+      sections:
+      - file: programming/languages/bash/basics
     - file: programming/languages/c/index
       sections:
       - file: programming/languages/c/basics
@@ -84,7 +90,12 @@
     - file: programming/languages/sql/index
       sections:
       - file: programming/languages/sql/basics
-
+  - file: programming/version_control/index
+    sections:
+    - file: programming/version_control/git
+    - file: programming/version_control/github
+    - file: programming/version_control/gitlab
+      
 - part: Data Collection
   chapters:
   - file: data_collection/index
@@ -96,7 +107,10 @@
 - part: Data Processing
   chapters:
   - file: data_processing/index
+  - file: data_processing/cleaning/index
+  - file: data_processing/feature_engineering/index
   - file: data_processing/feature_selection/index
+  - file: data_processing/imputation/index
 
 - part: Visualization
   chapters:

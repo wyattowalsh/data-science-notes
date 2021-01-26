@@ -1,5 +1,7 @@
 # Welcome to **Data Science Notes**!
 
+![](headers/header_2.svg)
+
 <p style= 'font-size:large'>Here, you can find a developing collection of notes across varying topics in data science.</p>
 
 <p style='font-size: large'>The goal with this project is to create a reliable source of referenced information in an <i>open-source</i> manner for  increased accessibility for people to learn about the topic. </p>
