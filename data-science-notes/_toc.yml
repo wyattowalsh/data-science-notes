@@ -129,6 +129,9 @@
   - file: machine_learning_and_data_mining/clustering/index
     sections:
     - file: machine_learning_and_data_mining/clustering/basics
+  - file: machine_learning_and_data_mining/deep_learning/index
+    sections:
+    - file: machine_learning_and_data_mining/deep_learning/basics
   - file: machine_learning_and_data_mining/dimensionality_reduction/index
     sections:
     - file: machine_learning_and_data_mining/dimensionality_reduction/basics
