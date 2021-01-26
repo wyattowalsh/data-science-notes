@@ -5,48 +5,48 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MATLAB &#8212; Data Science Notes</title>
+    <title>Basics &#8212; Data Science Notes</title>
     
-  <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
   <link rel="stylesheet"
-    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
   <link rel="stylesheet"
-    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/gtag_2.js"></script>
-    <script src="../../../_static/gtag.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/gtag_2.js"></script>
+    <script src="../../_static/gtag.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -55,12 +55,12 @@
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="../../../_static/android-chrome-512x512.png"/>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Basics" href="basics.html" />
-    <link rel="prev" title="Basics" href="../julia/basics.html" />
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/android-chrome-512x512.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dimensionality Reduction" href="../dimensionality_reduction/index.html" />
+    <link rel="prev" title="Deep Learning" href="index.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -77,22 +77,22 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../../index.html">
+<a class="navbar-brand text-wrap" href="../../index.html">
   
-  <img src="../../../_static/android-chrome-512x512.png" class="logo" alt="logo">
+  <img src="../../_static/android-chrome-512x512.png" class="logo" alt="logo">
   
   
   <h1 class="site-logo" id="site-title">Data Science Notes</h1>
   
 </a>
-</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../index.html">
+  <a class="reference internal" href="../../index.html">
    Welcome to Data Science Notes!
   </a>
  </li>
@@ -104,17 +104,17 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../mathematical_topics/index.html">
+  <a class="reference internal" href="../../mathematical_topics/index.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../mathematical_topics/calculus/index.html">
+  <a class="reference internal" href="../../mathematical_topics/calculus/index.html">
    Calculus
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../mathematical_topics/calculus/basics.html">
+    <a class="reference internal" href="../../mathematical_topics/calculus/basics.html">
      Basics
     </a>
    </li>
@@ -123,12 +123,12 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../mathematical_topics/linear_algebra/index.html">
+  <a class="reference internal" href="../../mathematical_topics/linear_algebra/index.html">
    Linear Algebra
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../mathematical_topics/linear_algebra/basics.html">
+    <a class="reference internal" href="../../mathematical_topics/linear_algebra/basics.html">
      Basics
     </a>
    </li>
@@ -137,12 +137,12 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../mathematical_topics/optimization/index.html">
+  <a class="reference internal" href="../../mathematical_topics/optimization/index.html">
    Optimization
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../mathematical_topics/optimization/basics.html">
+    <a class="reference internal" href="../../mathematical_topics/optimization/basics.html">
      Basics
     </a>
    </li>
@@ -151,12 +151,12 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../mathematical_topics/probability/index.html">
+  <a class="reference internal" href="../../mathematical_topics/probability/index.html">
    Probability
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../mathematical_topics/probability/basics.html">
+    <a class="reference internal" href="../../mathematical_topics/probability/basics.html">
      Basic Probability Rules
     </a>
    </li>
@@ -165,12 +165,12 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../mathematical_topics/statistics/index.html">
+  <a class="reference internal" href="../../mathematical_topics/statistics/index.html">
    Statistics
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../mathematical_topics/statistics/basics.html">
+    <a class="reference internal" href="../../mathematical_topics/statistics/basics.html">
      Basics
     </a>
    </li>
@@ -184,19 +184,19 @@
   Programming
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
+  <a class="reference internal" href="../../programming/index.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../ci_cd/index.html">
+  <a class="reference internal" href="../../programming/ci_cd/index.html">
    CI/CD
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../ci_cd/basics.html">
+    <a class="reference internal" href="../../programming/ci_cd/basics.html">
      Basics
     </a>
    </li>
@@ -205,12 +205,12 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../data_structures/index.html">
+  <a class="reference internal" href="../../programming/data_structures/index.html">
    Data Structures
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../data_structures/basics.html">
+    <a class="reference internal" href="../../programming/data_structures/basics.html">
      Basics
     </a>
    </li>
@@ -219,17 +219,17 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../frameworks/index.html">
+  <a class="reference internal" href="../../programming/frameworks/index.html">
    Frameworks
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../frameworks/apache_hadoop/index.html">
+    <a class="reference internal" href="../../programming/frameworks/apache_hadoop/index.html">
      Apache Hadoop
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="../../frameworks/apache_hadoop/basics.html">
+      <a class="reference internal" href="../../programming/frameworks/apache_hadoop/basics.html">
        Basics
       </a>
      </li>
@@ -238,12 +238,12 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../frameworks/apache_spark/index.html">
+    <a class="reference internal" href="../../programming/frameworks/apache_spark/index.html">
      Apache Spark
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="../../frameworks/apache_spark/basics.html">
+      <a class="reference internal" href="../../programming/frameworks/apache_spark/basics.html">
        Basics
       </a>
      </li>
@@ -252,12 +252,12 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../frameworks/jupyter/index.html">
+    <a class="reference internal" href="../../programming/frameworks/jupyter/index.html">
      Jupyter
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="../../frameworks/jupyter/basics.html">
+      <a class="reference internal" href="../../programming/frameworks/jupyter/basics.html">
        Basics
       </a>
      </li>
@@ -266,12 +266,12 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../frameworks/pytorch/index.html">
+    <a class="reference internal" href="../../programming/frameworks/pytorch/index.html">
      Pytorch
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="../../frameworks/pytorch/basics.html">
+      <a class="reference internal" href="../../programming/frameworks/pytorch/basics.html">
        Basics
       </a>
      </li>
@@ -280,217 +280,12 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../frameworks/tensorflow/index.html">
+    <a class="reference internal" href="../../programming/frameworks/tensorflow/index.html">
      TensorFlow
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="../../frameworks/tensorflow/basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../index.html">
-   Languages
-  </a>
-  <ul class="current collapse-ul">
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../bash/index.html">
-     Bash
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../bash/basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../c/index.html">
-     C
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../c/basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../c%2B%2B/index.html">
-     C++
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../c%2B%2B/basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../excel/index.html">
-     Excel
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../excel/basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../java/index.html">
-     Java
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../java/basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../javascript/index.html">
-     JavaScript
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../javascript/basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../julia/index.html">
-     Julia
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../julia/basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 current active collapsible-parent">
-    <a class="current reference internal" href="#">
-     MATLAB
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../python/index.html">
-     Python
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../python/basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../r/index.html">
-     R
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../r/basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../rust/index.html">
-     Rust
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../rust/basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../sas/index.html">
-     SAS
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../sas/basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../scala/index.html">
-     Scala
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../scala/basics.html">
-       Basics
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../sql/index.html">
-     SQL
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../sql/basics.html">
+      <a class="reference internal" href="../../programming/frameworks/tensorflow/basics.html">
        Basics
       </a>
      </li>
@@ -503,22 +298,227 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../version_control/index.html">
+  <a class="reference internal" href="../../programming/languages/index.html">
+   Languages
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/bash/index.html">
+     Bash
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/bash/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/c/index.html">
+     C
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/c/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/c%2B%2B/index.html">
+     C++
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/c%2B%2B/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/excel/index.html">
+     Excel
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/excel/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/java/index.html">
+     Java
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/java/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/javascript/index.html">
+     JavaScript
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/javascript/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/julia/index.html">
+     Julia
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/julia/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/matlab/index.html">
+     MATLAB
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/matlab/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/python/index.html">
+     Python
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/python/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/r/index.html">
+     R
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/r/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/rust/index.html">
+     Rust
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/rust/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/sas/index.html">
+     SAS
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/sas/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/scala/index.html">
+     Scala
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/scala/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../programming/languages/sql/index.html">
+     SQL
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../programming/languages/sql/basics.html">
+       Basics
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../programming/version_control/index.html">
    Version Control
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../version_control/git.html">
+    <a class="reference internal" href="../../programming/version_control/git.html">
      Git
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../version_control/github.html">
+    <a class="reference internal" href="../../programming/version_control/github.html">
      GitHub
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../version_control/gitlab.html">
+    <a class="reference internal" href="../../programming/version_control/gitlab.html">
      GitLab
     </a>
    </li>
@@ -534,22 +534,22 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../data_collection/index.html">
+  <a class="reference internal" href="../../data_collection/index.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../data_collection/databases/index.html">
+  <a class="reference internal" href="../../data_collection/databases/index.html">
    Databases
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../data_collection/databases/relational/index.html">
+    <a class="reference internal" href="../../data_collection/databases/relational/index.html">
      Relational Databases
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../data_collection/databases/non_relational/index.html">
+    <a class="reference internal" href="../../data_collection/databases/non_relational/index.html">
      Non-Relational Databases
     </a>
    </li>
@@ -565,27 +565,27 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../data_processing/index.html">
+  <a class="reference internal" href="../../data_processing/index.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../data_processing/cleaning/index.html">
+  <a class="reference internal" href="../../data_processing/cleaning/index.html">
    Cleaning
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../data_processing/feature_engineering/index.html">
+  <a class="reference internal" href="../../data_processing/feature_engineering/index.html">
    Feature Engineering
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../data_processing/feature_selection/index.html">
+  <a class="reference internal" href="../../data_processing/feature_selection/index.html">
    Feature Selection
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../data_processing/imputation/index.html">
+  <a class="reference internal" href="../../data_processing/imputation/index.html">
    Data Imputation
   </a>
  </li>
@@ -597,27 +597,27 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../visualization/index.html">
+  <a class="reference internal" href="../../visualization/index.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../visualization/python/index.html">
+  <a class="reference internal" href="../../visualization/python/index.html">
    Python
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../visualization/python/matplotlib.html">
+    <a class="reference internal" href="../../visualization/python/matplotlib.html">
      Matplotlib Gallery
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../visualization/python/plotly.html">
+    <a class="reference internal" href="../../visualization/python/plotly.html">
      Plotly Gallery
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../visualization/python/seaborn.html">
+    <a class="reference internal" href="../../visualization/python/seaborn.html">
      Seaborn Gallery
     </a>
    </li>
@@ -631,14 +631,14 @@
   Machine Learning &amp; Data Mining
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../machine_learning_and_data_mining/classification/index.html">
+  <a class="reference internal" href="../classification/index.html">
    Classification
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../machine_learning_and_data_mining/classification/basics.html">
+    <a class="reference internal" href="../classification/basics.html">
      Basics
     </a>
    </li>
@@ -647,12 +647,12 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../machine_learning_and_data_mining/clustering/index.html">
+  <a class="reference internal" href="../clustering/index.html">
    Clustering
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../machine_learning_and_data_mining/clustering/basics.html">
+    <a class="reference internal" href="../clustering/basics.html">
      Basics
     </a>
    </li>
@@ -660,13 +660,13 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../machine_learning_and_data_mining/deep_learning/index.html">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index.html">
    Deep Learning
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../machine_learning_and_data_mining/deep_learning/basics.html">
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Basics
     </a>
    </li>
@@ -675,12 +675,12 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../machine_learning_and_data_mining/dimensionality_reduction/index.html">
+  <a class="reference internal" href="../dimensionality_reduction/index.html">
    Dimensionality Reduction
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../machine_learning_and_data_mining/dimensionality_reduction/basics.html">
+    <a class="reference internal" href="../dimensionality_reduction/basics.html">
      Basics
     </a>
    </li>
@@ -689,12 +689,12 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../machine_learning_and_data_mining/nlp/index.html">
+  <a class="reference internal" href="../nlp/index.html">
    Natural Language Processing
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../machine_learning_and_data_mining/nlp/basics.html">
+    <a class="reference internal" href="../nlp/basics.html">
      Basics
     </a>
    </li>
@@ -703,17 +703,17 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../machine_learning_and_data_mining/regression/index.html">
+  <a class="reference internal" href="../regression/index.html">
    Regression
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../machine_learning_and_data_mining/regression/basics.html">
+    <a class="reference internal" href="../regression/basics.html">
      Basics
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../machine_learning_and_data_mining/regression/ols_plus_regularization.html">
+    <a class="reference internal" href="../regression/ols_plus_regularization.html">
      Ordinary Least Squares and Regularized Forms
     </a>
    </li>
@@ -722,12 +722,12 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../../machine_learning_and_data_mining/reinforcement_learning/index.html">
+  <a class="reference internal" href="../reinforcement_learning/index.html">
    Reinforcement Learning
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../machine_learning_and_data_mining/reinforcement_learning/basics.html">
+    <a class="reference internal" href="../reinforcement_learning/basics.html">
      Basics
     </a>
    </li>
@@ -743,17 +743,17 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../additional_topics/business_topics/index.html">
+  <a class="reference internal" href="../../additional_topics/business_topics/index.html">
    Business Topics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../additional_topics/eda/index.html">
+  <a class="reference internal" href="../../additional_topics/eda/index.html">
    Exploratory Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../additional_topics/simulation/index.html">
+  <a class="reference internal" href="../../additional_topics/simulation/index.html">
    Simulation
   </a>
  </li>
@@ -765,7 +765,7 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../resources/index.html">
+  <a class="reference internal" href="../../resources/index.html">
    Overview
   </a>
  </li>
@@ -809,7 +809,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/programming/languages/matlab/index.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/machine_learning_and_data_mining/deep_learning/basics.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -829,10 +829,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/wyattowalsh/data-science-notes/issues/new?title=Issue%20on%20page%20%2Fprogramming/languages/matlab/index.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/wyattowalsh/data-science-notes/issues/new?title=Issue%20on%20page%20%2Fmachine_learning_and_data_mining/deep_learning/basics.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/wyattowalsh/data-science-notes/edit/master/data-science-notes/programming/languages/matlab/index.md"><button
+        <a class="edit-button" href="https://github.com/wyattowalsh/data-science-notes/edit/master/data-science-notes/machine_learning_and_data_mining/deep_learning/basics.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -859,10 +859,8 @@
         
               <div>
                 
-  <div class="section" id="matlab">
-<h1>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="section" id="basics">
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -878,7 +876,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./programming/languages/matlab"
+            path: "./machine_learning_and_data_mining/deep_learning"
         },
         predefinedOutput: true
     }
@@ -893,8 +891,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../julia/basics.html" title="previous page">Basics</a>
-    <a class='right-next' id="next-link" href="basics.html" title="next page">Basics</a>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Deep Learning</a>
+    <a class='right-next' id="next-link" href="../dimensionality_reduction/index.html" title="next page">Dimensionality Reduction</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -912,7 +910,7 @@
     </div>
 
     
-  <script src="../../../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     
