@@ -984,9 +984,30 @@ However, even in English, this problem is not trivial due to the use of full sto
 </div>
 <div class="section" id="bag-of-words">
 <h2>Bag-of-Words<a class="headerlink" href="#bag-of-words" title="Permalink to this headline">¶</a></h2>
+<p>Machine learning algorithms cannot work with raw text directly, we need to convert the text into vectors of numbers. This is called <a class="reference external" href="https://en.wikipedia.org/wiki/Feature_extraction">feature extraction</a>.<br>The bag-of-words model is a popular and simple feature extraction technique used when we work with text. It describes the occurrence of each word within a document.<br>
+<b>To use this model, we need to:</b><br></p>
+<ol class="simple">
+<li><p>Design a vocabulary of known words (also called tokens)</p></li>
+<li><p>Choose a measure of the presence of known words.</p></li>
+</ol>
+<p>Any information about the order or structure of words is discarded. That’s why it’s called a bag of words. This model is trying to understand whether a known word occurs in a document, but don’t know where is that word in the document.<br>The intuition is that similar documents have similar contents. Also, from a content, we can learn something about the meaning of the document.</p>
 </div>
 <div class="section" id="regex">
 <h2>Regex<a class="headerlink" href="#regex" title="Permalink to this headline">¶</a></h2>
+<p>A regular expression, regex, or regexp is a sequence of characters that define a search pattern. Let’s see some basics.</p>
+<ul class="simple">
+<li><p>match any character except newline</p></li>
+<li><p>\w - match word</p></li>
+<li><p>\d - match digit</p></li>
+<li><p>\s - match whitespace</p></li>
+<li><p>\W - match not word</p></li>
+<li><p>\D - match not digit</p></li>
+<li><p>\S - match not whitespace</p></li>
+<li><p>[abc] - match any of a, b, or c</p></li>
+<li><p>[^abc] - not match a, b, or c</p></li>
+<li><p>[a-g] - match a character between a &amp; g</p></li>
+</ul>
+<p>Regular expressions use the backslash character (‘') to indicate special forms or to allow special characters to be used without invoking their special meaning. This collides with Python’s usage of the same character for the same purpose in string literals; for example, to match a literal backslash, one might have to write ‘\\’ as the pattern string, because the regular expression must be \, and each backslash must be expressed as \ inside a regular Python string literal.<br>We can use regex to apply additional filtering to our text. For example, we can remove all the non-words characters. In many cases, we don’t need the punctuation marks and it’s easy to remove them with regex.</p>
 </div>
 <div class="section" id="tf-idf">
 <h2>TF-IDF<a class="headerlink" href="#tf-idf" title="Permalink to this headline">¶</a></h2>
