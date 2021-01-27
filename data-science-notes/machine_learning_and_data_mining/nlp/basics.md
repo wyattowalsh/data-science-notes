@@ -49,18 +49,26 @@ Stop words usually refer to the most common words such as “and”, “the”, 
 ### Examples:
 >['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from']
 ## Bag-of-Words
+Machine learning algorithms cannot work with raw text directly, we need to convert the text into vectors of numbers. This is called [feature extraction](https://en.wikipedia.org/wiki/Feature_extraction).<br>The bag-of-words model is a popular and simple feature extraction technique used when we work with text. It describes the occurrence of each word within a document.<br>
+<b>To use this model, we need to:</b><br>
+1. Design a vocabulary of known words (also called tokens)
+1. Choose a measure of the presence of known words.
 
-
-
-
-
-
-
+Any information about the order or structure of words is discarded. That’s why it’s called a bag of words. This model is trying to understand whether a known word occurs in a document, but don’t know where is that word in the document.<br>The intuition is that similar documents have similar contents. Also, from a content, we can learn something about the meaning of the document.
 ## Regex
+A regular expression, regex, or regexp is a sequence of characters that define a search pattern. Let’s see some basics.
+* match any character except newline
+* \w - match word
+* \d - match digit
+* \s - match whitespace
+* \W - match not word
+* \D - match not digit
+* \S - match not whitespace
+* [abc] - match any of a, b, or c
+* [^abc] - not match a, b, or c
+* [a-g] - match a character between a & g
 
-
-
-
+Regular expressions use the backslash character ('\\') to indicate special forms or to allow special characters to be used without invoking their special meaning. This collides with Python’s usage of the same character for the same purpose in string literals; for example, to match a literal backslash, one might have to write '\\\\\\\\' as the pattern string, because the regular expression must be \\\\, and each backslash must be expressed as \\\ inside a regular Python string literal.<br>We can use regex to apply additional filtering to our text. For example, we can remove all the non-words characters. In many cases, we don’t need the punctuation marks and it’s easy to remove them with regex.
 
 
 
