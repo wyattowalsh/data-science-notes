@@ -1,6 +1,6 @@
-## Landing Page
+## Landing
 
-## Basics Page
+## Basics
 
 - https://courses.edx.org/courses/course-v1:UTAustinX+UT.5.05x+2T2017/course/
 - https://www.coursera.org/learn/linear-algebra-machine-learning
