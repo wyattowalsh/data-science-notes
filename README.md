@@ -25,7 +25,9 @@ This project was first created as a place to host notes of one of the contributo
 
 ### Contributing 
 
-We warmly welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/wyattowalsh/data-science-notes/graphs/contributors).
+We warmly welcome and recognize all contributions. 
+
+You can see a list of current contributors in the [contributors tab](https://github.com/wyattowalsh/data-science-notes/graphs/contributors).
 
 Please see [**here**](CONTRIBUTING.md) for contributing guidelines and check out the [**issues**](https://github.com/wyattowalsh/data-science-notes/issues) to get oriented 😊. 
 
