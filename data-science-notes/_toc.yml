@@ -3,7 +3,6 @@
 
 - part: Mathematical Topics 
   chapters:
-  - file: mathematical_topics/index
   - file: mathematical_topics/calculus/index
   - file: mathematical_topics/linear_algebra/index
   - file: mathematical_topics/optimization/index
@@ -12,7 +11,6 @@
 
 - part: Programming
   chapters:
-  - file: programming/index
   - file: programming/ci_cd/index
   - file: programming/data_structures/index
   - file: programming/frameworks/index
@@ -81,6 +79,15 @@
     # sections:
     # - file: machine_learning_and_data_mining/regression/ols_plus_regularization/index
   - file: machine_learning_and_data_mining/reinforcement_learning/index
+  - file: machine_learning_and_data_mining/models/index
+    sections:
+    - file: machine_learning_and_data_mining/models/decision_tree/index
+    - file: machine_learning_and_data_mining/models/elastic_net/index
+    - file: machine_learning_and_data_mining/models/lasso/index
+    - file: machine_learning_and_data_mining/models/ols/index
+    - file: machine_learning_and_data_mining/models/random_forest/index
+    - file: machine_learning_and_data_mining/models/ridge/index
+    - file: machine_learning_and_data_mining/models/svm/index
 
 - part: Addional Topics
   chapters:

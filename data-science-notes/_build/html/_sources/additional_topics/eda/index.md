@@ -2,17 +2,13 @@
 
 ---
 
-## Table of Contents
-
-- [Suggested Prerequisites](#Suggested-Prerequisites)
-
-- [Overview](#Overview)
-
-- [Sources](#Sources)
-
----
-
 ## Suggested Prerequisites
+
+- [Statistics](https://makeuseofdata.com/mathematical_topics/statistics/index.html)
+
+- [Visualization](https://makeuseofdata/visualization/index.html)
+
+- [Machine Learning & Data Mining](https://makeuseofdata.com/machine_learning_and_data_mining/index.html)
 
 ---
 
@@ -22,7 +18,7 @@
 
 ## Sources
 
-```{bibliography} references.bib
+```{bibliography}
 :filter: docname in docnames
 ```
 

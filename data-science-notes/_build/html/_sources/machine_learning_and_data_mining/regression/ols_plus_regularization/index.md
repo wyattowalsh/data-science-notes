@@ -304,7 +304,7 @@ In practice it is recommended to use a cross-validation technique such as K-Fold
 
 ## Sources
 
-```{bibliography} references.bib
+```{bibliography}
 :filter: docname in docnames
 ```
 

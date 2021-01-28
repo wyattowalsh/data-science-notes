@@ -2,18 +2,6 @@
 
 ---
 
-## Table of Contents
-
-- [Suggested Prerequisites](#Suggested-Prerequisites)
-
-- [Overview](#Overview)
-
-- [Python](https://makeuseofdata.com/visualization/python/index.html)
-
-- [Sources](#Sources)
-
----
-
 ## Suggested Prerequisites
 
 ---
@@ -22,9 +10,15 @@
 
 ---
 
+## Python Gallery
+
+The gallery can be found [**here**](https://makeuseofdata.com/visualization/python/index.html)
+
+---
+
 ## Sources
 
-```{bibliography} references.bib
+```{bibliography}
 :filter: docname in docnames
 ```
 

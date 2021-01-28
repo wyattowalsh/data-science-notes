@@ -428,6 +428,50 @@
    Reinforcement Learning
   </a>
  </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine_learning_and_data_mining/models/index.html">
+   Models
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine_learning_and_data_mining/models/decision_tree/index.html">
+     Decision Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine_learning_and_data_mining/models/elastic_net/index.html">
+     The Elastic Net
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine_learning_and_data_mining/models/lasso/index.html">
+     Lasso
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine_learning_and_data_mining/models/ols/index.html">
+     Ordinary Least Squares
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine_learning_and_data_mining/models/random_forest/index.html">
+     Random Forests
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine_learning_and_data_mining/models/ridge/index.html">
+     Ridge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine_learning_and_data_mining/models/svm/index.html">
+     Support Vector Machines
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -551,11 +595,6 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#table-of-contents">
-   Table of Contents
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#suggested-prerequisites">
    Suggested Prerequisites
   </a>
@@ -564,32 +603,34 @@
   <a class="reference internal nav-link" href="#overview">
    Overview
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#probability-space">
-   Probability Space
-  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#probability-function-p">
-     Probability Function (
-     <span class="math notranslate nohighlight">
-      \(P\)
-     </span>
-     )
+    <a class="reference internal nav-link" href="#probability-space">
+     Probability Space
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#probability-function-p">
+       Probability Function (
+       <span class="math notranslate nohighlight">
+        \(P\)
+       </span>
+       )
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#consequences">
+       Consequences
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#consequences">
-     Consequences
+    <a class="reference internal nav-link" href="#conditional-probability">
+     Conditional Probability
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conditional-probability">
-   Conditional Probability
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sources">
@@ -610,24 +651,14 @@
   <div class="section" id="probability">
 <h1>Probability<a class="headerlink" href="#probability" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
-<div class="section" id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="#Suggested-Prerequisites">Suggested Prerequisites</a></p></li>
-<li><p><a class="reference external" href="#Overview">Overview</a></p></li>
-<li><p><a class="reference external" href="#Sources">Sources</a></p></li>
-</ul>
-</div>
-<hr class="docutils" />
 <div class="section" id="suggested-prerequisites">
 <h2>Suggested Prerequisites<a class="headerlink" href="#suggested-prerequisites" title="Permalink to this headline">¶</a></h2>
 </div>
 <hr class="docutils" />
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="probability-space">
-<h2>Probability Space<a class="headerlink" href="#probability-space" title="Permalink to this headline">¶</a></h2>
+<h3>Probability Space<a class="headerlink" href="#probability-space" title="Permalink to this headline">¶</a></h3>
 <p>A probability space: <span class="math notranslate nohighlight">\((\Omega, \mathcal{F}, P)\)</span> where</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\Omega\)</span> is the sample space (set of all possible outcomes)</p></li>
@@ -635,7 +666,7 @@
 <li><p><span class="math notranslate nohighlight">\(P\)</span> is a function giving the probability of an event</p></li>
 </ul>
 <div class="section" id="probability-function-p">
-<h3>Probability Function (<span class="math notranslate nohighlight">\(P\)</span>)<a class="headerlink" href="#probability-function-p" title="Permalink to this headline">¶</a></h3>
+<h4>Probability Function (<span class="math notranslate nohighlight">\(P\)</span>)<a class="headerlink" href="#probability-function-p" title="Permalink to this headline">¶</a></h4>
 <p>Probability of an event must be greater than or equal to zero, probability of the sample space is equal to one, and probabilities of an intersection are additive:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(P(A) \geq 0\)</span></p></li>
@@ -644,7 +675,7 @@
 </ul>
 </div>
 <div class="section" id="consequences">
-<h3>Consequences<a class="headerlink" href="#consequences" title="Permalink to this headline">¶</a></h3>
+<h4>Consequences<a class="headerlink" href="#consequences" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(P(o_i)  = 1/n \)</span> in a sample space <span class="math notranslate nohighlight">\(\Omega = \{ o_1, o_2, ..., o_n\}\)</span> <strong>where each outcome <span class="math notranslate nohighlight">\(o_i\)</span> is equally likely to occur</strong> <span class="math notranslate nohighlight">\(\hspace{5pt} \forall \hspace{5pt} i = 1, ..., n\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(P(\bar{A}) = 1 - P(A)\)</span> where <span class="math notranslate nohighlight">\(\bar{A}\)</span> is the <strong>complement</strong> of event <span class="math notranslate nohighlight">\(A\)</span></p></li>
@@ -655,14 +686,14 @@
 </div>
 </div>
 <div class="section" id="conditional-probability">
-<h2>Conditional Probability<a class="headerlink" href="#conditional-probability" title="Permalink to this headline">¶</a></h2>
+<h3>Conditional Probability<a class="headerlink" href="#conditional-probability" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="sources">
 <h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
-<p id="bibtex-bibliography-mathematical_topics/probability/index-0"></p>
 <hr class="docutils" />
-<p>Contributions made by our wonderful GitHub Contributors:</p>
+<p>Contributions made by our wonderful GitHub Contributors: <a class="reference external" href="https://github.com/wyattowalsh">&#64;wyattowalsh</a></p>
 </div>
 </div>
 

@@ -428,6 +428,50 @@
    Reinforcement Learning
   </a>
  </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../models/index.html">
+   Models
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../models/decision_tree/index.html">
+     Decision Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../models/elastic_net/index.html">
+     The Elastic Net
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../models/lasso/index.html">
+     Lasso
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../models/ols/index.html">
+     Ordinary Least Squares
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../models/random_forest/index.html">
+     Random Forests
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../models/ridge/index.html">
+     Ridge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../models/svm/index.html">
+     Support Vector Machines
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -551,11 +595,6 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#table-of-contents">
-   Table of Contents
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#suggested-prerequisites">
    Suggested Prerequisites
   </a>
@@ -646,16 +685,6 @@
                 
   <div class="section" id="natural-language-processing">
 <h1>Natural Language Processing<a class="headerlink" href="#natural-language-processing" title="Permalink to this headline">¶</a></h1>
-<hr class="docutils" />
-<div class="section" id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="#Suggested-Prerequisites">Suggested Prerequisites</a></p></li>
-<li><p><a class="reference external" href="#Overview">Overview</a></p></li>
-<li><p><a class="reference external" href="#Basics">Basics</a></p></li>
-<li><p><a class="reference external" href="#Sources">Sources</a></p></li>
-</ul>
-</div>
 <hr class="docutils" />
 <div class="section" id="suggested-prerequisites">
 <h2>Suggested Prerequisites<a class="headerlink" href="#suggested-prerequisites" title="Permalink to this headline">¶</a></h2>
@@ -752,12 +781,24 @@ However, even in English, this problem is not trivial due to the use of full sto
 </div>
 <div class="section" id="tf-idf">
 <h3>TF-IDF<a class="headerlink" href="#tf-idf" title="Permalink to this headline">¶</a></h3>
+<p>One problem with scoring word frequency is that the most frequent words in the document start to have the highest scores. These frequent words may not contain as much “informational gain” to the model compared with some rarer and domain-specific words. One approach to fix that problem is to penalize words that are frequent across all the documents. This approach is called TF-IDF.<br>TF-IDF, short for term frequency-inverse document frequency is a statistical measure used to evaluate the importance of a word to a document in a collection or corpus.<br>The TF-IDF scoring value increases proportionally to the number of times a word appears in the document, but it is offset by the number of documents in the corpus that contain the word.</p>
+<ul class="simple">
+<li><p><b>Term Frequency (TF)</b>: a scoring of the frequency of the word in the current document.</p></li>
+</ul>
+<p><img alt="image" src="https://miro.medium.com/max/463/1*V3qfsHl0t-bV5kA0mlnsjQ.png" /></p>
+<ul class="simple">
+<li><p><b> Inverse Term Frequency (ITF)</b>: a scoring of how rare the word is across documents.</p></li>
+</ul>
+<p><img alt="image" src="https://miro.medium.com/max/445/1*wvPGL02y36QL7-tdG1BT1A.png" /></p>
+<ul class="simple">
+<li><p>Finally, we can use the previous formulas to calculate the TF-IDF score for a given term like this:</p></li>
+</ul>
+<p><img alt="image" src="https://miro.medium.com/max/294/1*D2UA6xj9KqcH6amzVj5Y5g.png" /></p>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="sources">
 <h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
-<p id="bibtex-bibliography-machine_learning_and_data_mining/nlp/index-0"></p>
 <hr class="docutils" />
 <p>Contributions made by our wonderful GitHub Contributors: <a class="reference external" href="https://github.com/pratik-99">&#64;pratik-99</a></p>
 </div>
