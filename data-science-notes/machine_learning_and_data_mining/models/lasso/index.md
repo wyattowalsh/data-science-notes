@@ -1,4 +1,4 @@
-# Lasso
+# The Lasso
 
 ---
 
