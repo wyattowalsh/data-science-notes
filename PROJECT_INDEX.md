@@ -1,82 +1,101 @@
 ### Current Sections
 
-- Mathematical Topics ***All Topics Need Work (5/5)**
+- Mathematical Topics
   - Calculus 
-    - Basics
+    - Basics  ***Needs Work***
   - Linear Algebra
-    - Basics
+    - Basics  ***Needs Work***
   - Optimization
-    - Basics
+    - Basics  ***Needs Work***
   - Probability
-    - Basics
+    - Basics  ***Needs Work***
   - Statistics
-    - Basics
-- Programming ***All Topics Need Work (3/3)***
+    - Basics  ***Needs Work***
+- Programming 
+  - CI/CD
+    - Basics  ***Needs Work***
   - Data Structures
-    - Basics
-  - Frameworks ***All Topics Need Work (5/5)***
+    - Basics  ***Needs Work***
+  - Frameworks 
     - Apache Hadoop
-      - Basics
+      - Basics  ***Needs Work*** 
     - Apache Spark
-      - Basics
+      - Basics  ***Needs Work***
     - Jupyter
-      - Basics
+      - Basics  ***Needs Work***
     - Pytorch
-      - Basics
+      - Basics  ***Needs Work***
     - TensorFlow
-      - Basics
-  - Languages ***All Topics Need Work (13/13)***
+      - Basics  ***Needs Work***
+  - Languages 
+    - Bash
+      - Basics  ***Needs Work***
     - C
-      - Basics
+      - Basics  ***Needs Work***
     - C++
-      - Basics
+      - Basics  ***Needs Work***
     - Excel
-      - Basics
+      - Basics  ***Needs Work***
     - Java
-      - Basics
+      - Basics  ***Needs Work***
     - JavaScript
-      - Basics
+      - Basics  ***Needs Work***
     - Julia
-      - Basics
+      - Basics  ***Needs Work***
     - MATLAB
-      - Basics
+      - Basics  ***Needs Work***
     - Python
-      - Basics
+      - Basics  ***Needs Work***
     - R
-      - Basics
+      - Basics  ***Needs Work***
     - Rust
-      - Basics
+      - Basics  ***Needs Work***
     - SAS
-      - Basics
+      - Basics  ***Needs Work***
     - Scala
-      - Basics
+      - Basics  ***Needs Work***
     - SQL
-      - Basics
-- Data Collection ***Needs Work***
+      - Basics  ***Needs Work***
+  - Version Control
+    - Basics  ***Needs Work***
+- Data Collection 
+  - Overview  ***Needs Work***
   - Databases
-    - Relational
-    - Non-Relational
-- Data Processing ***Needs Work***
-- Data Visualization ***Needs Work***
-- Machine Learning & Data Mining ***All Topics Need Work (6/6)***
+    - Relational  ***Needs Work***
+    - Non-Relational  ***Needs Work***
+- Data Processing
+  - Overview  ***Needs Work***
+  - Cleaning  ***Needs Work***
+  - Feature Engineering  ***Needs Work***
+  - Feature Selection  ***Needs Work***
+  - Data Imputation   ***Needs Work***
+- Visualization 
+  - Overview   ***Needs Work***
+  - Python
+    - Matplotlib Gallery  ***Needs Work***
+    - Plotly Gallery  ***Needs Work***
+    - Seaborn Gallery  ***Needs Work***
+- Machine Learning & Data Mining 
   - Classification
-    - Basics
+    - Basics  ***Needs Work***
   - Clustering
-    - Basics
+    - Basics  ***Needs Work***
+  - Deep Learning
+    - Basics  ***Needs Work***
   - Dimensionality Reduction
-    - Basics
+    - Basics  ***Needs Work***
   - Natural Language Processing
-    - Basics ***Currently Being Worked On*** [#59](i59) 
+    - Basics ***In Progress*** [#59](i59) 
   - Regression
-    - Basics
-    - Ordinary Least Squares and Regularized Linear Regression ***Good For Now***
+    - Basics  ***Needs Work***
+    - Ordinary Least Squares and Regularized Linear Regression
   - Reinforcement Learning
-    - Basics
+    - Basics  ***Needs Work***
 - Additional Topics ***All Topics Need Work***
   - Business 
-    - Basics
+    - Basics  ***Needs Work***
   - Exploratory Data Analysis
-    - Basics
+    - Basics  ***Needs Work***
   - Simulation
-    - Basics
-- Resources ***Needs Work***
+    - Basics  ***Needs Work***
+- Resources  ***Needs Work***

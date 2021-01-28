@@ -1,0 +1,1055 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ordinary Least Squares and Regularized Forms &#8212; Data Science Notes</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/gtag_2.js"></script>
+    <script src="../../../_static/gtag.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../../_static/android-chrome-512x512.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/android-chrome-512x512.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Data Science Notes</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index.html">
+   Welcome to Data Science Notes!
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematical Topics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../mathematical_topics/calculus/index.html">
+   Calculus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../mathematical_topics/linear_algebra/index.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../mathematical_topics/optimization/index.html">
+   Optimization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../mathematical_topics/probability/index.html">
+   Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../mathematical_topics/statistics/index.html">
+   Statistics
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Programming
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../programming/ci_cd/index.html">
+   CI/CD
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../programming/data_structures/index.html">
+   Data Structures
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../../programming/frameworks/index.html">
+   Frameworks
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/frameworks/apache_hadoop/index.html">
+     Apache Hadoop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/frameworks/apache_spark/index.html">
+     Apache Spark
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/frameworks/jupyter/index.html">
+     Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/frameworks/pytorch/index.html">
+     Pytorch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/frameworks/tensorflow/index.html">
+     TensorFlow
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../../programming/languages/index.html">
+   Languages
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/bash/index.html">
+     Bash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/c/index.html">
+     C
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/c%2B%2B/index.html">
+     C++
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/excel/index.html">
+     Excel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/java/index.html">
+     Java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/javascript/index.html">
+     JavaScript
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/julia/index.html">
+     Julia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/matlab/index.html">
+     MATLAB
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/python/index.html">
+     Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/r/index.html">
+     R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/rust/index.html">
+     Rust
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/sas/index.html">
+     SAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/scala/index.html">
+     Scala
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/languages/sql/index.html">
+     SQL
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../../programming/version_control/index.html">
+   Version Control
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/version_control/git/index.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/version_control/github/index.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../programming/version_control/gitlab/index.html">
+     GitLab
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../programming/virtual_environments/index.html">
+   Virtual Environments
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Collection
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../data_collection/index.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../../data_collection/databases/index.html">
+   Databases
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../data_collection/databases/relational/index.html">
+     Relational Databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../data_collection/databases/non_relational/index.html">
+     Non-Relational Databases
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Processing
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../data_processing/index.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../data_processing/cleaning/index.html">
+   Cleaning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../data_processing/feature_engineering/index.html">
+   Feature Engineering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../data_processing/feature_selection/index.html">
+   Feature Selection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../data_processing/imputation/index.html">
+   Data Imputation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Visualization
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../visualization/index.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../../visualization/python/index.html">
+   Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../visualization/python/matplotlib/gallery.html">
+     Matplotlib Gallery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../visualization/python/plotly/gallery.html">
+     Plotly Gallery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../visualization/python/seaborn/gallery.html">
+     Seaborn Gallery
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine Learning &amp; Data Mining
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../classification/index.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../clustering/index.html">
+   Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../deep_learning/index.html">
+   Deep Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../dimensionality_reduction/index.html">
+   Dimensionality Reduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../nlp/index.html">
+   Natural Language Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reinforcement_learning/index.html">
+   Reinforcement Learning
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Addional Topics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../additional_topics/business_topics/index.html">
+   Business Topics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../additional_topics/eda/index.html">
+   Exploratory Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../additional_topics/simulation/index.html">
+   Simulation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../resources/index.html">
+   Overview
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/machine_learning_and_data_mining/regression/ols_plus_regularization/index.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/wyattowalsh/data-science-notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/wyattowalsh/data-science-notes/issues/new?title=Issue%20on%20page%20%2Fmachine_learning_and_data_mining/regression/ols_plus_regularization/index.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/wyattowalsh/data-science-notes/edit/master/data-science-notes/machine_learning_and_data_mining/regression/ols_plus_regularization/index.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#suggested-prerequisites">
+   Suggested Prerequisites:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-regression-modeling">
+   Linear Regression Modeling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ordinary-least-squares">
+   Ordinary Least Squares
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loss-function-and-optimization-problem">
+     Loss Function and Optimization Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-estimator">
+     Model Estimator
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#proving-uniqueness-of-the-estimator">
+       Proving Uniqueness of the Estimator
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ridge-regression">
+   Ridge Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notes">
+     Notes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Loss Function and Optimization Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Model Estimator
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Proving Uniqueness of the Estimator
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-lasso-for-regression">
+   The Lasso for Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Notes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Loss Function and Optimization Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pathwise-coordinate-descent">
+     Pathwise Coordinate Descent
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#naive-updates">
+       Naive Updates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#covariance-updates">
+       Covariance Updates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#warm-starts">
+       Warm Starts
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-in-python-using-numpy">
+     Implementation in Python Using NumPy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-in-python-using-scikit-learn">
+     Implementation in Python Using Scikit-Learn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-elastic-net-for-regression">
+   The Elastic Net for Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Notes:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Loss Function and Optimization Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Pathwise Coordinate Descent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Implementation in Python Using NumPy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Implementation in Python Using Scikit-Learn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sources">
+   Sources
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ordinary-least-squares-and-regularized-forms">
+<h1>Ordinary Least Squares and Regularized Forms<a class="headerlink" href="#ordinary-least-squares-and-regularized-forms" title="Permalink to this headline">¶</a></h1>
+<p>This section will cover some of the most popular forms of regression models: <em><strong>Ordinary Least Squares</strong></em>, <em><strong>Ridge Regression</strong></em>, <em><strong>the Lasso</strong></em>, and <em><strong>the Elastic Net</strong></em>. These models are popular since they are highly efficient, robust in their predictions, and simple overall. All of these models depend on a <strong>linear</strong> modeling assumption underlying their fits. Linear models are presented below with each other model to follow.</p>
+<hr class="docutils" />
+<div class="section" id="suggested-prerequisites">
+<h2>Suggested Prerequisites:<a class="headerlink" href="#suggested-prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://makeuseofdata/mathematical_topics/calculus/index.html">Calculus</a></p></li>
+<li><p><a class="reference external" href="https://makeuseofdata.com/mathematical_topics/linear_algebra/index.html">Linear Algebra</a></p></li>
+<li><p><a class="reference external" href="https://makeuseofdata.com/mathematical_topics/optimization/index.html">Optimization</a></p></li>
+<li><p><a class="reference external" href="https://makeuseofdata.com/machine_learning_and_data_mining/regression/basics.html">Regression Basics</a></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="linear-regression-modeling">
+<h2>Linear Regression Modeling<a class="headerlink" href="#linear-regression-modeling" title="Permalink to this headline">¶</a></h2>
+<p>In this case, sample data is fit by a linear function as formalized by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+y_i = \beta_0 + \beta_1x_{i,1} + \beta_2x_{i,2} + \ldots + \beta_px_{i,p} + \epsilon_i \hspace{5pt} \forall \hspace{5pt} i \in \{1, \ldots, n\}\\
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> is the number of features, <span class="math notranslate nohighlight">\(n\)</span> is the number of samples and <span class="math notranslate nohighlight">\(\epsilon\)</span> is an error term with mean of zero and finite variance. Or in vector notation:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{y} = \mathbf{X}\mathbf{\beta} + \mathbf{\epsilon}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(y\)</span> is a response vector <span class="math notranslate nohighlight">\([y_1, y_2, ..., y_n]^\mathbf{T}\)</span> of length <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is a <span class="math notranslate nohighlight">\(n \times (p + 1)\)</span> <strong>design matrix</strong> of features <span class="math notranslate nohighlight">\([\mathbf{1}, \mathbf{x_1}, \mathbf{x_2}, ..., \mathbf{x_p}]\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{\beta}\)</span> is a length <span class="math notranslate nohighlight">\((p+1)\)</span> coefficient vector <span class="math notranslate nohighlight">\([\beta_0, \beta_1, \beta_2, ..., \beta_p]\)</span> with <span class="math notranslate nohighlight">\(\beta_0\)</span> an intercept term. This intercept term is included in the model through <strong>data augmentation</strong> of the column of <span class="math notranslate nohighlight">\(\mathbf{1}\)</span>s to the <strong>design matrix</strong>. When an intercept is not sought, this column can be omitted and <span class="math notranslate nohighlight">\(\mathbf{\beta}\)</span> is length <span class="math notranslate nohighlight">\(p\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="ordinary-least-squares">
+<h2>Ordinary Least Squares<a class="headerlink" href="#ordinary-least-squares" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="loss-function-and-optimization-problem">
+<h3>Loss Function and Optimization Problem<a class="headerlink" href="#loss-function-and-optimization-problem" title="Permalink to this headline">¶</a></h3>
+<p>The <em><strong>Ordinary Least Squares</strong></em> (OLS) loss function is simply the <strong>sum of squared error</strong> (SSE) error term:</p>
+<div class="math notranslate nohighlight">
+\[
+L(\mathbf{\beta}) = \|\mathbf{y} - \hat{\mathbf{y}}\|_2^2 =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2
+\]</div>
+<p>Using this function to formulate a <em>least-squares</em> optimization problem yields:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mathbf{\beta}} = \arg\min_{\mathbf{\beta}} L(\mathbf{\beta}) = \arg\min_{\mathbf{\beta}} \frac{1}{2n}  \|\mathbf{y}-\mathbf{X}\mathbf{\beta} \|_{2}^{2} 
+\]</div>
+<p>The <span class="math notranslate nohighlight">\(\frac{1}{2n}\)</span> term is added in order to simplify gradient solving (<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>) and allow objective function convergence to the expected value of model error by the <strong>Law of Large Numbers</strong> (<span class="math notranslate nohighlight">\(\frac{1}{n}\)</span>).</p>
+</div>
+<div class="section" id="model-estimator">
+<h3>Model Estimator<a class="headerlink" href="#model-estimator" title="Permalink to this headline">¶</a></h3>
+<p>By setting the gradient of the loss function equal to zero and solving for the coefficient vector, <span class="math notranslate nohighlight">\( \hat{\mathbf{ \beta }} \)</span>, the <strong>OLS estimator</strong> is found:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mathbf{\beta}} = (\mathbf{X}^\mathbf{T}\mathbf{X})^{-1}(\mathbf{X}^\mathbf{T}\mathbf{y}) 
+\]</div>
+<div class="section" id="proving-uniqueness-of-the-estimator">
+<h4>Proving Uniqueness of the Estimator<a class="headerlink" href="#proving-uniqueness-of-the-estimator" title="Permalink to this headline">¶</a></h4>
+<p>The OLS estimator can be shown be unique by convexity as for any convex function will have a unique global minimum. The <em>second-order convexity conditions</em> state that a function is convex if it continuous, twice differentiable, and has an associated <strong>Hessian</strong> matrix that is <strong>positive semi-definite</strong>.</p>
+<p>The OLS loss function satisfies the first two conditions due to its <strong>quadratic</strong> nature. The OLS <strong>Hessian</strong> matrix can be found as:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{H} = 2\mathbf{X}^\mathbf{T}\mathbf{X}
+\]</div>
+<p>This <strong>Hessian</strong> can be shown to be positive semi-definite as:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{\beta}^\mathbf{T} (2\mathbf{X}^\mathbf{T}\mathbf{X}) \beta = 2(\mathbf{X}\beta)^\mathbf{T} \mathbf{X}\beta = 2 \|\mathbf{X}\mathbf{\beta}\|_2^2 \succeq 0 \: \: \: \forall \: \: \: \mathbf{\beta}
+\]</div>
+<p>Thus, by second-order convexity conditions, the OLS loss function is convex implying that the OLS estimator is the unique global minimizer to the OLS problem. <a class="bibtex reference internal" href="#walsh-2021-1" id="id1">[Wal21a]</a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="ridge-regression">
+<h2>Ridge Regression<a class="headerlink" href="#ridge-regression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Also known as <em><strong>Tikhonov Regularization</strong></em></p></li>
+<li><p>Helps to reduce <strong>overfitting</strong> by reducing model variance through the addition of <strong>shrinkage</strong> towards zero across all coefficients.</p></li>
+<li><p>Can be useful in times when <strong>high multicollinearity</strong> is found between predictors</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>Loss Function and Optimization Problem<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>For the case of <em><strong>Ridge Regression</strong></em>, the OLS loss function is modified by the addition of an <span class="math notranslate nohighlight">\(\mathbf{L}_2\)</span> penalty with an associated tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda\|\mathbf{\beta}\|_2^2 \: \: \: \text{ with tuning parameter $\lambda \geq 0$} 
+\]</div>
+<p>Using this function to formulate a <em>least-squares</em> optimization problem yields:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mathbf{\beta}} = \arg\min_{\mathbf{\beta}}  L(\mathbf{\beta}) = \arg\min_{\mathbf{\beta}} \frac{1}{2n} \|\mathbf{y}-\mathbf{X}\mathbf{\beta} \|_{2}^{2} + \lambda\|\mathbf{\beta}\|_2^2 
+\]</div>
+<p>Just like OLS, the <span class="math notranslate nohighlight">\(\frac{1}{2n}\)</span> term is added in order to simplify gradient solving (<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>) and allow objective function convergence to the expected value of model error by the <strong>Law of Large Numbers</strong> (<span class="math notranslate nohighlight">\(\frac{1}{n}\)</span>).</p>
+</div>
+<div class="section" id="id3">
+<h3>Model Estimator<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>By setting the gradient of the loss function equal to zero and solving for the coefficient vector, <span class="math notranslate nohighlight">\( \hat{\mathbf{ \beta }} \)</span>, the <strong>Ridge Estimator</strong> is found:</p>
+<div class="math notranslate nohighlight">
+\[
+{\hat {\beta }}=(\mathbf {X} ^{\mathsf {T}}\mathbf {X} +\lambda \mathbf {I} )^{-1}\mathbf {X} ^{\mathsf {T}}\mathbf {y}
+\]</div>
+<div class="section" id="id4">
+<h4>Proving Uniqueness of the Estimator<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>It turns out that the <strong>Ridge problem</strong> can be shown to be strongly convex with a <strong>positive definite</strong> associated <strong>Hessian</strong> matrix. This <strong>Hessian</strong> is found as:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{H} = 2\mathbf{X}^\mathbf{T}\mathbf{X} + 2 \lambda \mathbf {I}
+\]</div>
+<p>And to show its positive definiteness:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{\beta}^\mathbf{T} (\mathbf{X}^\mathbf{T}\mathbf{X} + \lambda \mathbf {I})\mathbf{\beta} = (\mathbf{X}\mathbf{\beta})\mathbf{X}\mathbf{\beta} + \lambda \mathbf{\beta}^\mathbf{T}\mathbf{\beta} = \|\mathbf{X}\mathbf{\beta}\|_2^2 + \lambda \|\mathbf{\beta}\|_2^2 \succ 0 \: \: \: \forall \:\:\:  \mathbf{\beta} \neq \mathbf{0}
+\]</div>
+<p>Thus, the <strong>Ridge estimator</strong> is the <em>unique</em> global minimizer to the <strong>Ridge Regression</strong> problem. <a class="bibtex reference internal" href="#walsh-2021-2" id="id5">[Wal21b]</a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-lasso-for-regression">
+<h2>The Lasso for Regression<a class="headerlink" href="#the-lasso-for-regression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>Notes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The acronym stands for <em><strong>Least Absolute Shrinkage and Selection Operator</strong></em></p></li>
+<li><p>Helps to reduce <strong>overfitting</strong> by reducing model variance through the addition of <strong>shrinkage</strong> to zero for selective coefficients.</p></li>
+<li><p>Can be useful in <strong>feature selection</strong> tasks due to its automated feature selection property</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>Loss Function and Optimization Problem<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>The associated loss function for <strong>the Lasso</strong> modifies the OLS loss function through the addition of an <span class="math notranslate nohighlight">\(\mathbf{L}_1\)</span> penalty controlled by a tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda\|\mathbf{\beta}\|_1 \: \: \: \text{ with tuning parameter $\lambda \geq 0$} 
+\]</div>
+<p>Using this function to formulate a <em>least-squares</em> optimization problem yields:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mathbf{\beta}} = \arg\min_{\mathbf{\beta}}  L(\mathbf{\beta}) = \arg\min_{\mathbf{\beta}} \frac{1}{2n} \|\mathbf{y}-\mathbf{X}\mathbf{\beta} \|_{2}^{2} + \lambda\|\mathbf{\beta}\|_1
+\]</div>
+<p>No closed-form solution exists in this case since the addition of the <span class="math notranslate nohighlight">\(\mathbf{L}_1\)</span> penalty adds a non-smooth, absolute component to the loss function rendering it no longer continuously differentiable.  Thus, a discrete optimization technique is required to solve for model coefficient estimates. Many algorithms can be utilized for this purpose such as <em><strong>LARS</strong></em> (Least Angle Regression) and <em><strong>Forwards Stepwise Regression</strong></em>. Coordinate Descent seems to be the most favored algorithm currently and used in the popular packages <em><strong>Scikit-Learn</strong></em> in Python and <em><strong>GLMNET</strong></em> in R.</p>
+</div>
+<div class="section" id="pathwise-coordinate-descent">
+<h3>Pathwise Coordinate Descent<a class="headerlink" href="#pathwise-coordinate-descent" title="Permalink to this headline">¶</a></h3>
+<p>Here, all features should be standardized to have zero mean and unit variance. A <span class="math notranslate nohighlight">\(p+1\)</span> length coefficient vector is then initialized to zero. Cycles are run across all coefficients until convergence when the values stabilize within a certain tolerance. For every cycle, across each coefficient, a coefficient update is found.</p>
+<p>The simplest form of update calculates the simple least-squares coefficient value using the partial residuals across all other features in the design matrix and subsequently applies the soft-thresholding operator with the tuning parameter penalty as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\beta_j = \mathbf{S}(\beta_j^*, \lambda) = sign(\beta_j^*)(\left|\beta_j^*\right| - \lambda)_+ =
+ \begin{cases} 
+     \beta_j^* - \lambda &amp; \beta_j^* &gt; 0 \text{ and } \lambda &lt;  \left|\beta_j^*\right|\\
+     \beta_j^* + \lambda &amp; \beta_j^* &gt; 0 \text{ and } \lambda &lt; \left|\beta_j^*\right| \\
+     0 &amp; \lambda \geq  \left|\beta_j^*\right|
+  \end{cases}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> is the soft-thresholding operator and <span class="math notranslate nohighlight">\(\beta_j^*\)</span> is the update as calculated by:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_j^* = \frac{1}{n}\sum_{i=1}^{n} x_{i, j}r_{i, j}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_{i,j}\)</span> is the partial residuals across as found by:</p>
+<div class="math notranslate nohighlight">
+\[
+r_{i,j} = y_i - \sum_{k \neq j} x_{i, k}\beta_k
+\]</div>
+<div class="section" id="naive-updates">
+<h4>Naive Updates<a class="headerlink" href="#naive-updates" title="Permalink to this headline">¶</a></h4>
+<p>Improved efficiency can be found by updated via:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_j^* = \frac{1}{n}\sum_{i=1}^{n} x_{i, j}r_i + \beta_j\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_i\)</span> is the current model residual for all samples, <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</div>
+<div class="section" id="covariance-updates">
+<h4>Covariance Updates<a class="headerlink" href="#covariance-updates" title="Permalink to this headline">¶</a></h4>
+<p>When the number of samples is much greater than the number of features (<span class="math notranslate nohighlight">\(n \gg p\)</span>) further efficiency boosts can be gained by replacing the first term of the <em><strong>Naive update</strong></em> above as:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^{n} x_{i, j}r_i = \langle x_j, y \rangle - \sum_{k: \left|\beta_k\right| &gt; 0} \langle x_j, x_k \rangle \beta_k
+\]</div>
+</div>
+<div class="section" id="warm-starts">
+<h4>Warm Starts<a class="headerlink" href="#warm-starts" title="Permalink to this headline">¶</a></h4>
+<p>It has been shown that fitting a sequence of models using the solution of one as the starting coefficient values of the next can be faster than a single fit for some small <span class="math notranslate nohighlight">\(\lambda\)</span> values. This sequence should begin at <span class="math notranslate nohighlight">\(\lambda_{max}\)</span>, the smallest value of the tuning parameter for which all coefficient estimates are brought to zero, and end at <span class="math notranslate nohighlight">\(\epsilon \cdot \lambda_{max}\)</span> with around 100 values on a log scale where <span class="math notranslate nohighlight">\(\epsilon\)</span> is typically 0.001:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\text{max}} \rightarrow \lambda_{\text{min}} = \epsilon \cdot \lambda_{\text{max}}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\lambda_{max}\)</span> can be found by finding the minimum value that will bring the estimates for all model coefficients to zero. Thus any values greater than this value will result in total sparsity of the coefficient vector. This value can be found as:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\text{max}} = \frac{\max_l \left|\langle x_l, y \rangle \right|}{n}
+\]</div>
+<p>When <em><strong>warm starts</strong></em> are utilized the Coordinate Descent algorithm is referred to as <em><strong>Pathwise Coordinate Descent</strong></em>.</p>
+</div>
+</div>
+<div class="section" id="implementation-in-python-using-numpy">
+<h3>Implementation in Python Using NumPy<a class="headerlink" href="#implementation-in-python-using-numpy" title="Permalink to this headline">¶</a></h3>
+<script src="https://gist.github.com/wyattowalsh/6a95b1c9ad6118b196336cffd5de4f72.js"></script>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In practice it is recommended to use a cross-validation technique such as K-Fold cross-validation to choose the tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</div>
+</div>
+<div class="section" id="implementation-in-python-using-scikit-learn">
+<h3>Implementation in Python Using Scikit-Learn<a class="headerlink" href="#implementation-in-python-using-scikit-learn" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html">Plain Lasso Function Documentation</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html#sklearn.linear_model.LassoCV">Lasso Cross-Validation Function Documentation</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#lasso">Scikit-Learn User Guide Entry</a></p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-elastic-net-for-regression">
+<h2>The Elastic Net for Regression<a class="headerlink" href="#the-elastic-net-for-regression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>Notes:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Compromise between <em><strong>Ridge Regression</strong></em> and <em><strong>the Lasso</strong></em></p></li>
+<li><p>Helps to reduce <strong>overfitting</strong> by bringing model coefficients towards zero and selectively to zero</p></li>
+<li><p>Arguably the most robust linear regularized method</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3>Loss Function and Optimization Problem<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>The associated loss function for <em><strong>the Elastic Net</strong></em> modifies the OLS loss function through the addition of both an <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> penalties controlled by tuning parameters <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> respectively as:</p>
+<div class="math notranslate nohighlight">
+\[
+L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda [(1-\alpha)\frac{1}{2} \|\mathbf{\beta}\|_2^2 + \alpha \|\mathbf{\beta}\| ] \: \: \: \text{ with tuning parameters $\lambda \geq 0, 0 \leq \alpha \leq 1$  } 
+\]</div>
+<p>In this context, <span class="math notranslate nohighlight">\(\alpha\)</span> can be considered as the parameter controlling the ratio of <span class="math notranslate nohighlight">\(L_1\)</span> penalty and <span class="math notranslate nohighlight">\(\lambda\)</span> is the intensity of regularization to apply.</p>
+<p>Formulating the loss function as a <em>least-squares</em> optimization problem yields:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mathbf{\beta}} = \arg\min_{\mathbf{\beta}} L(\mathbf{\beta}) = \arg\min_{\mathbf{\beta}}  \frac{1}{2n}\|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda [(1-\alpha)\frac{1}{2} \|\mathbf{\beta}\|_2^2 + \alpha \|\mathbf{\beta}\| ]
+\]</div>
+<p>Similarly to <em><strong>the Lasso</strong></em>, a discrete optimization technique needs to be applied to yield a solution for the coefficient estimates.</p>
+</div>
+<div class="section" id="id10">
+<h3>Pathwise Coordinate Descent<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>The algorithm is similar to that of <em><strong>the Lasso</strong></em>. Features should be should be standardized to have zero mean and unit variance. Coefficients should be updated as:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_j = \frac{\mathbf{S}(\beta_j^*, \lambda\alpha)}{1 + \lambda(1-\alpha)}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> is the same soft-thresholding operator applied in the case of <em><strong>the Lasso</strong></em>:</p>
+<div class="math notranslate nohighlight">
+\[
+sign(\beta_j^*)(\left|\beta_j^*\right| - \lambda\alpha)_+ 
+\]</div>
+<p>Furthermore, if <em><strong>warm starts</strong></em> are to be utilized then <span class="math notranslate nohighlight">\(\lambda_{max}\)</span> can be found as:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\text{max}} = \frac{\max_l \left|\langle x_l, y \rangle \right|}{n\alpha}
+\]</div>
+</div>
+<div class="section" id="id11">
+<h3>Implementation in Python Using NumPy<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<script src="https://gist.github.com/wyattowalsh/3bfb1a924007f19a7191a17b6c4e52a0.js"></script>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In practice it is recommended to use a cross-validation technique such as K-Fold cross-validation to choose the tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>Implementation in Python Using Scikit-Learn<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet">Plain Elastic Net Function</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html#sklearn.linear_model.ElasticNetCV">Elastic Net Cross-Validation Function</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#elastic-net">Scikit-Learn User Guide Entry</a> <a class="bibtex reference internal" href="#walsh-2021-3" id="id13">[Wal21c]</a></p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="sources">
+<h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-machine_learning_and_data_mining/regression/ols_plus_regularization/index-0"><dl class="citation">
+<dt class="bibtex label" id="walsh-2021-1"><span class="brackets"><a class="fn-backref" href="#id1">Wal21a</a></span></dt>
+<dd><p>Wyatt Walsh. Regularized linear regression models. <em>Medium</em>, Jan 2021. URL: <a class="reference external" href="https://towardsdatascience.com/regularized-linear-regression-models-57bbdce90a8c">https://towardsdatascience.com/regularized-linear-regression-models-57bbdce90a8c</a>.</p>
+</dd>
+<dt class="bibtex label" id="walsh-2021-2"><span class="brackets"><a class="fn-backref" href="#id5">Wal21b</a></span></dt>
+<dd><p>Wyatt Walsh. Regularized linear regression models. <em>Medium</em>, Jan 2021. URL: <a class="reference external" href="https://towardsdatascience.com/regularized-linear-regression-models-44572e79a1b5">https://towardsdatascience.com/regularized-linear-regression-models-44572e79a1b5</a>.</p>
+</dd>
+<dt class="bibtex label" id="walsh-2021-3"><span class="brackets"><a class="fn-backref" href="#id13">Wal21c</a></span></dt>
+<dd><p>Wyatt Walsh. Regularized linear regression models. <em>Medium</em>, Jan 2021. URL: <a class="reference external" href="https://towardsdatascience.com/regularized-linear-regression-models-dcf5aa662ab9">https://towardsdatascience.com/regularized-linear-regression-models-dcf5aa662ab9</a>.</p>
+</dd>
+</dl>
+</p>
+<hr class="docutils" />
+<p>Contributions made by our wonderful GitHub Contributors: <a class="reference external" href="https://github.com/wyatowalsh">&#64;wyattowalsh</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./machine_learning_and_data_mining/regression/ols_plus_regularization"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

@@ -5,86 +5,46 @@
   chapters:
   - file: mathematical_topics/index
   - file: mathematical_topics/calculus/index
-    sections:
-    - file: mathematical_topics/calculus/basics
   - file: mathematical_topics/linear_algebra/index
-    sections:
-    - file: mathematical_topics/linear_algebra/basics
   - file: mathematical_topics/optimization/index
-    sections:
-    - file: mathematical_topics/optimization/basics
   - file: mathematical_topics/probability/index
-    sections:
-    - file: mathematical_topics/probability/basics
   - file: mathematical_topics/statistics/index
-    sections:
-    - file: mathematical_topics/statistics/basics 
 
 - part: Programming
   chapters:
   - file: programming/index
+  - file: programming/ci_cd/index
   - file: programming/data_structures/index
-    sections:
-    - file: programming/data_structures/basics
   - file: programming/frameworks/index
     sections:
     - file: programming/frameworks/apache_hadoop/index
-      sections:
-      - file: programming/frameworks/apache_hadoop/basics
     - file: programming/frameworks/apache_spark/index
-      sections:
-      - file: programming/frameworks/apache_spark/basics
     - file: programming/frameworks/jupyter/index
-      sections:
-      - file: programming/frameworks/jupyter/basics
     - file: programming/frameworks/pytorch/index
-      sections:
-      - file: programming/frameworks/pytorch/basics
     - file: programming/frameworks/tensorflow/index
-      sections:
-      - file: programming/frameworks/tensorflow/basics
   - file: programming/languages/index
     sections:
+    - file: programming/languages/bash/index
     - file: programming/languages/c/index
-      sections:
-      - file: programming/languages/c/basics
     - file: programming/languages/c++/index
-      sections:
-      - file: programming/languages/c++/basics
     - file: programming/languages/excel/index
-      sections:
-      - file: programming/languages/excel/basics
     - file: programming/languages/java/index
-      sections:
-      - file: programming/languages/java/basics
     - file: programming/languages/javascript/index
-      sections:
-      - file: programming/languages/javascript/basics
     - file: programming/languages/julia/index
-      sections:
-      - file: programming/languages/julia/basics
     - file: programming/languages/matlab/index
-      sections:
-      - file: programming/languages/matlab/basics
     - file: programming/languages/python/index
-      sections:
-      - file: programming/languages/python/basics
     - file: programming/languages/r/index
-      sections:
-      - file: programming/languages/r/basics
     - file: programming/languages/rust/index
-      sections:
-      - file: programming/languages/rust/basics
     - file: programming/languages/sas/index
-      sections:
-      - file: programming/languages/sas/basics
     - file: programming/languages/scala/index
-      sections:
-      - file: programming/languages/scala/basics
     - file: programming/languages/sql/index
-      sections:
-      - file: programming/languages/sql/basics
-
+  - file: programming/version_control/index
+    sections:
+    - file: programming/version_control/git/index
+    - file: programming/version_control/github/index
+    - file: programming/version_control/gitlab/index
+  - file: programming/virtual_environments/index
+      
 - part: Data Collection
   chapters:
   - file: data_collection/index
@@ -96,41 +56,31 @@
 - part: Data Processing
   chapters:
   - file: data_processing/index
+  - file: data_processing/cleaning/index
+  - file: data_processing/feature_engineering/index
   - file: data_processing/feature_selection/index
+  - file: data_processing/imputation/index
 
 - part: Visualization
   chapters:
   - file: visualization/index
   - file: visualization/python/index
     sections:
-    - file: visualization/python/matplotlib.ipynb
-    - file: visualization/python/plotly.ipynb
-    - file: visualization/python/seaborn.ipynb
+    - file: visualization/python/matplotlib/gallery.ipynb
+    - file: visualization/python/plotly/gallery.ipynb
+    - file: visualization/python/seaborn/gallery.ipynb
 
 - part: Machine Learning & Data Mining
   chapters:
   - file: machine_learning_and_data_mining/classification/index
-    sections:
-    - file: machine_learning_and_data_mining/classification/basics
   - file: machine_learning_and_data_mining/clustering/index
-    sections:
-    - file: machine_learning_and_data_mining/clustering/basics
   - file: machine_learning_and_data_mining/deep_learning/index
-    sections:
-    - file: machine_learning_and_data_mining/deep_learning/basics
   - file: machine_learning_and_data_mining/dimensionality_reduction/index
-    sections:
-    - file: machine_learning_and_data_mining/dimensionality_reduction/basics
   - file: machine_learning_and_data_mining/nlp/index
-    sections:
-    - file: machine_learning_and_data_mining/nlp/basics
   - file: machine_learning_and_data_mining/regression/index
-    sections:
-    - file: machine_learning_and_data_mining/regression/basics
-    - file: machine_learning_and_data_mining/regression/ols_plus_regularization
+    # sections:
+    # - file: machine_learning_and_data_mining/regression/ols_plus_regularization/index
   - file: machine_learning_and_data_mining/reinforcement_learning/index
-    sections:
-    - file: machine_learning_and_data_mining/reinforcement_learning/basics
 
 - part: Addional Topics
   chapters:
