@@ -2,16 +2,6 @@
 
 ---
 
-## Table of Contents
-
-- [Suggested Prerequisites](#Suggested-Prerequisites)
-
-- [Overview](#Overview)
-
-- [Sources](#Sources)
-
----
-
 ## Suggested Prerequisites
 
 ---
@@ -20,9 +10,13 @@
 
 ---
 
+## Models
+
+---
+
 ## Sources
 
-```{bibliography} references.bib
+```{bibliography}
 :filter: docname in docnames
 ```
 

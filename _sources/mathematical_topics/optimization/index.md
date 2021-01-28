@@ -2,17 +2,11 @@
 
 ---
 
-## Table of Contents
-
-- [Suggested Prerequisites](#Suggested-Prerequisites)
-
-- [Overview](#Overview)
-
-- [Sources](#Sources)
-
----
-
 ## Suggested Prerequisites
+
+- [Calculus](https://makeuseofdata/mathematical_topics/calculus/index.hmtl)
+
+- [Linear Algebra](https://makeuseofdata/mathematical_topics/linear_algebra/index.hmtl)
 
 ---
 
@@ -20,9 +14,25 @@
 
 ---
 
+## Linear Programming
+
+---
+
+## Integer Programming
+
+---
+
+## Non-Linear Optimization
+
+---
+
+## Discrete Optimization
+
+---
+
 ## Sources
 
-```{bibliography} references.bib
+```{bibliography}
 :filter: docname in docnames
 ```
 

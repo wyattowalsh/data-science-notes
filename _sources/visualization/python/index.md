@@ -1,24 +1,10 @@
-# Python 
-
----
-
-## Table of Contents
-
-- [Suggested Prerequisites](#Suggested-Prerequisites)
-
-- [Overview](#Overview)
-
-- [Matplotlib Gallery](https://makeuseofdata.com/visualization/matplotlib/gallery.html)
-
-- [Plotly Gallery](https://makeuseofdata.com/visualization/plotly/gallery.html)
-
-- [Seaborn Gallery](https://makeuseofdata.com/visualization/seaborn/gallery.html)
-
-- [Sources](#Sources)
+# Python
 
 ---
 
 ## Suggested Prerequisites
+
+- [Python](https://makeuseofdata/programming/languages/python/index.html)
 
 ---
 
@@ -26,9 +12,31 @@
 
 ---
 
+## Matplotlib Gallery
+
+
+
+The gallery can be found [**here**](https://makeuseofdata.com/visualization/matplotlib/gallery.html)
+
+---
+
+## Plotly Gallery
+
+
+
+The gallery can be found [**here**](https://makeuseofdata.com/visualization/plotly/gallery.html)
+
+---
+
+## Seaborn Gallery
+
+
+
+The gallery can found [**here**](https://makeuseofdata.com/visualization/seaborn/gallery.html)
+
 ## Sources
 
-```{bibliography} references.bib
+```{bibliography}
 :filter: docname in docnames
 ```
 

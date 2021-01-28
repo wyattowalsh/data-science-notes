@@ -1,14 +1,6 @@
 # Linear Algebra
 
----
 
-## Table of Contents
-
-- [Suggested Prerequisites](#Suggested-Prerequisites)
-
-- [Overview](#Overview)
-
-- [Sources](#Sources)
 
 ---
 
@@ -22,7 +14,7 @@
 
 ## Sources
 
-```{bibliography} references.bib
+```{bibliography}
 :filter: docname in docnames
 ```
 

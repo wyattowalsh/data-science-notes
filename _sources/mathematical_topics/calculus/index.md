@@ -2,17 +2,15 @@
 
 ---
 
-## Table of Contents
-
-- [Suggested Prerequisites](#Suggested-Prerequisites)
-
-- [Overview](#Overview)
-
-- [Sources](#Sources)
-
----
-
 ## Suggested Prerequisites
+
+- Algebra
+
+- Geometry
+
+- Trigonometry
+
+- [Linear Algebra](https://makeuseofdata.com/mathematical_topics/linear_algebra/index.html)
 
 ---
 
@@ -20,9 +18,21 @@
 
 ---
 
+## Part I
+
+---
+
+## Part II
+
+---
+
+## Part III
+
+---
+
 ## Sources
 
-```{bibliography} references.bib
+```{bibliography}
 :filter: docname in docnames
 ```
 

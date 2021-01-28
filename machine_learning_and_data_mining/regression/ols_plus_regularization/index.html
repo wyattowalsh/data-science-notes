@@ -426,6 +426,50 @@
    Reinforcement Learning
   </a>
  </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../models/index.html">
+   Models
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../models/decision_tree/index.html">
+     Decision Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../models/elastic_net/index.html">
+     The Elastic Net
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../models/lasso/index.html">
+     Lasso
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../models/ols/index.html">
+     Ordinary Least Squares
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../models/random_forest/index.html">
+     Random Forests
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../models/ridge/index.html">
+     Ridge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../models/svm/index.html">
+     Support Vector Machines
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -773,7 +817,7 @@ L(\mathbf{\beta}) = \|\mathbf{y} - \hat{\mathbf{y}}\|_2^2 =  \|\mathbf{y} - \mat
 \[
 \mathbf{\beta}^\mathbf{T} (2\mathbf{X}^\mathbf{T}\mathbf{X}) \beta = 2(\mathbf{X}\beta)^\mathbf{T} \mathbf{X}\beta = 2 \|\mathbf{X}\mathbf{\beta}\|_2^2 \succeq 0 \: \: \: \forall \: \: \: \mathbf{\beta}
 \]</div>
-<p>Thus, by second-order convexity conditions, the OLS loss function is convex implying that the OLS estimator is the unique global minimizer to the OLS problem. <a class="bibtex reference internal" href="#walsh-2021-1" id="id1">[Wal21a]</a></p>
+<p>Thus, by second-order convexity conditions, the OLS loss function is convex implying that the OLS estimator is the unique global minimizer to the OLS problem. <span class="bibtex" id="id1">[walsh_2021_1]</span></p>
 </div>
 </div>
 </div>
@@ -821,7 +865,7 @@ L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda\|\m
 \[
 \mathbf{\beta}^\mathbf{T} (\mathbf{X}^\mathbf{T}\mathbf{X} + \lambda \mathbf {I})\mathbf{\beta} = (\mathbf{X}\mathbf{\beta})\mathbf{X}\mathbf{\beta} + \lambda \mathbf{\beta}^\mathbf{T}\mathbf{\beta} = \|\mathbf{X}\mathbf{\beta}\|_2^2 + \lambda \|\mathbf{\beta}\|_2^2 \succ 0 \: \: \: \forall \:\:\:  \mathbf{\beta} \neq \mathbf{0}
 \]</div>
-<p>Thus, the <strong>Ridge estimator</strong> is the <em>unique</em> global minimizer to the <strong>Ridge Regression</strong> problem. <a class="bibtex reference internal" href="#walsh-2021-2" id="id5">[Wal21b]</a></p>
+<p>Thus, the <strong>Ridge estimator</strong> is the <em>unique</em> global minimizer to the <strong>Ridge Regression</strong> problem. <span class="bibtex" id="id5">[walsh_2021_2]</span></p>
 </div>
 </div>
 </div>
@@ -978,25 +1022,13 @@ sign(\beta_j^*)(\left|\beta_j^*\right| - \lambda\alpha)_+
 <ul class="simple">
 <li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet">Plain Elastic Net Function</a></p></li>
 <li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html#sklearn.linear_model.ElasticNetCV">Elastic Net Cross-Validation Function</a></p></li>
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#elastic-net">Scikit-Learn User Guide Entry</a> <a class="bibtex reference internal" href="#walsh-2021-3" id="id13">[Wal21c]</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#elastic-net">Scikit-Learn User Guide Entry</a> <span class="bibtex" id="id13">[walsh_2021_3]</span></p></li>
 </ul>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="sources">
 <h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
-<p id="bibtex-bibliography-machine_learning_and_data_mining/regression/ols_plus_regularization/index-0"><dl class="citation">
-<dt class="bibtex label" id="walsh-2021-1"><span class="brackets"><a class="fn-backref" href="#id1">Wal21a</a></span></dt>
-<dd><p>Wyatt Walsh. Regularized linear regression models. <em>Medium</em>, Jan 2021. URL: <a class="reference external" href="https://towardsdatascience.com/regularized-linear-regression-models-57bbdce90a8c">https://towardsdatascience.com/regularized-linear-regression-models-57bbdce90a8c</a>.</p>
-</dd>
-<dt class="bibtex label" id="walsh-2021-2"><span class="brackets"><a class="fn-backref" href="#id5">Wal21b</a></span></dt>
-<dd><p>Wyatt Walsh. Regularized linear regression models. <em>Medium</em>, Jan 2021. URL: <a class="reference external" href="https://towardsdatascience.com/regularized-linear-regression-models-44572e79a1b5">https://towardsdatascience.com/regularized-linear-regression-models-44572e79a1b5</a>.</p>
-</dd>
-<dt class="bibtex label" id="walsh-2021-3"><span class="brackets"><a class="fn-backref" href="#id13">Wal21c</a></span></dt>
-<dd><p>Wyatt Walsh. Regularized linear regression models. <em>Medium</em>, Jan 2021. URL: <a class="reference external" href="https://towardsdatascience.com/regularized-linear-regression-models-dcf5aa662ab9">https://towardsdatascience.com/regularized-linear-regression-models-dcf5aa662ab9</a>.</p>
-</dd>
-</dl>
-</p>
 <hr class="docutils" />
 <p>Contributions made by our wonderful GitHub Contributors: <a class="reference external" href="https://github.com/wyatowalsh">&#64;wyattowalsh</a></p>
 </div>

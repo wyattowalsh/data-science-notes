@@ -2,20 +2,6 @@
 
 ---
 
-## Table of Contents
-
-- [Suggested Prerequisites](#Suggested-Prerequisites)
-
-- [Overview](#Overview)
-
-- [Relational](https://makeuseofdata.com/data_collection/databases/relational/index.html)
-
-- [Non-Relational](https://makeuseofdata.com/data_collection/databases/non_relational/index.html)
-
-- [Sources](#Sources)
-
----
-
 ## Suggested Prerequisites
 
 ---
@@ -24,9 +10,19 @@
 
 ---
 
+## Relational
+
+Read more [**here**](https://makeuseofdata/data_collection/databases/relational/index.html)
+
+---
+
+## Non-Relational
+
+Read more [**here**](https://makeuseofdata/data_collection/databases/non_relational/index.html)
+
 ## Sources
 
-```{bibliography} references.bib
+```{bibliography}
 :filter: docname in docnames
 ```
 
