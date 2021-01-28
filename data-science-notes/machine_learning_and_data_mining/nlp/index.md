@@ -46,7 +46,7 @@ Sources:
 
 - https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html
 
-## Stemming and Text Lemmatization
+### Stemming and Text Lemmatization
 For many grammatical reasons, documents can contain different forms of a word such as drive, drives, driving. Also, sometimes we have related words with a similar meaning, such as nation, national, nationality.
 >The goal of both stemming and lemmatization is to reduce inflectional forms and sometimes derivationally related forms of a word to a common base form.
 
