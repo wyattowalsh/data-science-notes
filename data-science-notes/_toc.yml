@@ -77,8 +77,8 @@
   - file: machine_learning_and_data_mining/dimensionality_reduction/index
   - file: machine_learning_and_data_mining/nlp/index
   - file: machine_learning_and_data_mining/regression/index
-    sections:
-    - file: machine_learning_and_data_mining/regression/ols_plus_regularization/index
+    # sections:
+    # - file: machine_learning_and_data_mining/regression/ols_plus_regularization/index
   - file: machine_learning_and_data_mining/reinforcement_learning/index
 
 - part: Addional Topics
