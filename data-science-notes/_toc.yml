@@ -43,6 +43,7 @@
     - file: programming/version_control/git/index
     - file: programming/version_control/github/index
     - file: programming/version_control/gitlab/index
+  - file: programming/virtual_environments/index
       
 - part: Data Collection
   chapters:
@@ -86,7 +87,6 @@
   - file: additional_topics/business_topics/index
   - file: additional_topics/eda/index
   - file: additional_topics/simulation/index
-  - file: additional_topics/virtual_environments/index
 
 - part: Resources
   chapters:
