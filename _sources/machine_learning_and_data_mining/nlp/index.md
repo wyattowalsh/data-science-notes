@@ -101,11 +101,17 @@ Regular expressions use the backslash character ('\\') to indicate special forms
 
 ### TF-IDF
 
+One problem with scoring word frequency is that the most frequent words in the document start to have the highest scores. These frequent words may not contain as much “informational gain” to the model compared with some rarer and domain-specific words. One approach to fix that problem is to penalize words that are frequent across all the documents. This approach is called TF-IDF.<br>TF-IDF, short for term frequency-inverse document frequency is a statistical measure used to evaluate the importance of a word to a document in a collection or corpus.<br>The TF-IDF scoring value increases proportionally to the number of times a word appears in the document, but it is offset by the number of documents in the corpus that contain the word.
+* <b>Term Frequency (TF)</b>: a scoring of the frequency of the word in the current document.
 
+![image](https://miro.medium.com/max/463/1*V3qfsHl0t-bV5kA0mlnsjQ.png)
+* <b> Inverse Term Frequency (ITF)</b>: a scoring of how rare the word is across documents.
 
+![image](https://miro.medium.com/max/445/1*wvPGL02y36QL7-tdG1BT1A.png)
 
+* Finally, we can use the previous formulas to calculate the TF-IDF score for a given term like this:
 
-
+![image](https://miro.medium.com/max/294/1*D2UA6xj9KqcH6amzVj5Y5g.png)
 
 ---
 
