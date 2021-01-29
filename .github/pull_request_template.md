@@ -19,6 +19,7 @@ Ensuring the quality of content within Data Science Notes is essential such that
 - [ ] If my pull request is a new page, did I add that page to the `_toc.yml` file?
 - [ ] Did I star the repo? ⭐️ (starring helps us attract more viewers and contributors!)
 - [ ] Would I like my contribution to be featured on the [@MakeUseofData](https://twitter.com/MakeUseofData) Twitter account? 
+- [ ] Did I join [the Discord](https://discord.gg/uKqQBaJjt3)
 
 ## Twitter Username
 
