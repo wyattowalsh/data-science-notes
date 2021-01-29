@@ -95,7 +95,7 @@
     - file: machine_learning_and_data_mining/models/lasso/index
     - file: machine_learning_and_data_mining/models/logistic/index
     - file: machine_learning_and_data_mining/models/lstm/index
-    - file: machine_learning_and_data_mining/models/neural_network/index
+    - file: machine_learning_and_data_mining/models/nn/index
     - file: machine_learning_and_data_mining/models/ols/index
     - file: machine_learning_and_data_mining/models/pca/index
     - file: machine_learning_and_data_mining/models/ridge/index
