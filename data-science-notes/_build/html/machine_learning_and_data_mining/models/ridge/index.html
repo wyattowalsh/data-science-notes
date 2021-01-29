@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ridge &#8212; Data Science Notes</title>
+    <title>Ridge Regression &#8212; Data Science Notes</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -59,8 +59,8 @@
     <link rel="shortcut icon" href="../../../_static/android-chrome-512x512.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Support Vector Machines" href="../svm/index.html" />
-    <link rel="prev" title="Random Forests" href="../random_forest/index.html" />
+    <link rel="next" title="Recurrent Neural Networks (RNNs)" href="../rnn/index.html" />
+    <link rel="prev" title="Principle Component Analysis" href="../pca/index.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -434,8 +434,28 @@
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
+    <a class="reference internal" href="../ann/index.html">
+     Autoencoders (ANNs)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cnn/index.html">
+     Convolutional Neural Networks (CNNs)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../decision_tree/index.html">
      Decision Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discriminant_analysis/index.html">
+     Discriminant Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dnn/index.html">
+     Deep Neural Networks (DNNs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -444,8 +464,48 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../ensemble/index.html">
+     Ensemble Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../glm/index.html">
+     Generalized Linear Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hierarchical_clustering/index.html">
+     Hierarchical Clustering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../kmeans/index.html">
+     K-Means
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../knn/index.html">
+     K-Nearest Neighbors
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../lasso/index.html">
-     Lasso
+     The Lasso
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../logistic/index.html">
+     Logistic Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lstm/index.html">
+     Long short-erm memory (LSTM)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../neural_network/index.html">
+     Neural Networks
     </a>
    </li>
    <li class="toctree-l2">
@@ -454,13 +514,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../random_forest/index.html">
-     Random Forests
+    <a class="reference internal" href="../pca/index.html">
+     Principle Component Analysis
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Ridge
+     Ridge Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../rnn/index.html">
+     Recurrent Neural Networks (RNNs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -620,8 +685,8 @@
         
               <div>
                 
-  <div class="section" id="ridge">
-<h1>Ridge<a class="headerlink" href="#ridge" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ridge-regression">
+<h1>Ridge Regression<a class="headerlink" href="#ridge-regression" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
 <div class="section" id="suggested-prerequisites">
 <h2>Suggested Prerequisites<a class="headerlink" href="#suggested-prerequisites" title="Permalink to this headline">¶</a></h2>
@@ -666,8 +731,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../random_forest/index.html" title="previous page">Random Forests</a>
-    <a class='right-next' id="next-link" href="../svm/index.html" title="next page">Support Vector Machines</a>
+    <a class='left-prev' id="prev-link" href="../pca/index.html" title="previous page">Principle Component Analysis</a>
+    <a class='right-next' id="next-link" href="../rnn/index.html" title="next page">Recurrent Neural Networks (RNNs)</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

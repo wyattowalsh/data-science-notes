@@ -1,4 +1,4 @@
-# Random Forests
+# Deep Neural Networks (DNNs)
 
 ---
 

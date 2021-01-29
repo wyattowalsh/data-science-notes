@@ -1,4 +1,4 @@
-# Ridge
+# Ridge Regression
 
 ---
 
