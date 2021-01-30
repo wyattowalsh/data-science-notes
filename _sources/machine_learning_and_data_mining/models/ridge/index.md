@@ -65,7 +65,6 @@ Thus, the **Ridge estimator** is the *unique* global minimizer to the **Ridge Re
 ```{tabbed} Python
 <script src="https://gist.github.com/wyattowalsh/d213f0db32ac06cf49db5c84cc63d720.js"></script>
 ```
-
 ```{tabbed} R
 
 ```
@@ -80,4 +79,5 @@ Thus, the **Ridge estimator** is the *unique* global minimizer to the **Ridge Re
 
 ---
 
-Contributions made by our wonderful GitHub Contributors:
+Contributions made by our wonderful GitHub Contributors: [@wyattowalsh](https://github.com/wyattowalsh)
+
