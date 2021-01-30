@@ -498,11 +498,11 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../models/lstm/index.html">
-     Long short-erm memory (LSTM)
+     Long short-term memory (LSTM)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../models/neural_network/index.html">
+    <a class="reference internal" href="../../models/nn/index.html">
      Neural Networks
     </a>
    </li>
@@ -671,7 +671,17 @@
   <a class="reference internal nav-link" href="#ordinary-least-squares">
    Ordinary Least Squares
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ridge-regression">
+   Ridge Regression
+  </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notes">
+     Notes
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#loss-function-and-optimization-problem">
      Loss Function and Optimization Problem
@@ -692,46 +702,17 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ridge-regression">
-   Ridge Regression
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#notes">
-     Notes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Loss Function and Optimization Problem
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Model Estimator
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       Proving Uniqueness of the Estimator
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-lasso-for-regression">
    The Lasso for Regression
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id2">
      Notes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#id3">
      Loss Function and Optimization Problem
     </a>
    </li>
@@ -775,27 +756,27 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#id4">
      Notes:
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
+    <a class="reference internal nav-link" href="#id5">
      Loss Function and Optimization Problem
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#id6">
      Pathwise Coordinate Descent
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
+    <a class="reference internal nav-link" href="#id7">
      Implementation in Python Using NumPy
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
+    <a class="reference internal nav-link" href="#id8">
      Implementation in Python Using Scikit-Learn
     </a>
    </li>
@@ -848,45 +829,7 @@ y_i = \beta_0 + \beta_1x_{i,1} + \beta_2x_{i,2} + \ldots + \beta_px_{i,p} + \eps
 <hr class="docutils" />
 <div class="section" id="ordinary-least-squares">
 <h2>Ordinary Least Squares<a class="headerlink" href="#ordinary-least-squares" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="loss-function-and-optimization-problem">
-<h3>Loss Function and Optimization Problem<a class="headerlink" href="#loss-function-and-optimization-problem" title="Permalink to this headline">¶</a></h3>
-<p>The <em><strong>Ordinary Least Squares</strong></em> (OLS) loss function is simply the <strong>sum of squared error</strong> (SSE) error term:</p>
-<div class="math notranslate nohighlight">
-\[
-L(\mathbf{\beta}) = \|\mathbf{y} - \hat{\mathbf{y}}\|_2^2 =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2
-\]</div>
-<p>Using this function to formulate a <em>least-squares</em> optimization problem yields:</p>
-<div class="math notranslate nohighlight">
-\[
-\hat{\mathbf{\beta}} = \arg\min_{\mathbf{\beta}} L(\mathbf{\beta}) = \arg\min_{\mathbf{\beta}} \frac{1}{2n}  \|\mathbf{y}-\mathbf{X}\mathbf{\beta} \|_{2}^{2} 
-\]</div>
-<p>The <span class="math notranslate nohighlight">\(\frac{1}{2n}\)</span> term is added in order to simplify gradient solving (<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>) and allow objective function convergence to the expected value of model error by the <strong>Law of Large Numbers</strong> (<span class="math notranslate nohighlight">\(\frac{1}{n}\)</span>).</p>
 </div>
-<div class="section" id="model-estimator">
-<h3>Model Estimator<a class="headerlink" href="#model-estimator" title="Permalink to this headline">¶</a></h3>
-<p>By setting the gradient of the loss function equal to zero and solving for the coefficient vector, <span class="math notranslate nohighlight">\( \hat{\mathbf{ \beta }} \)</span>, the <strong>OLS estimator</strong> is found:</p>
-<div class="math notranslate nohighlight">
-\[
-\hat{\mathbf{\beta}} = (\mathbf{X}^\mathbf{T}\mathbf{X})^{-1}(\mathbf{X}^\mathbf{T}\mathbf{y}) 
-\]</div>
-<div class="section" id="proving-uniqueness-of-the-estimator">
-<h4>Proving Uniqueness of the Estimator<a class="headerlink" href="#proving-uniqueness-of-the-estimator" title="Permalink to this headline">¶</a></h4>
-<p>The OLS estimator can be shown be unique by convexity as for any convex function will have a unique global minimum. The <em>second-order convexity conditions</em> state that a function is convex if it continuous, twice differentiable, and has an associated <strong>Hessian</strong> matrix that is <strong>positive semi-definite</strong>.</p>
-<p>The OLS loss function satisfies the first two conditions due to its <strong>quadratic</strong> nature. The OLS <strong>Hessian</strong> matrix can be found as:</p>
-<div class="math notranslate nohighlight">
-\[
-\mathbf{H} = 2\mathbf{X}^\mathbf{T}\mathbf{X}
-\]</div>
-<p>This <strong>Hessian</strong> can be shown to be positive semi-definite as:</p>
-<div class="math notranslate nohighlight">
-\[
-\mathbf{\beta}^\mathbf{T} (2\mathbf{X}^\mathbf{T}\mathbf{X}) \beta = 2(\mathbf{X}\beta)^\mathbf{T} \mathbf{X}\beta = 2 \|\mathbf{X}\mathbf{\beta}\|_2^2 \succeq 0 \: \: \: \forall \: \: \: \mathbf{\beta}
-\]</div>
-<p>Thus, by second-order convexity conditions, the OLS loss function is convex implying that the OLS estimator is the unique global minimizer to the OLS problem. <span class="bibtex" id="id1">[walsh_2021_1]</span></p>
-</div>
-</div>
-</div>
-<hr class="docutils" />
 <div class="section" id="ridge-regression">
 <h2>Ridge Regression<a class="headerlink" href="#ridge-regression" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="notes">
@@ -897,8 +840,8 @@ L(\mathbf{\beta}) = \|\mathbf{y} - \hat{\mathbf{y}}\|_2^2 =  \|\mathbf{y} - \mat
 <li><p>Can be useful in times when <strong>high multicollinearity</strong> is found between predictors</p></li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h3>Loss Function and Optimization Problem<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="loss-function-and-optimization-problem">
+<h3>Loss Function and Optimization Problem<a class="headerlink" href="#loss-function-and-optimization-problem" title="Permalink to this headline">¶</a></h3>
 <p>For the case of <em><strong>Ridge Regression</strong></em>, the OLS loss function is modified by the addition of an <span class="math notranslate nohighlight">\(\mathbf{L}_2\)</span> penalty with an associated tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -911,15 +854,15 @@ L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda\|\m
 \]</div>
 <p>Just like OLS, the <span class="math notranslate nohighlight">\(\frac{1}{2n}\)</span> term is added in order to simplify gradient solving (<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>) and allow objective function convergence to the expected value of model error by the <strong>Law of Large Numbers</strong> (<span class="math notranslate nohighlight">\(\frac{1}{n}\)</span>).</p>
 </div>
-<div class="section" id="id3">
-<h3>Model Estimator<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="model-estimator">
+<h3>Model Estimator<a class="headerlink" href="#model-estimator" title="Permalink to this headline">¶</a></h3>
 <p>By setting the gradient of the loss function equal to zero and solving for the coefficient vector, <span class="math notranslate nohighlight">\( \hat{\mathbf{ \beta }} \)</span>, the <strong>Ridge Estimator</strong> is found:</p>
 <div class="math notranslate nohighlight">
 \[
 {\hat {\beta }}=(\mathbf {X} ^{\mathsf {T}}\mathbf {X} +\lambda \mathbf {I} )^{-1}\mathbf {X} ^{\mathsf {T}}\mathbf {y}
 \]</div>
-<div class="section" id="id4">
-<h4>Proving Uniqueness of the Estimator<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="proving-uniqueness-of-the-estimator">
+<h4>Proving Uniqueness of the Estimator<a class="headerlink" href="#proving-uniqueness-of-the-estimator" title="Permalink to this headline">¶</a></h4>
 <p>It turns out that the <strong>Ridge problem</strong> can be shown to be strongly convex with a <strong>positive definite</strong> associated <strong>Hessian</strong> matrix. This <strong>Hessian</strong> is found as:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -930,23 +873,23 @@ L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda\|\m
 \[
 \mathbf{\beta}^\mathbf{T} (\mathbf{X}^\mathbf{T}\mathbf{X} + \lambda \mathbf {I})\mathbf{\beta} = (\mathbf{X}\mathbf{\beta})\mathbf{X}\mathbf{\beta} + \lambda \mathbf{\beta}^\mathbf{T}\mathbf{\beta} = \|\mathbf{X}\mathbf{\beta}\|_2^2 + \lambda \|\mathbf{\beta}\|_2^2 \succ 0 \: \: \: \forall \:\:\:  \mathbf{\beta} \neq \mathbf{0}
 \]</div>
-<p>Thus, the <strong>Ridge estimator</strong> is the <em>unique</em> global minimizer to the <strong>Ridge Regression</strong> problem. <span class="bibtex" id="id5">[walsh_2021_2]</span></p>
+<p>Thus, the <strong>Ridge estimator</strong> is the <em>unique</em> global minimizer to the <strong>Ridge Regression</strong> problem. <span class="bibtex" id="id1">[walsh_2021_2]</span></p>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="the-lasso-for-regression">
 <h2>The Lasso for Regression<a class="headerlink" href="#the-lasso-for-regression" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id6">
-<h3>Notes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Notes<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>The acronym stands for <em><strong>Least Absolute Shrinkage and Selection Operator</strong></em></p></li>
 <li><p>Helps to reduce <strong>overfitting</strong> by reducing model variance through the addition of <strong>shrinkage</strong> to zero for selective coefficients.</p></li>
 <li><p>Can be useful in <strong>feature selection</strong> tasks due to its automated feature selection property</p></li>
 </ul>
 </div>
-<div class="section" id="id7">
-<h3>Loss Function and Optimization Problem<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Loss Function and Optimization Problem<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>The associated loss function for <strong>the Lasso</strong> modifies the OLS loss function through the addition of an <span class="math notranslate nohighlight">\(\mathbf{L}_1\)</span> penalty controlled by a tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1033,16 +976,16 @@ r_{i,j} = y_i - \sum_{k \neq j} x_{i, k}\beta_k
 <hr class="docutils" />
 <div class="section" id="the-elastic-net-for-regression">
 <h2>The Elastic Net for Regression<a class="headerlink" href="#the-elastic-net-for-regression" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id8">
-<h3>Notes:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Notes:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Compromise between <em><strong>Ridge Regression</strong></em> and <em><strong>the Lasso</strong></em></p></li>
 <li><p>Helps to reduce <strong>overfitting</strong> by bringing model coefficients towards zero and selectively to zero</p></li>
 <li><p>Arguably the most robust linear regularized method</p></li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h3>Loss Function and Optimization Problem<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>Loss Function and Optimization Problem<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>The associated loss function for <em><strong>the Elastic Net</strong></em> modifies the OLS loss function through the addition of both an <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> penalties controlled by tuning parameters <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> respectively as:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1056,8 +999,8 @@ L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda [(1
 \]</div>
 <p>Similarly to <em><strong>the Lasso</strong></em>, a discrete optimization technique needs to be applied to yield a solution for the coefficient estimates.</p>
 </div>
-<div class="section" id="id10">
-<h3>Pathwise Coordinate Descent<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>Pathwise Coordinate Descent<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>The algorithm is similar to that of <em><strong>the Lasso</strong></em>. Features should be should be standardized to have zero mean and unit variance. Coefficients should be updated as:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1074,20 +1017,20 @@ sign(\beta_j^*)(\left|\beta_j^*\right| - \lambda\alpha)_+
 \lambda_{\text{max}} = \frac{\max_l \left|\langle x_l, y \rangle \right|}{n\alpha}
 \]</div>
 </div>
-<div class="section" id="id11">
-<h3>Implementation in Python Using NumPy<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>Implementation in Python Using NumPy<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <script src="https://gist.github.com/wyattowalsh/3bfb1a924007f19a7191a17b6c4e52a0.js"></script>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>In practice it is recommended to use a cross-validation technique such as K-Fold cross-validation to choose the tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
 </div>
 </div>
-<div class="section" id="id12">
-<h3>Implementation in Python Using Scikit-Learn<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>Implementation in Python Using Scikit-Learn<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet">Plain Elastic Net Function</a></p></li>
 <li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html#sklearn.linear_model.ElasticNetCV">Elastic Net Cross-Validation Function</a></p></li>
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#elastic-net">Scikit-Learn User Guide Entry</a> <span class="bibtex" id="id13">[walsh_2021_3]</span></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#elastic-net">Scikit-Learn User Guide Entry</a> <span class="bibtex" id="id9">[walsh_2021_3]</span></p></li>
 </ul>
 </div>
 </div>

@@ -9,302 +9,407 @@
 
 <url>
   <loc>https://makeuseofdata.com/</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/mathematical_topics/calculus/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/mathematical_topics/linear_algebra/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/mathematical_topics/optimization/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/mathematical_topics/probability/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/mathematical_topics/statistics/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/ci_cd/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/data_structures/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/frameworks/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/frameworks/apache_hadoop/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/frameworks/apache_spark/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/frameworks/jupyter/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/frameworks/pytorch/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/frameworks/tensorflow/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/bash/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/c/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/c%2B%2B/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/excel/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/java/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/javascript/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/julia/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/matlab/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/python/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/r/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/rust/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/sas/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/scala/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/languages/sql/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/version_control/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/version_control/git/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/version_control/github/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/version_control/gitlab/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/programming/virtual_environments/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/data_collection/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/data_collection/databases/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/data_collection/databases/relational/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/data_collection/databases/non_relational/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/data_processing/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/data_processing/cleaning/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/data_processing/feature_engineering/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/data_processing/feature_selection/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/data_processing/imputation/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/visualization/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/visualization/python/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/visualization/python/matplotlib/gallery.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/visualization/python/plotly/gallery.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/visualization/python/seaborn/gallery.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/machine_learning_and_data_mining/classification/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/machine_learning_and_data_mining/clustering/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/machine_learning_and_data_mining/deep_learning/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/machine_learning_and_data_mining/dimensionality_reduction/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/machine_learning_and_data_mining/nlp/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/machine_learning_and_data_mining/regression/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/machine_learning_and_data_mining/reinforcement_learning/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/ann/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/cnn/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/decision_tree/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/discriminant_analysis/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/dnn/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/elastic_net/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/ensemble/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/glm/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/hierarchical_clustering/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/kmeans/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/knn/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/lasso/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/logistic/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/lstm/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/nn/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/ols/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/pca/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/ridge/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/rnn/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://makeuseofdata.com/machine_learning_and_data_mining/models/svm/index.html</loc>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/additional_topics/business_topics/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/additional_topics/eda/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/additional_topics/simulation/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/resources/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://makeuseofdata.com/index.html</loc>
-  <lastmod>2021-01-28T08:53:46+00:00</lastmod>
+  <lastmod>2021-01-29T04:41:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 

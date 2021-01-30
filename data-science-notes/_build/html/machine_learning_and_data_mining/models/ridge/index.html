@@ -500,11 +500,11 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../lstm/index.html">
-     Long short-erm memory (LSTM)
+     Long short-term memory (LSTM)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../neural_network/index.html">
+    <a class="reference internal" href="../nn/index.html">
      Neural Networks
     </a>
    </li>
@@ -665,8 +665,30 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
+  <a class="reference internal nav-link" href="#notes">
+   Notes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loss-function-and-optimization-problem">
+   Loss Function and Optimization Problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-estimator">
+   Model Estimator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proving-uniqueness-of-the-estimator">
+     Proving Uniqueness of the Estimator
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementation">
+   Implementation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -690,14 +712,79 @@
 <hr class="docutils" />
 <div class="section" id="suggested-prerequisites">
 <h2>Suggested Prerequisites<a class="headerlink" href="#suggested-prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://makeuseofdata.com/machine_learning_and_data_mining/regression/index.html#linear-regression-modeling">Linear Regression Modeling</a></p></li>
+<li><p><a class="reference external" href="https://makeuseofdata.com/machine_learning_and_data_mining/models/ols/index.html">Ordinary Least Squares</a></p></li>
+</ul>
 </div>
 <hr class="docutils" />
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Also known as <em><strong>Tikhonov Regularization</strong></em></p></li>
+<li><p>Helps to reduce <strong>overfitting</strong> by reducing model variance through the addition of <strong>shrinkage</strong> towards zero across all coefficients.</p></li>
+<li><p>Can be useful in times when <strong>high multicollinearity</strong> is found between predictors</p></li>
+</ul>
+</div>
+<div class="section" id="loss-function-and-optimization-problem">
+<h2>Loss Function and Optimization Problem<a class="headerlink" href="#loss-function-and-optimization-problem" title="Permalink to this headline">¶</a></h2>
+<p>For the case of <em><strong>Ridge Regression</strong></em>, the OLS loss function is modified by the addition of an <span class="math notranslate nohighlight">\(\mathbf{L}_2\)</span> penalty with an associated tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda\|\mathbf{\beta}\|_2^2 \: \: \: \text{ with tuning parameter $\lambda \geq 0$} 
+\]</div>
+<p>Using this function to formulate a <em>least-squares</em> optimization problem yields:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mathbf{\beta}} = \arg\min_{\mathbf{\beta}}  L(\mathbf{\beta}) = \arg\min_{\mathbf{\beta}} \frac{1}{2n} \|\mathbf{y}-\mathbf{X}\mathbf{\beta} \|_{2}^{2} + \lambda\|\mathbf{\beta}\|_2^2 
+\]</div>
+<p>Just like OLS, the <span class="math notranslate nohighlight">\(\frac{1}{2n}\)</span> term is added in order to simplify gradient solving (<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>) and allow objective function convergence to the expected value of model error by the <strong>Law of Large Numbers</strong> (<span class="math notranslate nohighlight">\(\frac{1}{n}\)</span>).</p>
+</div>
+<div class="section" id="model-estimator">
+<h2>Model Estimator<a class="headerlink" href="#model-estimator" title="Permalink to this headline">¶</a></h2>
+<p>By setting the gradient of the loss function equal to zero and solving for the coefficient vector, <span class="math notranslate nohighlight">\( \hat{\mathbf{ \beta }} \)</span>, the <strong>Ridge Estimator</strong> is found:</p>
+<div class="math notranslate nohighlight">
+\[
+{\hat {\beta }}=(\mathbf {X} ^{\mathsf {T}}\mathbf {X} +\lambda \mathbf {I} )^{-1}\mathbf {X} ^{\mathsf {T}}\mathbf {y}
+\]</div>
+<div class="section" id="proving-uniqueness-of-the-estimator">
+<h3>Proving Uniqueness of the Estimator<a class="headerlink" href="#proving-uniqueness-of-the-estimator" title="Permalink to this headline">¶</a></h3>
+<p>It turns out that the <strong>Ridge problem</strong> can be shown to be strongly convex with a <strong>positive definite</strong> associated <strong>Hessian</strong> matrix. This <strong>Hessian</strong> is found as:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{H} = 2\mathbf{X}^\mathbf{T}\mathbf{X} + 2 \lambda \mathbf {I}
+\]</div>
+<p>And to show its positive definiteness:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{\beta}^\mathbf{T} (\mathbf{X}^\mathbf{T}\mathbf{X} + \lambda \mathbf {I})\mathbf{\beta} = (\mathbf{X}\mathbf{\beta})\mathbf{X}\mathbf{\beta} + \lambda \mathbf{\beta}^\mathbf{T}\mathbf{\beta} = \|\mathbf{X}\mathbf{\beta}\|_2^2 + \lambda \|\mathbf{\beta}\|_2^2 \succ 0 \: \: \: \forall \:\:\:  \mathbf{\beta} \neq \mathbf{0}
+\]</div>
+<p>Thus, the <strong>Ridge estimator</strong> is the <em>unique</em> global minimizer to the <strong>Ridge Regression</strong> problem. <a class="bibtex reference internal" href="#cs-189-2020-note-2" id="id1">[cs_20]</a><a class="bibtex reference internal" href="#aswani-2021-note-8" id="id2">[Asw21]</a></p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">¶</a></h2>
+<div class="tabbed-set docutils">
+<input checked="checked" id="0b93dcf8-fa61-4bf4-bd69-f9b760afcdb7" name="3b249622-c343-44e9-8248-9a5ceaf80ea4" type="radio">
+</input><label class="tabbed-label" for="0b93dcf8-fa61-4bf4-bd69-f9b760afcdb7">
+Python</label><div class="tabbed-content docutils">
+<script src="https://gist.github.com/wyattowalsh/d213f0db32ac06cf49db5c84cc63d720.js"></script>
+</div>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="sources">
 <h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-machine_learning_and_data_mining/models/ridge/index-0"><dl class="citation">
+<dt class="bibtex label" id="cs-189-2020-note-2"><span class="brackets"><a class="fn-backref" href="#id1">cs_20</a></span></dt>
+<dd><p>Uc berkeley fall 2020 cs189 (introduction to machine learning) note 2. Sep 2020. URL: <a class="reference external" href="https://www.eecs189.org/static/notes/n2.pdf">https://www.eecs189.org/static/notes/n2.pdf</a>.</p>
+</dd>
+<dt class="bibtex label" id="aswani-2021-note-8"><span class="brackets"><a class="fn-backref" href="#id2">Asw21</a></span></dt>
+<dd><p>Anil Aswani. Ieor 165 – engineering statistics, quality control, and forecasting lecture notes 8. Jan 2021. URL: <a class="reference external" href="http://courses.ieor.berkeley.edu/ieor165/lecture_notes/ieor165_lec8.pdf">http://courses.ieor.berkeley.edu/ieor165/lecture_notes/ieor165_lec8.pdf</a>.</p>
+</dd>
+</dl>
+</p>
 <hr class="docutils" />
 <p>Contributions made by our wonderful GitHub Contributors:</p>
 </div>

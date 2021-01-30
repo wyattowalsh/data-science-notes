@@ -500,11 +500,11 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../models/lstm/index.html">
-     Long short-erm memory (LSTM)
+     Long short-term memory (LSTM)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../models/neural_network/index.html">
+    <a class="reference internal" href="../models/nn/index.html">
      Neural Networks
     </a>
    </li>
@@ -668,6 +668,13 @@
   <a class="reference internal nav-link" href="#overview">
    Overview
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-regression-modeling">
+     Linear Regression Modeling
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#models">
@@ -695,10 +702,30 @@
 <hr class="docutils" />
 <div class="section" id="suggested-prerequisites">
 <h2>Suggested Prerequisites<a class="headerlink" href="#suggested-prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://makeuseofdata/mathematical_topics/calculus/index.html">Calculus</a></p></li>
+<li><p><a class="reference external" href="https://makeuseofdata.com/mathematical_topics/linear_algebra/index.html">Linear Algebra</a></p></li>
+<li><p><a class="reference external" href="https://makeuseofdata.com/mathematical_topics/optimization/index.html">Optimization</a></p></li>
+</ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linear-regression-modeling">
+<h3>Linear Regression Modeling<a class="headerlink" href="#linear-regression-modeling" title="Permalink to this headline">¶</a></h3>
+<p>In this case, sample data is fit by a linear function as formalized by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+y_i = \beta_0 + \beta_1x_{i,1} + \beta_2x_{i,2} + \ldots + \beta_px_{i,p} + \epsilon_i \hspace{5pt} \forall \hspace{5pt} i \in \{1, \ldots, n\}\\
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> is the number of features, <span class="math notranslate nohighlight">\(n\)</span> is the number of samples and <span class="math notranslate nohighlight">\(\epsilon\)</span> is an error term with mean of zero and finite variance. Or in vector notation:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{y} = \mathbf{X}\mathbf{\beta} + \mathbf{\epsilon}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(y\)</span> is a response vector <span class="math notranslate nohighlight">\([y_1, y_2, ..., y_n]^\mathbf{T}\)</span> of length <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is a <span class="math notranslate nohighlight">\(n \times (p + 1)\)</span> <strong>design matrix</strong> of features <span class="math notranslate nohighlight">\([\mathbf{1}, \mathbf{x_1}, \mathbf{x_2}, ..., \mathbf{x_p}]\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{\beta}\)</span> is a length <span class="math notranslate nohighlight">\((p+1)\)</span> coefficient vector <span class="math notranslate nohighlight">\([\beta_0, \beta_1, \beta_2, ..., \beta_p]\)</span> with <span class="math notranslate nohighlight">\(\beta_0\)</span> an intercept term. This intercept term is included in the model through <strong>data augmentation</strong> of the column of <span class="math notranslate nohighlight">\(\mathbf{1}\)</span>s to the <strong>design matrix</strong>. When an intercept is not sought, this column can be omitted and <span class="math notranslate nohighlight">\(\mathbf{\beta}\)</span> is length <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<hr class="docutils" />
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="models">
