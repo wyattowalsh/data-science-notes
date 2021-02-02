@@ -2,18 +2,6 @@
 
 ---
 
-## Table of Contents
-
-- [Suggested Prerequisites](#Suggested-Prerequisites)
-
-- [Overview](#Overview)
-
-- [Basic Syntax](#Basic-Syntax)
-
-- [Sources](#Sources)
-
----
-
 ## Overview
 
 ---
@@ -24,6 +12,11 @@
 
 ## Sources
 
-```{bibliography} data-science-notes/programming/languages/julia/references.bib
-
+```{bibliography} references.bib
+:filter: docname in docnames
+:style: plain
 ```
+
+---
+
+Contributions made by our wonderful GitHub Contributors: 

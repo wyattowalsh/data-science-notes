@@ -654,11 +654,33 @@
   <a class="reference internal nav-link" href="#suggested-prerequisites">
    Suggested Prerequisites
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notes">
+     Notes:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loss-function-and-optimization-problem">
+     Loss Function and Optimization Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pathwise-coordinate-descent">
+     Pathwise Coordinate Descent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-in-python-using-numpy">
+     Implementation in Python Using NumPy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-in-python-using-scikit-learn">
+     Implementation in Python Using Scikit-Learn
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sources">
@@ -681,16 +703,93 @@
 <hr class="docutils" />
 <div class="section" id="suggested-prerequisites">
 <h2>Suggested Prerequisites<a class="headerlink" href="#suggested-prerequisites" title="Permalink to this headline">¶</a></h2>
-</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://makeuseofdata.com/machine_learning_and_data_mining/regression/index.html#linear-regression-modeling">Linear Regression Modeling</a></p></li>
+<li><p><a class="reference external" href="https://makeuseofdata.com/machine_learning_and_data_mining/models/ols/index.html">Ordinary Least Squares</a></p></li>
+<li><p><a class="reference external" href="https://makeuseofdata.com/machine_learning_and_data_mining/models/ridge/index.html">Ridge Regression</a></p></li>
+</ul>
 <hr class="docutils" />
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="notes">
+<h3>Notes:<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Compromise between <em><strong>Ridge Regression</strong></em> and <em><strong>the Lasso</strong></em></p></li>
+<li><p>Helps to reduce <strong>overfitting</strong> by bringing model coefficients towards zero and selectively to zero</p></li>
+<li><p>Arguably the most robust linear regularized method</p></li>
+</ul>
+</div>
+<div class="section" id="loss-function-and-optimization-problem">
+<h3>Loss Function and Optimization Problem<a class="headerlink" href="#loss-function-and-optimization-problem" title="Permalink to this headline">¶</a></h3>
+<p>The associated loss function for <em><strong>the Elastic Net</strong></em> modifies the OLS loss function through the addition of both an <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> penalties controlled by tuning parameters <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> respectively as:</p>
+<div class="math notranslate nohighlight">
+\[
+L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda [(1-\alpha)\frac{1}{2} \|\mathbf{\beta}\|_2^2 + \alpha \|\mathbf{\beta}\| ] \: \: \: \text{ with tuning parameters $\lambda \geq 0, 0 \leq \alpha \leq 1$  } 
+\]</div>
+<p>In this context, <span class="math notranslate nohighlight">\(\alpha\)</span> can be considered as the parameter controlling the ratio of <span class="math notranslate nohighlight">\(L_1\)</span> penalty and <span class="math notranslate nohighlight">\(\lambda\)</span> is the intensity of regularization to apply.</p>
+<p>Formulating the loss function as a <em>least-squares</em> optimization problem yields:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mathbf{\beta}} = \arg\min_{\mathbf{\beta}} L(\mathbf{\beta}) = \arg\min_{\mathbf{\beta}}  \frac{1}{2n}\|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda [(1-\alpha)\frac{1}{2} \|\mathbf{\beta}\|_2^2 + \alpha \|\mathbf{\beta}\| ]
+\]</div>
+<p>Similarly to <em><strong>the Lasso</strong></em>, a discrete optimization technique needs to be applied to yield a solution for the coefficient estimates.</p>
+</div>
+<div class="section" id="pathwise-coordinate-descent">
+<h3>Pathwise Coordinate Descent<a class="headerlink" href="#pathwise-coordinate-descent" title="Permalink to this headline">¶</a></h3>
+<p>The algorithm is similar to that of <em><strong>the Lasso</strong></em>. Features should be should be standardized to have zero mean and unit variance. Coefficients should be updated as:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_j = \frac{\mathbf{S}(\beta_j^*, \lambda\alpha)}{1 + \lambda(1-\alpha)}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> is the same soft-thresholding operator applied in the case of <em><strong>the Lasso</strong></em>:</p>
+<div class="math notranslate nohighlight">
+\[
+sign(\beta_j^*)(\left|\beta_j^*\right| - \lambda\alpha)_+ 
+\]</div>
+<p>Furthermore, if <em><strong>warm starts</strong></em> are to be utilized then <span class="math notranslate nohighlight">\(\lambda_{max}\)</span> can be found as:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\text{max}} = \frac{\max_l \left|\langle x_l, y \rangle \right|}{n\alpha}
+\]</div>
+</div>
+<div class="section" id="implementation-in-python-using-numpy">
+<h3>Implementation in Python Using NumPy<a class="headerlink" href="#implementation-in-python-using-numpy" title="Permalink to this headline">¶</a></h3>
+<script src="https://gist.github.com/wyattowalsh/3bfb1a924007f19a7191a17b6c4e52a0.js"></script>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In practice it is recommended to use a cross-validation technique such as K-Fold cross-validation to choose the tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</div>
+</div>
+<div class="section" id="implementation-in-python-using-scikit-learn">
+<h3>Implementation in Python Using Scikit-Learn<a class="headerlink" href="#implementation-in-python-using-scikit-learn" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet">Plain Elastic Net Function</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html#sklearn.linear_model.ElasticNetCV">Elastic Net Cross-Validation Function</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#elastic-net">Scikit-Learn User Guide Entry</a> <a class="bibtex reference internal" href="../lasso/index.html#friedman-hastie-tibshirani-2010" id="id1">[3]</a><a class="bibtex reference internal" href="../lasso/index.html#hastie-friedman-tibshirani-2009" id="id2">[4]</a><a class="bibtex reference internal" href="../ridge/index.html#aswani-2021-note-8" id="id3">[2]</a><a class="bibtex reference internal" href="../lasso/index.html#stanford-2006" id="id4">[1]</a><a class="bibtex reference internal" href="../lasso/index.html#hastie-friedman-tisbshirani-2017" id="id5">[5]</a></p></li>
+</ul>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="sources">
 <h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-machine_learning_and_data_mining/models/elastic_net/index-0"><dl class="citation">
+<dt class="bibtex label" id="stanford-2006"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dd><p>Regularization: ridge regression and the lasso. Nov 2006. URL: <a class="reference external" href="http://statweb.stanford.edu/~tibs/sta305files/Rudyregularization.pdf">http://statweb.stanford.edu/~tibs/sta305files/Rudyregularization.pdf</a>.</p>
+</dd>
+<dt class="bibtex label" id="aswani-2021-note-8"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>Anil Aswani. Ieor 165 – engineering statistics, quality control, and forecasting lecture notes 8. Jan 2021. URL: <a class="reference external" href="http://courses.ieor.berkeley.edu/ieor165/lecture_notes/ieor165_lec8.pdf">http://courses.ieor.berkeley.edu/ieor165/lecture_notes/ieor165_lec8.pdf</a>.</p>
+</dd>
+<dt class="bibtex label" id="friedman-hastie-tibshirani-2010"><span class="brackets"><a class="fn-backref" href="#id1">3</a></span></dt>
+<dd><p>Jerome Friedman, Trevor Hastie, and Rob Tibshirani. Regularization paths for generalized linear models via coordinate descent. Aug 2010. URL: <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2929880/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2929880/</a>.</p>
+</dd>
+<dt class="bibtex label" id="hastie-friedman-tibshirani-2009"><span class="brackets"><a class="fn-backref" href="#id2">4</a></span></dt>
+<dd><p>Trevor Hastie, Jerome Friedman, and Rob Tibshirani. Fast regularization paths via coordinate descent talk. 2009. URL: <a class="reference external" href="https://web.stanford.edu/~hastie/TALKS/glmnet.pdf">https://web.stanford.edu/~hastie/TALKS/glmnet.pdf</a>.</p>
+</dd>
+<dt class="bibtex label" id="hastie-friedman-tisbshirani-2017"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dd><p>Trevor Hastie, Jerome Friedman, and Robert Tisbshirani. <em>The Elements of statistical learning: data mining, inference, and prediction</em>. Springer, 2017. URL: <a class="reference external" href="https://web.stanford.edu/~hastie/ElemStatLearn//printings/ESLII_print12_toc.pdf">https://web.stanford.edu/~hastie/ElemStatLearn//printings/ESLII_print12_toc.pdf</a>.</p>
+</dd>
+</dl>
+</p>
 <hr class="docutils" />
-<p>Contributions made by our wonderful GitHub Contributors:</p>
+<p>Contributions made by our wonderful GitHub Contributors: <a class="reference external" href="https://github.com/wyattowalsh">&#64;wyattowalsh</a></p>
 </div>
 </div>
 

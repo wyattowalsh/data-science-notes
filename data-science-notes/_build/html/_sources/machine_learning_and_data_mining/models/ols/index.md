@@ -66,6 +66,7 @@ Thus, by second-order convexity conditions, the OLS loss function is convex impl
 
 ```{bibliography} references.bib
 :filter: docname in docnames
+:style: plain
 ```
 
 ---

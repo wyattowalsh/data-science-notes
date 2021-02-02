@@ -1,7 +1,5 @@
 # Data Imputation
 
-
-
 ---
 
 ## Suggested Prerequisites
@@ -14,8 +12,9 @@
 
 ## Sources
 
-```{bibliography}
+```{bibliography} references.bib
 :filter: docname in docnames
+:style: plain
 ```
 
 ---

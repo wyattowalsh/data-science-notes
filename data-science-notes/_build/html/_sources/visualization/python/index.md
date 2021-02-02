@@ -34,10 +34,13 @@ The gallery can be found [**here**](https://makeuseofdata.com/visualization/plot
 
 The gallery can found [**here**](https://makeuseofdata.com/visualization/seaborn/gallery.html)
 
+---
+
 ## Sources
 
-```{bibliography}
+```{bibliography} references.bib
 :filter: docname in docnames
+:style: plain
 ```
 
 ---

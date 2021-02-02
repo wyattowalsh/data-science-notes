@@ -75,6 +75,7 @@ Thus, the **Ridge estimator** is the *unique* global minimizer to the **Ridge Re
 
 ```{bibliography} references.bib
 :filter: docname in docnames
+:style: plain
 ```
 
 ---

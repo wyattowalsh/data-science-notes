@@ -2,18 +2,6 @@
 
 ---
 
-## Table of Contents
-
-- [Suggested Prerequisites](#Suggested-Prerequisites)
-
-- [Overview](#Overview)
-
-- [Basic Syntax](#Basic-Syntax)
-
-- [Sources](#Sources)
-
----
-
 ## Overview
 
 ---
@@ -26,6 +14,7 @@
 
 ```{bibliography} references.bib
 :filter: docname in docnames
+:style: plain
 ```
 
 ---

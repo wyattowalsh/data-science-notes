@@ -1,6 +1,5 @@
 # Languages
 
-
 ---
 
 ## Table of Contents
@@ -11,6 +10,7 @@
 
 ```{bibliography} references.bib
 :filter: docname in docnames
+:style: plain
 ```
 
 ---

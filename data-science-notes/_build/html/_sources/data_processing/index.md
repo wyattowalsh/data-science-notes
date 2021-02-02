@@ -36,8 +36,9 @@ Read more [**here**](https://makeuseofdata.com/data_processing/data_imputation/i
 
 ## Sources
 
-```{bibliography}
+```{bibliography} references.bib
 :filter: docname in docnames
+:style: plain
 ```
 
 ---

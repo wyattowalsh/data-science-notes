@@ -656,9 +656,48 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
+  <a class="reference internal nav-link" href="#notes">
+   Notes
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loss-function-and-optimization-problem">
+   Loss Function and Optimization Problem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pathwise-coordinate-descent">
+     Pathwise Coordinate Descent
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#naive-updates">
+       Naive Updates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#covariance-updates">
+       Covariance Updates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#warm-starts">
+       Warm Starts
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-in-python-using-numpy">
+     Implementation in Python Using NumPy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-in-python-using-scikit-learn">
+     Implementation in Python Using Scikit-Learn
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sources">
@@ -681,16 +720,127 @@
 <hr class="docutils" />
 <div class="section" id="suggested-prerequisites">
 <h2>Suggested Prerequisites<a class="headerlink" href="#suggested-prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://makeuseofdata.com/machine_learning_and_data_mining/regression/index.html#linear-regression-modeling">Linear Regression Modeling</a></p></li>
+<li><p><a class="reference external" href="https://makeuseofdata.com/machine_learning_and_data_mining/models/ols/index.html">Ordinary Least Squares</a></p></li>
+</ul>
 </div>
 <hr class="docutils" />
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The acronym stands for <em><strong>Least Absolute Shrinkage and Selection Operator</strong></em></p></li>
+<li><p>Helps to reduce <strong>overfitting</strong> by reducing model variance through the addition of <strong>shrinkage</strong> to zero for selective coefficients.</p></li>
+<li><p>Can be useful in <strong>feature selection</strong> tasks due to its automated feature selection property</p></li>
+</ul>
+</div>
+<div class="section" id="loss-function-and-optimization-problem">
+<h2>Loss Function and Optimization Problem<a class="headerlink" href="#loss-function-and-optimization-problem" title="Permalink to this headline">¶</a></h2>
+<p>The associated loss function for <strong>the Lasso</strong> modifies the OLS loss function through the addition of an <span class="math notranslate nohighlight">\(\mathbf{L}_1\)</span> penalty controlled by a tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+L(\mathbf{\beta}) =  \|\mathbf{y} - \mathbf{X}\mathbf{\beta}\|_2^2 + \lambda\|\mathbf{\beta}\|_1 \: \: \: \text{ with tuning parameter $\lambda \geq 0$} 
+\]</div>
+<p>Using this function to formulate a <em>least-squares</em> optimization problem yields:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mathbf{\beta}} = \arg\min_{\mathbf{\beta}}  L(\mathbf{\beta}) = \arg\min_{\mathbf{\beta}} \frac{1}{2n} \|\mathbf{y}-\mathbf{X}\mathbf{\beta} \|_{2}^{2} + \lambda\|\mathbf{\beta}\|_1
+\]</div>
+<p>No closed-form solution exists in this case since the addition of the <span class="math notranslate nohighlight">\(\mathbf{L}_1\)</span> penalty adds a non-smooth, absolute component to the loss function rendering it no longer continuously differentiable.  Thus, a discrete optimization technique is required to solve for model coefficient estimates. Many algorithms can be utilized for this purpose such as <em><strong>LARS</strong></em> (Least Angle Regression) and <em><strong>Forwards Stepwise Regression</strong></em>. Coordinate Descent seems to be the most favored algorithm currently and used in the popular packages <em><strong>Scikit-Learn</strong></em> in Python and <em><strong>GLMNET</strong></em> in R.</p>
+<div class="section" id="pathwise-coordinate-descent">
+<h3>Pathwise Coordinate Descent<a class="headerlink" href="#pathwise-coordinate-descent" title="Permalink to this headline">¶</a></h3>
+<p>Here, all features should be standardized to have zero mean and unit variance. A <span class="math notranslate nohighlight">\(p+1\)</span> length coefficient vector is then initialized to zero. Cycles are run across all coefficients until convergence when the values stabilize within a certain tolerance. For every cycle, across each coefficient, a coefficient update is found.</p>
+<p>The simplest form of update calculates the simple least-squares coefficient value using the partial residuals across all other features in the design matrix and subsequently applies the soft-thresholding operator with the tuning parameter penalty as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\beta_j = \mathbf{S}(\beta_j^*, \lambda) = sign(\beta_j^*)(\left|\beta_j^*\right| - \lambda)_+ =
+ \begin{cases} 
+     \beta_j^* - \lambda &amp; \beta_j^* &gt; 0 \text{ and } \lambda &lt;  \left|\beta_j^*\right|\\
+     \beta_j^* + \lambda &amp; \beta_j^* &gt; 0 \text{ and } \lambda &lt; \left|\beta_j^*\right| \\
+     0 &amp; \lambda \geq  \left|\beta_j^*\right|
+  \end{cases}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> is the soft-thresholding operator and <span class="math notranslate nohighlight">\(\beta_j^*\)</span> is the update as calculated by:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_j^* = \frac{1}{n}\sum_{i=1}^{n} x_{i, j}r_{i, j}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_{i,j}\)</span> is the partial residuals across as found by:</p>
+<div class="math notranslate nohighlight">
+\[
+r_{i,j} = y_i - \sum_{k \neq j} x_{i, k}\beta_k
+\]</div>
+<div class="section" id="naive-updates">
+<h4>Naive Updates<a class="headerlink" href="#naive-updates" title="Permalink to this headline">¶</a></h4>
+<p>Improved efficiency can be found by updated via:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_j^* = \frac{1}{n}\sum_{i=1}^{n} x_{i, j}r_i + \beta_j\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_i\)</span> is the current model residual for all samples, <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</div>
+<div class="section" id="covariance-updates">
+<h4>Covariance Updates<a class="headerlink" href="#covariance-updates" title="Permalink to this headline">¶</a></h4>
+<p>When the number of samples is much greater than the number of features (<span class="math notranslate nohighlight">\(n \gg p\)</span>) further efficiency boosts can be gained by replacing the first term of the <em><strong>Naive update</strong></em> above as:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^{n} x_{i, j}r_i = \langle x_j, y \rangle - \sum_{k: \left|\beta_k\right| &gt; 0} \langle x_j, x_k \rangle \beta_k
+\]</div>
+</div>
+<div class="section" id="warm-starts">
+<h4>Warm Starts<a class="headerlink" href="#warm-starts" title="Permalink to this headline">¶</a></h4>
+<p>It has been shown that fitting a sequence of models using the solution of one as the starting coefficient values of the next can be faster than a single fit for some small <span class="math notranslate nohighlight">\(\lambda\)</span> values. This sequence should begin at <span class="math notranslate nohighlight">\(\lambda_{max}\)</span>, the smallest value of the tuning parameter for which all coefficient estimates are brought to zero, and end at <span class="math notranslate nohighlight">\(\epsilon \cdot \lambda_{max}\)</span> with around 100 values on a log scale where <span class="math notranslate nohighlight">\(\epsilon\)</span> is typically 0.001:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\text{max}} \rightarrow \lambda_{\text{min}} = \epsilon \cdot \lambda_{\text{max}}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\lambda_{max}\)</span> can be found by finding the minimum value that will bring the estimates for all model coefficients to zero. Thus any values greater than this value will result in total sparsity of the coefficient vector. This value can be found as:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\text{max}} = \frac{\max_l \left|\langle x_l, y \rangle \right|}{n}
+\]</div>
+<p>When <em><strong>warm starts</strong></em> are utilized the Coordinate Descent algorithm is referred to as <em><strong>Pathwise Coordinate Descent</strong></em>. <a class="bibtex reference internal" href="#friedman-hastie-tibshirani-2010" id="id1">[3]</a><a class="bibtex reference internal" href="#hastie-friedman-tibshirani-2009" id="id2">[4]</a><a class="bibtex reference internal" href="../ridge/index.html#aswani-2021-note-8" id="id3">[2]</a><a class="bibtex reference internal" href="#stanford-2006" id="id4">[1]</a><a class="bibtex reference internal" href="#hastie-friedman-tisbshirani-2017" id="id5">[5]</a></p>
+</div>
+</div>
+<div class="section" id="implementation-in-python-using-numpy">
+<h3>Implementation in Python Using NumPy<a class="headerlink" href="#implementation-in-python-using-numpy" title="Permalink to this headline">¶</a></h3>
+<script src="https://gist.github.com/wyattowalsh/6a95b1c9ad6118b196336cffd5de4f72.js"></script>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In practice it is recommended to use a cross-validation technique such as K-Fold cross-validation to choose the tuning parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</div>
+</div>
+<div class="section" id="implementation-in-python-using-scikit-learn">
+<h3>Implementation in Python Using Scikit-Learn<a class="headerlink" href="#implementation-in-python-using-scikit-learn" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html">Plain Lasso Function Documentation</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html#sklearn.linear_model.LassoCV">Lasso Cross-Validation Function Documentation</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#lasso">Scikit-Learn User Guide Entry</a></p></li>
+</ul>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="sources">
 <h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-machine_learning_and_data_mining/models/lasso/index-0"><dl class="citation">
+<dt class="bibtex label" id="stanford-2006"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dd><p>Regularization: ridge regression and the lasso. Nov 2006. URL: <a class="reference external" href="http://statweb.stanford.edu/~tibs/sta305files/Rudyregularization.pdf">http://statweb.stanford.edu/~tibs/sta305files/Rudyregularization.pdf</a>.</p>
+</dd>
+<dt class="bibtex label" id="aswani-2021-note-8"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>Anil Aswani. Ieor 165 – engineering statistics, quality control, and forecasting lecture notes 8. Jan 2021. URL: <a class="reference external" href="http://courses.ieor.berkeley.edu/ieor165/lecture_notes/ieor165_lec8.pdf">http://courses.ieor.berkeley.edu/ieor165/lecture_notes/ieor165_lec8.pdf</a>.</p>
+</dd>
+<dt class="bibtex label" id="friedman-hastie-tibshirani-2010"><span class="brackets"><a class="fn-backref" href="#id1">3</a></span></dt>
+<dd><p>Jerome Friedman, Trevor Hastie, and Rob Tibshirani. Regularization paths for generalized linear models via coordinate descent. Aug 2010. URL: <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2929880/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2929880/</a>.</p>
+</dd>
+<dt class="bibtex label" id="hastie-friedman-tibshirani-2009"><span class="brackets"><a class="fn-backref" href="#id2">4</a></span></dt>
+<dd><p>Trevor Hastie, Jerome Friedman, and Rob Tibshirani. Fast regularization paths via coordinate descent talk. 2009. URL: <a class="reference external" href="https://web.stanford.edu/~hastie/TALKS/glmnet.pdf">https://web.stanford.edu/~hastie/TALKS/glmnet.pdf</a>.</p>
+</dd>
+<dt class="bibtex label" id="hastie-friedman-tisbshirani-2017"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dd><p>Trevor Hastie, Jerome Friedman, and Robert Tisbshirani. <em>The Elements of statistical learning: data mining, inference, and prediction</em>. Springer, 2017. URL: <a class="reference external" href="https://web.stanford.edu/~hastie/ElemStatLearn//printings/ESLII_print12_toc.pdf">https://web.stanford.edu/~hastie/ElemStatLearn//printings/ESLII_print12_toc.pdf</a>.</p>
+</dd>
+</dl>
+</p>
 <hr class="docutils" />
-<p>Contributions made by our wonderful GitHub Contributors:</p>
+<p>Contributions made by our wonderful GitHub Contributors: <a class="reference external" href="https://github.com/wyattowalsh">&#64;wyattowalsh</a></p>
 </div>
 </div>
 

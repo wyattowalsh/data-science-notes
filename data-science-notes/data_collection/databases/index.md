@@ -22,8 +22,9 @@ Read more [**here**](https://makeuseofdata/data_collection/databases/non_relatio
 
 ## Sources
 
-```{bibliography}
+```{bibliography} references.bib
 :filter: docname in docnames
+:style: plain
 ```
 
 ---
