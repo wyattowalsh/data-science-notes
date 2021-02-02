@@ -56,10 +56,10 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="../../_static/android-chrome-512x512.png"/>
+    <link rel="shortcut icon" href="../../_static/ds-512x512.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Git" href="git/index.html" />
+    <link rel="next" title="Virtual Environments" href="../virtual_environments/index.html" />
     <link rel="prev" title="SQL" href="../languages/sql/index.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -79,7 +79,7 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../../index.html">
   
-  <img src="../../_static/android-chrome-512x512.png" class="logo" alt="logo">
+  <img src="../../_static/ds-512x512.png" class="logo" alt="logo">
   
   
   <h1 class="site-logo" id="site-title">Data Science Notes</h1>
@@ -258,29 +258,10 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Version Control
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="git/index.html">
-     Git
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="github/index.html">
-     GitHub
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gitlab/index.html">
-     GitLab
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../virtual_environments/index.html">
@@ -660,11 +641,6 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#table-of-contents">
-   Table of Contents
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#suggested-prerequisites">
    Suggested Prerequisites
   </a>
@@ -673,6 +649,40 @@
   <a class="reference internal nav-link" href="#overview">
    Overview
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#systems">
+   Systems
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#git">
+     Git
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apache-subversion">
+     Apache Subversion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hosting-platforms">
+   Hosting Platforms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#github">
+     GitHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gitlab">
+     GitLab
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sources">
@@ -693,18 +703,6 @@
   <div class="section" id="version-control">
 <h1>Version Control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
-<div class="section" id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="#Suggested-Prerequisites">Suggested Prerequisites</a></p></li>
-<li><p><a class="reference external" href="#Overview">Overview</a></p></li>
-<li><p><a class="reference external" href="https://makeuseofdata.com/programming/version_control/git/index.html">Git</a></p></li>
-<li><p><a class="reference external" href="https://makeuseofdata.com/programming/version_control/github/index.html">GitHub</a></p></li>
-<li><p><a class="reference external" href="https://makeuseofdata.com/programming/version_control/gitlab/index.html">GitLab</a></p></li>
-<li><p><a class="reference external" href="#Sources">Sources</a></p></li>
-</ul>
-</div>
-<hr class="docutils" />
 <div class="section" id="suggested-prerequisites">
 <h2>Suggested Prerequisites<a class="headerlink" href="#suggested-prerequisites" title="Permalink to this headline">¶</a></h2>
 </div>
@@ -713,13 +711,31 @@
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 </div>
 <hr class="docutils" />
+<div class="section" id="systems">
+<h2>Systems<a class="headerlink" href="#systems" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="git">
+<h3>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="apache-subversion">
+<h3>Apache Subversion<a class="headerlink" href="#apache-subversion" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="hosting-platforms">
+<h2>Hosting Platforms<a class="headerlink" href="#hosting-platforms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="github">
+<h3>GitHub<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="gitlab">
+<h3>GitLab<a class="headerlink" href="#gitlab" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="sources">
 <h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
 <p id="bibtex-bibliography-programming/version_control/index-0"></p>
 <hr class="docutils" />
 <p>Contributions made by our wonderful GitHub Contributors:</p>
-<div class="toctree-wrapper compound">
-</div>
 </div>
 </div>
 
@@ -752,7 +768,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="../languages/sql/index.html" title="previous page">SQL</a>
-    <a class='right-next' id="next-link" href="git/index.html" title="next page">Git</a>
+    <a class='right-next' id="next-link" href="../virtual_environments/index.html" title="next page">Virtual Environments</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

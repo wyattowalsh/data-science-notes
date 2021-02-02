@@ -1,4 +1,4 @@
-# Version Control
+# Application Programming Interfaces (APIs)
 
 ---
 
@@ -7,22 +7,6 @@
 ---
 
 ## Overview
-
----
-
-## Systems
-
-### Git
-
-### Apache Subversion
-
----
-
-## Hosting Platforms
-
-### GitHub
-
-### GitLab
 
 ---
 
