@@ -10,6 +10,8 @@
 
 - [Ridge Regression](https://makeuseofdata.com/machine_learning_and_data_mining/models/ridge/index.html)
 
+- [The Lasso](https://makeuseofdata.com/machine_learning_and_data_mining/models/lasso/index.html)
+
 ---
 
 ### Notes:
