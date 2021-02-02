@@ -102,6 +102,7 @@
 - part: Addional Topics
   chapters:
   - file: additional_topics/business_topics/index
+  - file: additional_topics/cloud/index
   - file: additional_topics/eda/index
   - file: additional_topics/simulation/index
 
