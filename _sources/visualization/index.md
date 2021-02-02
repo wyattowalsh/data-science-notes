@@ -18,8 +18,9 @@ The gallery can be found [**here**](https://makeuseofdata.com/visualization/pyth
 
 ## Sources
 
-```{bibliography}
+```{bibliography} references.bib
 :filter: docname in docnames
+:style: plain
 ```
 
 ---

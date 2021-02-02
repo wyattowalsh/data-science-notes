@@ -46,8 +46,9 @@ Probability of an event must be greater than or equal to zero, probability of th
 
 ## Sources
 
-```{bibliography}
+```{bibliography} references.bib
 :filter: docname in docnames
+:style: plain
 ```
 
 ---
