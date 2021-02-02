@@ -42,7 +42,7 @@
 - part: Data Collection
   chapters:
   - file: data_collection/index
-  - file: data_collectin/apis/index
+  - file: data_collection/apis/index
   - file: data_collection/databases/index
     sections:
     - file: data_collection/databases/relational/index
