@@ -4,7 +4,7 @@
 
 ## Suggested Prerequisites
 
-- [Statistics](html://makeuseofdata.com/mathematical_topics/statistics/index.html)
+- [Statistics](https://makeuseofdata.com/mathematical_topics/statistics/index.html)
 
 ---
 

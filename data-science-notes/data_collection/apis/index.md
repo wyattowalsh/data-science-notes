@@ -1,14 +1,4 @@
-# GitHub
-
----
-
-## Table of Contents
-
-- [Suggested Prerequisites](#Suggested-Prerequisites)
-
-- [Overview](#Overview)
-
-- [Sources](#Sources)
+# Application Programming Interfaces (APIs)
 
 ---
 

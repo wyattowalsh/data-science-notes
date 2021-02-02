@@ -2,27 +2,27 @@
 
 ---
 
-## Table of Contents
-
-- [Suggested Prerequisites](#Suggested-Prerequisites)
-
-- [Overview](#Overview)
-
-- [Git](https://makeuseofdata.com/programming/version_control/git/index.html)
-
-- [GitHub](https://makeuseofdata.com/programming/version_control/github/index.html)
-
-- [GitLab](https://makeuseofdata.com/programming/version_control/gitlab/index.html)
-
-- [Sources](#Sources)
-
----
-
 ## Suggested Prerequisites
 
 ---
 
 ## Overview
+
+---
+
+## Systems
+
+### Git
+
+### Apache Subversion
+
+---
+
+## Hosting Platforms
+
+### GitHub
+
+### GitLab
 
 ---
 

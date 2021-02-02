@@ -37,15 +37,12 @@
     - file: programming/languages/scala/index
     - file: programming/languages/sql/index
   - file: programming/version_control/index
-    sections:
-    - file: programming/version_control/git/index
-    - file: programming/version_control/github/index
-    - file: programming/version_control/gitlab/index
   - file: programming/virtual_environments/index
       
 - part: Data Collection
   chapters:
   - file: data_collection/index
+  - file: data_collectin/apis/index
   - file: data_collection/databases/index
     sections:
     - file: data_collection/databases/relational/index
