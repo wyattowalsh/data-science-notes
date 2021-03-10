@@ -9,7 +9,7 @@ If you a *data science* related idea for content feel free to use `issues` or `d
 
 ## Add Content
 
-As an *open-source* project, ***Data Science Notes*** is built on community contributions, so thank for considering to add your thoughts to the collection!
+As an *open-source* project, ***Data Science Notes*** is built on community contributions, so thank you for considering to add your thoughts to the collection!
 
 Please see [**here**](FORMATTING.md) for formatting and content guidelines. 
 
