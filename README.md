@@ -10,7 +10,7 @@ The first project of this website is building a robust collection of notes acros
 
 Check out the [`issues`](https://github.com/wyattowalsh/data-science-notes/issues) tab to see where you can help out! Right now, basics across the different subjects are being added, but anything on the topic of *data science* is welcome!
 
-The [`discussions`](https://github.com/wyattowalsh/data-science-notes/discussions) tab has a few threads that could be interesting to check out. This note project as well as the greater MakeUseofData project are quite open-ended so creative suggestions for possible content are warlmly welcomed.
+The [`discussions`](https://github.com/wyattowalsh/data-science-notes/discussions) tab has a few threads that could be interesting to check out. This note project as well as the greater MakeUseofData project are quite open-ended so creative suggestions for possible content are warmly welcomed.
 
 
 ![](site_preview.gif)
