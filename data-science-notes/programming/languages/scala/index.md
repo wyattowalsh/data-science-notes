@@ -3,8 +3,8 @@
 ---
 
 ## Overview
-Scala is statically typed modern programming language. Scala allows for _both_ object-oriented and functional programming (it is **multi-paradigm**). Scala was created with the purpose of taking a concise, elegant, and type-safe approach to common programming patterns. Scala is used is many different application settings, including [Spark](https://makeuseofdata.com/programming/frameworks/apache_spark/index.html) and for Web Development. Like many other languages, Scala interoperates with other languages, specifically [Java](https://makeuseofdata.com/programming/languages/java/index.html). {cite}`scala_into`
 ---
+Scala is statically typed modern programming language. Scala allows for _both_ object-oriented and functional programming (it is **multi-paradigm**). Scala was created with the purpose of taking a concise, elegant, and type-safe approach to common programming patterns. Scala is used is many different application settings, including [Spark](https://makeuseofdata.com/programming/frameworks/apache_spark/index.html) and for Web Development. Like many other languages, Scala interoperates with other languages, specifically [Java](https://makeuseofdata.com/programming/languages/java/index.html). {cite}`scala_into`
 
 ## Basic Syntax
 ### Variable Types
