@@ -5,7 +5,7 @@ helps, and credit will always be given. Read below for how to contribute.
 
 ## Suggest Content
 
-If you a *data science* related idea for content feel free to use `issues` or `discussions`. We'd love to hear your ideas!
+If you have a *data science* related idea for content feel free to use `issues` or `discussions`. We'd love to hear your ideas!
 
 ## Add Content
 
