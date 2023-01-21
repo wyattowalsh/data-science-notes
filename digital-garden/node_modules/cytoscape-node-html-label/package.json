@@ -1,0 +1,61 @@
+{
+  "name": "cytoscape-node-html-label",
+  "version": "1.2.2",
+  "description": "labels for cytoscape nodes",
+  "author": "Kalugin Sergey <kalugin.perm@gmail.com> (https://github.com/kaluginserg)",
+  "main": "./dist/cytoscape-node-html-label.js",
+  "spm": {
+    "main": "./dist/cytoscape-node-html-label.js"
+  },
+  "scripts": {
+    "test": "gulp test",
+    "test-firefox": "TEST_ON_FIREFOX=true gulp test",
+    "build": "tsc --declaration && gulp min",
+    "lint": "eslint src --ext .ts",
+    "start": "tsc --watch --declaration"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaluginserg/cytoscape-node-html-label.git"
+  },
+  "keywords": [
+    "cytoscape",
+    "cytoscape-extension",
+    "cytoscape-labels",
+    "cytoscape html label"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaluginserg/cytoscape-node-html-label/issues"
+  },
+  "homepage": "https://github.com/kaluginserg/cytoscape-node-html-label",
+  "devDependencies": {
+    "@types/cytoscape": "^3.14.11",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.18.0",
+    "gulp": "^4.0.2",
+    "gulp-bump": "^3.2.0",
+    "gulp-git": "^2.10.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-tag-version": "^1.3.1",
+    "gulp-uglify": "^3.0.2",
+    "jasmine": "^2.7.0",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-firefox-launcher": "^1.0.4",
+    "typescript": "^4.1.3"
+  },
+  "peerDependencies": {
+    "@types/cytoscape": "^3.1.0",
+    "cytoscape": "^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/cytoscape": {
+      "optional": true
+    }
+  },
+  "dependencies": {}
+}

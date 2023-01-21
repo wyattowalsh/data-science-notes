@@ -1,0 +1,11 @@
+{
+	"package": "grunt-doctoc",
+	"description": "Adds/updates TOC of README.md",
+	"config": {
+		"options": {
+			"header": "## Table of contents"
+		},
+		"readme": {}
+	},
+	"alias": "toc"
+}

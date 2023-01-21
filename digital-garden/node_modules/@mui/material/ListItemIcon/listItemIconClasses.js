@@ -1,0 +1,6 @@
+import { generateUtilityClass, generateUtilityClasses } from '@mui/base';
+export function getListItemIconUtilityClass(slot) {
+  return generateUtilityClass('MuiListItemIcon', slot);
+}
+const listItemIconClasses = generateUtilityClasses('MuiListItemIcon', ['root', 'alignItemsFlexStart']);
+export default listItemIconClasses;

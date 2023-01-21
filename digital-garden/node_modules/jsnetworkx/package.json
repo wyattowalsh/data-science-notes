@@ -1,0 +1,73 @@
+{
+  "name": "jsnetworkx",
+  "version": "0.3.4",
+  "description": "A graph processing and visualization library for JavaScript (port of NetworkX for Python).",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "jsnetworkx",
+    "graph",
+    "visualization",
+    "science"
+  ],
+  "homepage": "http://felix-kling.de/JSNetworkX/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fkling/JSNetworkX.git"
+  },
+  "bugs": "https://github.com/fkling/JSNetworkX/issues",
+  "author": {
+    "name": "Felix Kling",
+    "email": "felix.kling@gmx.net",
+    "url": "http://jsnetworkx.org/"
+  },
+  "main": "node/index.js",
+  "dependencies": {
+    "babel-runtime": "^5",
+    "lodash": "^3.3.1",
+    "through": "^2.3.6",
+    "tiny-sprintf": "^0.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^5",
+    "babel-eslint": "^3",
+    "browserify": "^11.0.0",
+    "chai": "^3.1.0",
+    "chai-as-promised": "^5.1.0",
+    "chai-checkmark": "^1.0.1",
+    "chai-members-deep": "^1.1.0",
+    "commoner": "^0.10.1",
+    "d3": "^3.5.3",
+    "eslint": "^0.19.0",
+    "istanbul": "^0.3.5",
+    "mocha": "^2.0.1",
+    "sinon": "^1.11.1",
+    "source-map-support": "^0.3.2",
+    "uglify-js": "^2.4.16",
+    "watchify": "^3.3.0"
+  },
+  "browser": {
+    "./node/_internals/delegate.js": "./node/_internals/delegateToWorker.js",
+    "./src/_internals/delegate.js": "./src/_internals/delegateToWorker.js"
+  },
+  "browserify": {
+    "transform": [
+      "./transforms/replace"
+    ]
+  },
+  "scripts": {
+    "prepublish": "npm run build:node",
+    "clean": "rm -rf node/ jsnetworkx.js jsnetworkx-dev.js",
+    "build:node": "rm -rf node/ && node scripts/build-node.js src/ node/",
+    "build:node:dev": "rm -rf node/ && node scripts/build-node.js --dev src/ node/",
+    "watch:node": "npm run build:node:dev -- -w",
+    "build:browser": "(export JSNETWORKX_BUNDLE=jsnetworkx.js; npm run build:node && rm -f $JSNETWORKX_BUNDLE && browserify node/browser.js -s jsnx | uglifyjs -cmo $JSNETWORKX_BUNDLE)",
+    "build:browser:dev": "(export JSNETWORKX_BUNDLE=jsnetworkx-dev.js; npm run build:node:dev && rm -f $JSNETWORKX_BUNDLE && NODE_ENV=dev browserify node/browser.js -ds jsnx > $JSNETWORKX_BUNDLE)",
+    "watch:browser": "(export JSNETWORKX_BUNDLE=jsnetworkx-dev.js; rm -f $JSNETWORKX_BUNDLE && NODE_ENV=dev watchify src/browser.js -t ./transforms/es7 -vds jsnx -o $JSNETWORKX_BUNDLE)",
+    "test": "npm run build:node:dev && npm run test:fast",
+    "test:fast": "mocha --ui exports -R progress -r './scripts/setup-testenv.js' `find node/ -name *-test.js`",
+    "watch:test": "npm test -- -b -w",
+    "cover": "npm run build:node && nom run cover:fast",
+    "cover:fast": "istanbul cover _mocha -x '**/__tests__/**' -x 'scripts/*' -x 'node/drawing/*' -- --ui exports -R progress -r './scripts/setup-testenv.js' `find node/ -name *-test.js`",
+    "lint": "eslint src/"
+  }
+}

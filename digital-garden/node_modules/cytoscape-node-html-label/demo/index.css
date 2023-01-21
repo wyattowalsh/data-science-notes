@@ -1,0 +1,68 @@
+body {
+    font-family: helvetica neue, helvetica, liberation sans, arial, sans-serif;
+    font-size: 14px;
+}
+
+.demo-wrap {
+    position: relative;
+    height: 600px;
+    border: 1px solid
+}
+
+#cy, #cy2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+}
+
+h1 {
+    opacity: 0.5;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.cy-title {
+    text-align: center;
+    font-size: 13px;
+    width: 130px;
+}
+
+.cy-title__name {
+    color: #000;
+    font-size: 0.85em;
+    line-height: 1em;
+    margin-bottom: 0.4em;
+    text-transform: capitalize;
+}
+
+.cy-title__info {
+    color: #9c9c9c;
+    font-size: 0.9em;
+    line-height: 0.9em;
+    margin-bottom: 0.5em;
+}
+
+.cy-title__main {
+    color: #2b2b2b;
+    font-size: 1.1em;
+    background: rgba(253, 255, 128, 0.63);
+    text-transform: capitalize;
+    margin-bottom: 0.4em;
+}
+
+.cy-title__none {
+    color: rgba(78, 78, 78, 0.9);
+    font-size: 1.1em;
+    text-transform: capitalize;
+    font-style: italic;
+    margin-top: 0.4em;
+    text-decoration: line-through;
+}

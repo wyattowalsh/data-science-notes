@@ -1,0 +1,43 @@
+
+body {
+    font-family: helvetica neue, helvetica, liberation sans, arial, sans-serif;
+    font-size: 14px;
+}
+
+#cy {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+}
+
+h1 {
+    opacity: 0.5;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.cy-title {
+    text-align: center;
+}
+
+.cy-title_right {
+    text-align: right;
+}
+
+.cy-title__p1 {
+    color: #000;
+    font-size: 0.8em;
+}
+
+.cy-title__p2 {
+    color: #1bad14;
+    font-size: 1em;
+    text-shadow: 0 0 2px #000;
+}
+
+.cy-title_left {
+    text-align: left;
+}

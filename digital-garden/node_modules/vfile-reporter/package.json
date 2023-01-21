@@ -1,0 +1,106 @@
+{
+  "name": "vfile-reporter",
+  "version": "6.0.2",
+  "description": "vfile utility to create a report for a file",
+  "license": "MIT",
+  "keywords": [
+    "vfile",
+    "vfile-util",
+    "vfile-reporter",
+    "util",
+    "utility",
+    "reporter",
+    "virtual",
+    "file",
+    "formatter",
+    "report",
+    "format",
+    "message",
+    "warning",
+    "error"
+  ],
+  "repository": "vfile/vfile-reporter",
+  "bugs": "https://github.com/vfile/vfile-reporter/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "repeat-string": "^1.5.0",
+    "string-width": "^4.0.0",
+    "supports-color": "^6.0.0",
+    "unist-util-stringify-position": "^2.0.0",
+    "vfile-sort": "^2.1.2",
+    "vfile-statistics": "^1.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "cross-env": "^7.0.0",
+    "figures": "^3.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "strip-ansi": "^6.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "vfile": "^4.0.0",
+    "xo": "^0.35.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify . --bare -s vfileReporter -g [ babelify --presets [ \"@babel/preset-env\" ] ] -o vfile-reporter.js",
+    "build-mangle": "browserify . --bare -s vfileReporter -g [ babelify --presets [ \"@babel/preset-env\" ] ] -o vfile-reporter.min.js -p tinyify",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "cross-env FORCE_COLOR=\"true\" node test",
+    "test-coverage": "cross-env FORCE_COLOR=\"true\" nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "browserslist": "> 2.5%, node 6",
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "complexity": "off",
+      "eqeqeq": "off",
+      "guard-for-in": "off",
+      "no-eq-null": "off",
+      "unicorn/escape-case": "off",
+      "unicorn/explicit-length-check": "off",
+      "unicorn/no-hex-escape": "off",
+      "unicorn/prefer-optional-catch-binding": "off"
+    },
+    "ignores": [
+      "vfile-reporter.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

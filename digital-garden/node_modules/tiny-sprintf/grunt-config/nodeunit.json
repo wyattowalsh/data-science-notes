@@ -1,0 +1,11 @@
+{
+	"package": "grunt-contrib-nodeunit",
+	"description": "Executes all unit tests",
+	"config": {
+		"all": ["test/*.js"],
+		"options": {
+			"reporter": "verbose"
+		}
+	},
+	"visible": true
+}

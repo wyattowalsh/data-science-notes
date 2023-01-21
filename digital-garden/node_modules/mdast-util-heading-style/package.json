@@ -1,0 +1,77 @@
+{
+  "name": "mdast-util-heading-style",
+  "version": "1.0.6",
+  "description": "mdast utility to get the style of a heading",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "mdast",
+    "mdast-util",
+    "util",
+    "utility",
+    "markdown",
+    "node",
+    "heading",
+    "style"
+  ],
+  "repository": "syntax-tree/mdast-util-heading-style",
+  "bugs": "https://github.com/syntax-tree/mdast-util-heading-style/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^1.0.0",
+    "remark": "^11.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "tape": "^4.0.0",
+    "tinyify": "^2.0.0",
+    "xo": "^0.26.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "build-bundle": "browserify . -s mdastUtilHeadingStyle > mdast-util-heading-style.js",
+    "build-mangle": "browserify . -s mdastUtilHeadingStyle -p tinyify > mdast-util-heading-style.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "ignore": [
+      "mdast-util-heading-style.js"
+    ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

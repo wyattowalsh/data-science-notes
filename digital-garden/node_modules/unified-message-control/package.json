@@ -1,0 +1,97 @@
+{
+  "name": "unified-message-control",
+  "version": "3.0.3",
+  "description": "Enable, disable, and ignore messages from unified processors",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "unified-plugin",
+    "comment",
+    "message",
+    "marker",
+    "control"
+  ],
+  "repository": "unifiedjs/unified-message-control",
+  "bugs": "https://github.com/unifiedjs/unified-message-control/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Christian Murphy <christian.murphy.42@gmail.com> (https://github.com/ChristianMurphy)",
+    "Thomas 'zemnmez' Shadwell (https://github.com/zemnmez)"
+  ],
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "dependencies": {
+    "unist-util-visit": "^2.0.0",
+    "vfile-location": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/hast": "^2.0.0",
+    "@types/mdast": "^3.0.0",
+    "@types/unist": "^2.0.0",
+    "browserify": "^17.0.0",
+    "dtslint": "^4.0.0",
+    "mdast-comment-marker": "^1.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark": "^13.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "remark-toc": "^7.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "unified": "^9.0.0",
+    "unist-util-is": "^4.0.0",
+    "xo": "^0.37.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . --write && xo --fix",
+    "build-bundle": "browserify index.js -s unifiedMessageControl -o unified-message-control.js",
+    "build-mangle": "browserify index.js -s unifiedMessageControl -p tinyify -o unified-message-control.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "dtslint",
+    "test": "npm run test-types && npm run format && npm run build && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "guard-for-in": "off",
+      "unicorn/explicit-length-check": "off",
+      "unicorn/no-array-callback-reference": "off",
+      "unicorn/prefer-includes": "off",
+      "unicorn/string-content": "off"
+    },
+    "ignores": [
+      "*.ts",
+      "unified-message-control.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

@@ -1,0 +1,182 @@
+import _extends from "@babel/runtime/helpers/esm/extends";
+import _objectWithoutPropertiesLoose from "@babel/runtime/helpers/esm/objectWithoutPropertiesLoose";
+const _excluded = ["className", "date", "disabled", "disableFuture", "disablePast", "maxDate", "minDate", "onChange", "onMonthChange", "readOnly"];
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import clsx from 'clsx';
+import { styled, useThemeProps } from '@mui/material/styles';
+import { unstable_composeClasses as composeClasses, generateUtilityClass, generateUtilityClasses } from '@mui/base';
+import PickersMonth from './PickersMonth';
+import { useUtils, useNow } from '../internal/pickers/hooks/useUtils';
+import { jsx as _jsx } from "react/jsx-runtime";
+export function getMonthPickerUtilityClass(slot) {
+  return generateUtilityClass('MuiMonthPicker', slot);
+}
+export const monthPickerClasses = generateUtilityClasses('MuiMonthPicker', ['root']);
+
+const useUtilityClasses = ownerState => {
+  const {
+    classes
+  } = ownerState;
+  const slots = {
+    root: ['root']
+  };
+  return composeClasses(slots, getMonthPickerUtilityClass, classes);
+};
+
+const MonthPickerRoot = styled('div', {
+  name: 'MuiMonthPicker',
+  slot: 'Root',
+  overridesResolver: (props, styles) => styles.root
+})({
+  width: 310,
+  display: 'flex',
+  flexWrap: 'wrap',
+  alignContent: 'stretch',
+  margin: '0 4px'
+});
+const MonthPicker = /*#__PURE__*/React.forwardRef(function MonthPicker(inProps, ref) {
+  const props = useThemeProps({
+    props: inProps,
+    name: 'MuiMonthPicker'
+  });
+
+  const {
+    className,
+    date,
+    disabled,
+    disableFuture,
+    disablePast,
+    maxDate,
+    minDate,
+    onChange,
+    onMonthChange,
+    readOnly
+  } = props,
+        other = _objectWithoutPropertiesLoose(props, _excluded);
+
+  const ownerState = props;
+  const classes = useUtilityClasses(ownerState);
+  const utils = useUtils();
+  const now = useNow();
+  const currentMonth = utils.getMonth(date || now);
+
+  const shouldDisableMonth = month => {
+    const firstEnabledMonth = utils.startOfMonth(disablePast && utils.isAfter(now, minDate) ? now : minDate);
+    const lastEnabledMonth = utils.startOfMonth(disableFuture && utils.isBefore(now, maxDate) ? now : maxDate);
+    const isBeforeFirstEnabled = utils.isBefore(month, firstEnabledMonth);
+    const isAfterLastEnabled = utils.isAfter(month, lastEnabledMonth);
+    return isBeforeFirstEnabled || isAfterLastEnabled;
+  };
+
+  const onMonthSelect = month => {
+    if (readOnly) {
+      return;
+    }
+
+    const newDate = utils.setMonth(date || now, month);
+    onChange(newDate, 'finish');
+
+    if (onMonthChange) {
+      onMonthChange(newDate);
+    }
+  };
+
+  return /*#__PURE__*/_jsx(MonthPickerRoot, _extends({
+    ref: ref,
+    className: clsx(classes.root, className),
+    ownerState: ownerState
+  }, other, {
+    children: utils.getMonthArray(date || now).map(month => {
+      const monthNumber = utils.getMonth(month);
+      const monthText = utils.format(month, 'monthShort');
+      return /*#__PURE__*/_jsx(PickersMonth, {
+        value: monthNumber,
+        selected: monthNumber === currentMonth,
+        onSelect: onMonthSelect,
+        disabled: disabled || shouldDisableMonth(month),
+        children: monthText
+      }, monthText);
+    })
+  }));
+});
+process.env.NODE_ENV !== "production" ? MonthPicker.propTypes
+/* remove-proptypes */
+= {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // |     To update them edit TypeScript types and run "yarn proptypes"  |
+  // ----------------------------------------------------------------------
+
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+
+  /**
+   * className applied to the root element.
+   */
+  className: PropTypes.string,
+
+  /**
+   * Date value for the MonthPicker
+   */
+  date: PropTypes.any,
+
+  /**
+   * If `true` picker is disabled
+   */
+  disabled: PropTypes.bool,
+
+  /**
+   * If `true` future days are disabled.
+   */
+  disableFuture: PropTypes.bool,
+
+  /**
+   * If `true` past days are disabled.
+   */
+  disablePast: PropTypes.bool,
+
+  /**
+   * Maximal selectable date.
+   */
+  maxDate: PropTypes.any.isRequired,
+
+  /**
+   * Minimal selectable date.
+   */
+  minDate: PropTypes.any.isRequired,
+
+  /**
+   * Callback fired on date change.
+   */
+  onChange: PropTypes.func.isRequired,
+
+  /**
+   * @ignore
+   */
+  onMonthChange: PropTypes.func,
+
+  /**
+   * If `true` picker is readonly
+   */
+  readOnly: PropTypes.bool,
+
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
+} : void 0;
+/**
+ *
+ * Demos:
+ *
+ * - [Date Picker](https://mui.com/components/date-picker/)
+ *
+ * API:
+ *
+ * - [MonthPicker API](https://mui.com/api/month-picker/)
+ */
+
+export default MonthPicker;

@@ -1,0 +1,87 @@
+{
+  "name": "remark-message-control",
+  "version": "6.0.0",
+  "description": "remark plugin to enable, disable, and ignore messages with remark",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "remark",
+    "remark-plugin",
+    "plugin",
+    "mdast",
+    "markdown",
+    "comment",
+    "message",
+    "marker",
+    "control"
+  ],
+  "repository": "remarkjs/remark-message-control",
+  "bugs": "https://github.com/remarkjs/remark-message-control/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Christian Murphy <christian.murphy.42@gmail.com>"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "mdast-comment-marker": "^1.0.0",
+    "unified-message-control": "^3.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark": "^11.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "remark-toc": "^7.0.0",
+    "tape": "^4.0.0",
+    "tinyify": "^2.0.0",
+    "xo": "^0.28.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "build-bundle": "browserify . -s remarkMessageControl > remark-message-control.js",
+    "build-mangle": "browserify . -s remarkMessageControl -p tinyify > remark-message-control.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/string-content": "off",
+      "guard-for-in": "off"
+    },
+    "ignores": [
+      "remark-message-control.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}
