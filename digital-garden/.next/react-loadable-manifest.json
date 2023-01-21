@@ -1,0 +1,14 @@
+{
+  "index.js -> ../components/Graph": {
+    "id": "index.js -> ../components/Graph",
+    "files": [
+      "static/chunks/components_Graph_js.js"
+    ]
+  },
+  "note/[id].js -> ../../components/Graph": {
+    "id": "note/[id].js -> ../../components/Graph",
+    "files": [
+      "static/chunks/components_Graph_js.js"
+    ]
+  }
+}

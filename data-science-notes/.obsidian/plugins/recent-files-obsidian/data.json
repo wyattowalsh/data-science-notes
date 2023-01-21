@@ -1,0 +1,207 @@
+{
+  "recentFiles": [
+    {
+      "basename": "Frameworks, Libraries, and Packages",
+      "path": "notes/Visualization/Frameworks, Libraries, and Packages.md"
+    },
+    {
+      "basename": "Line Plot",
+      "path": "notes/Visualization/Visualizations/Line Plot.md"
+    },
+    {
+      "basename": "Visualization Index",
+      "path": "notes/Visualization/Visualization Index.md"
+    },
+    {
+      "basename": "Excel",
+      "path": "notes/Software Engineering/Languages/Excel.md"
+    },
+    {
+      "basename": "Javascript",
+      "path": "notes/Software Engineering/Languages/Javascript.md"
+    },
+    {
+      "basename": "Java",
+      "path": "notes/Software Engineering/Languages/Java.md"
+    },
+    {
+      "basename": "Rust",
+      "path": "notes/Software Engineering/Languages/Rust.md"
+    },
+    {
+      "basename": "SAS",
+      "path": "notes/Software Engineering/Languages/SAS.md"
+    },
+    {
+      "basename": "Scala",
+      "path": "notes/Software Engineering/Languages/Scala.md"
+    },
+    {
+      "basename": "C",
+      "path": "notes/Software Engineering/Languages/C.md"
+    },
+    {
+      "basename": "C++",
+      "path": "notes/Software Engineering/Languages/C++.md"
+    },
+    {
+      "basename": "Matlab",
+      "path": "notes/Software Engineering/Languages/Matlab.md"
+    },
+    {
+      "basename": "Shell Scripting",
+      "path": "notes/Software Engineering/Languages/Shell Scripting.md"
+    },
+    {
+      "basename": "R",
+      "path": "notes/Software Engineering/Languages/R.md"
+    },
+    {
+      "basename": "Julia",
+      "path": "notes/Software Engineering/Languages/Julia.md"
+    },
+    {
+      "basename": "TensorFlow",
+      "path": "notes/Software Engineering/Frameworks/TensorFlow.md"
+    },
+    {
+      "basename": "SQL",
+      "path": "notes/Software Engineering/Languages/SQL.md"
+    },
+    {
+      "basename": "Python",
+      "path": "notes/Software Engineering/Languages/Python.md"
+    },
+    {
+      "basename": "Jupyter",
+      "path": "notes/Software Engineering/Frameworks/Jupyter.md"
+    },
+    {
+      "basename": "PyTorch",
+      "path": "notes/Software Engineering/Frameworks/PyTorch.md"
+    },
+    {
+      "basename": "Apache Spark",
+      "path": "notes/Software Engineering/Frameworks/Apache Spark.md"
+    },
+    {
+      "basename": "Continuous Integration Continuous Delivery (CICD)",
+      "path": "notes/Software Engineering/Continuous Integration Continuous Delivery (CICD).md"
+    },
+    {
+      "basename": "Data Structures",
+      "path": "notes/Software Engineering/Data Structures.md"
+    },
+    {
+      "basename": "Version Control",
+      "path": "notes/Software Engineering/Version Control.md"
+    },
+    {
+      "basename": "Virtual Environments",
+      "path": "notes/Software Engineering/Virtual Environments.md"
+    },
+    {
+      "basename": "Apache Hadoop",
+      "path": "notes/Software Engineering/Frameworks/Apache Hadoop.md"
+    },
+    {
+      "basename": "Probability",
+      "path": "notes/Mathematical Topics/Probability.md"
+    },
+    {
+      "basename": "Statistics",
+      "path": "notes/Mathematical Topics/Statistics.md"
+    },
+    {
+      "basename": "Optimization",
+      "path": "notes/Mathematical Topics/Optimization.md"
+    },
+    {
+      "basename": "Calculus",
+      "path": "notes/Mathematical Topics/Calculus.md"
+    },
+    {
+      "basename": "Linear Algebra",
+      "path": "notes/Mathematical Topics/Linear Algebra.md"
+    },
+    {
+      "basename": "Support Vector Machine (SVM)",
+      "path": "notes/Machine Learning and Data Mining/Models/Support Vector Machine (SVM).md"
+    },
+    {
+      "basename": "Ordinary Least Squares (OLS)",
+      "path": "notes/Machine Learning and Data Mining/Models/Ordinary Least Squares (OLS).md"
+    },
+    {
+      "basename": "Principle Component Analysis (PCA)",
+      "path": "notes/Machine Learning and Data Mining/Models/Principle Component Analysis (PCA).md"
+    },
+    {
+      "basename": "Ridge",
+      "path": "notes/Machine Learning and Data Mining/Models/Ridge.md"
+    },
+    {
+      "basename": "Recurrent Neural Network (RNN)",
+      "path": "notes/Machine Learning and Data Mining/Models/Recurrent Neural Network (RNN).md"
+    },
+    {
+      "basename": "K-Nearest-Neighbor (KNN)",
+      "path": "notes/Machine Learning and Data Mining/Models/K-Nearest-Neighbor (KNN).md"
+    },
+    {
+      "basename": "Lasso",
+      "path": "notes/Machine Learning and Data Mining/Models/Lasso.md"
+    },
+    {
+      "basename": "Logistic Regression",
+      "path": "notes/Machine Learning and Data Mining/Models/Logistic Regression.md"
+    },
+    {
+      "basename": "Long Short-Term Memory Neural Network (LSTM)",
+      "path": "notes/Machine Learning and Data Mining/Models/Long Short-Term Memory Neural Network (LSTM).md"
+    },
+    {
+      "basename": "Hierarchical Clustering",
+      "path": "notes/Machine Learning and Data Mining/Models/Hierarchical Clustering.md"
+    },
+    {
+      "basename": "K-Means",
+      "path": "notes/Machine Learning and Data Mining/Models/K-Means.md"
+    },
+    {
+      "basename": "Elastic Net",
+      "path": "notes/Machine Learning and Data Mining/Models/Elastic Net.md"
+    },
+    {
+      "basename": "Ensemble Models",
+      "path": "notes/Machine Learning and Data Mining/Models/Ensemble Models.md"
+    },
+    {
+      "basename": "Generalized Linear Model (GLM)",
+      "path": "notes/Machine Learning and Data Mining/Models/Generalized Linear Model (GLM).md"
+    },
+    {
+      "basename": "Decision Tree",
+      "path": "notes/Machine Learning and Data Mining/Models/Decision Tree.md"
+    },
+    {
+      "basename": "Discriminant Analysis",
+      "path": "notes/Machine Learning and Data Mining/Models/Discriminant Analysis.md"
+    },
+    {
+      "basename": "Deep Neural Network (DNN)",
+      "path": "notes/Machine Learning and Data Mining/Models/Deep Neural Network (DNN).md"
+    },
+    {
+      "basename": "Convolutional Neural Network (CNN)",
+      "path": "notes/Machine Learning and Data Mining/Models/Convolutional Neural Network (CNN).md"
+    },
+    {
+      "basename": "Artificial Neural Network (ANN)",
+      "path": "notes/Machine Learning and Data Mining/Models/Artificial Neural Network (ANN).md"
+    }
+  ],
+  "omittedPaths": [],
+  "maxLength": null,
+  "openType": "tab"
+}

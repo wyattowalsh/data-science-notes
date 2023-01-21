@@ -1,0 +1,167 @@
+{
+  "main": {
+    "id": "dc70f4422a4d4406",
+    "type": "split",
+    "children": [
+      {
+        "id": "04c5582f4bea7617",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6af4ade1eb316c16",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "66a5f95f92275350",
+    "type": "split",
+    "children": [
+      {
+        "id": "df3e6df253582aca",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c3f3e65efba72662",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "876d8df2826a5712",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0ab8d6d89dc6e4ec",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "b611efc5d1629eb6",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "680930146e240a8a",
+    "type": "split",
+    "children": [
+      {
+        "id": "62a63878652fbad2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9f912d6c98555d5c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "notes/Visualization/Frameworks, Libraries, and Packages.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f27d8c8d657f3724",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "notes/Visualization/Frameworks, Libraries, and Packages.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e6e0edd4d52f5730",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "81c5da0a7f33bf06",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "notes/Visualization/Frameworks, Libraries, and Packages.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "c3f3e65efba72662",
+  "lastOpenFiles": [
+    "notes/Visualization/Visualizations/Line Plot.md",
+    "notes/Visualization/Visualization Index.md",
+    "notes/Software Engineering/Languages/Excel.md",
+    "notes/Software Engineering/Languages/Javascript.md",
+    "notes/Software Engineering/Languages/Java.md",
+    "notes/Software Engineering/Languages/Rust.md",
+    "notes/Software Engineering/Languages/SAS.md",
+    "notes/Software Engineering/Languages/Scala.md",
+    "notes/Software Engineering/Languages/C.md",
+    "notes/Software Engineering/Languages/C++.md"
+  ]
+}

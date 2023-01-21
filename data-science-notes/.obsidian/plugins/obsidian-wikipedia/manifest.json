@@ -1,0 +1,10 @@
+{
+  "id": "obsidian-wikipedia",
+  "name": "Wikipedia",
+  "version": "1.0.3",
+  "minAppVersion": "0.9.12",
+  "description": "Grabs information from Wikipedia for a topic and brings it into Obsidian notes",
+  "author": "Jonathan Miller",
+  "authorUrl": "https://jmill.dev",
+  "isDesktopOnly": false
+}
