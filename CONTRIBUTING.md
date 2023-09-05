@@ -5,17 +5,17 @@ helps, and credit will always be given. Read below for how to contribute.
 
 ## Suggest Content
 
-If you a *data science* related idea for content feel free to use `issues` or `discussions`. We'd love to hear your ideas!
+If you  have a *data science* related idea for content, feel free to use `issues` or `discussions`. We'd love to hear your ideas!
 
 ## Add Content
 
-As an *open-source* project, ***Data Science Notes*** is built on community contributions, so thank for considering to add your thoughts to the collection!
+As an *open-source* project, ***Data Science Notes*** is built on community contributions, so thankyou for considering to add your thoughts to the collection!
 
 Please see [**here**](FORMATTING.md) for formatting and content guidelines. 
 
 ## Share the Project
 
-Sharing the project on social media (we have a twitter @MakeUseofData) would be awesome!! We could always use more contributors helping out!
+Sharing the project on social media (we have a twitter @MakeUseofData) would be awesome!! We could always use more contributors for helping out!
 
 ## Give Feedback
 
