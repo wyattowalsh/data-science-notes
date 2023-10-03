@@ -46,6 +46,25 @@
       - Basics  ***Needs Work***
     - Python
       - Basics  ***Needs Work***
+      - INTRODUCTION DATA, EXPRESSIONS, STATEMENTS
+        Introduction to Python and installation, data types: Int, float, Boolean, string, and list; variables,
+        expressions, statements, precedence of operators, comments; modules, functions--- function and its
+        use, flow of execution, parameters and arguments.
+      - CONTROL FLOW, LOOPS
+        Conditionals: Boolean values and operators, conditional (if), alternative (if-else), chained conditional
+        (if-elif-else); Iteration: while, for, break, continue.
+      - FUNCTIONS, ARRAYS
+        Fruitful functions: return values, parameters, local and global scope, function composition,
+        recursion; Strings: string slices, immutability, string functions and methods, string module; Python
+        arrays, Access the Elements of an Array, array methods.
+      - LISTS, TUPLES, DICTIONARIES
+        Lists: list operations, list slices, list methods, list loop, mutability, aliasing, cloning lists, list
+        parameters, list comprehension; Tuples: tuple assignment, tuple as return value, tuple comprehension;
+        Dictionaries: operations and methods, comprehension.
+      - FILES, EXCEPTIONS, MODULES, PACKAGES
+        Files and exception: text files, reading and writing files, command line arguments, errors and
+        exceptions, handling exceptions, modules (datetime, time, OS , calendar, math module), Explore
+        packages.
     - R
       - Basics  ***Needs Work***
     - Rust
